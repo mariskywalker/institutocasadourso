@@ -1,25 +1,23 @@
-import { Header } from "@/components/design-system/Header";
-import { HeroSection } from "@/components/design-system/HeroSection";
-import { ColorsSection } from "@/components/design-system/ColorsSection";
-import { TypographySection } from "@/components/design-system/TypographySection";
-import { ComponentsSection } from "@/components/design-system/ComponentsSection";
-import { IconsSection } from "@/components/design-system/IconsSection";
-import { Footer } from "@/components/design-system/Footer";
+import { BrandHeader } from '@/components/brand/BrandHeader';
+import { LogoSection } from '@/components/brand/LogoSection';
+import { ColorPaletteSection } from '@/components/brand/ColorPaletteSection';
+import { TypographySection } from '@/components/brand/TypographySection';
+import { SocialMediaSection } from '@/components/brand/SocialMediaSection';
+import { BrandElementsSection } from '@/components/brand/BrandElementsSection';
+import { UsageGuidelinesSection } from '@/components/brand/UsageGuidelinesSection';
+import { BrandFooter } from '@/components/brand/BrandFooter';
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
-      <Header />
-      <main>
-        <HeroSection />
-        <div className="container">
-          <ColorsSection />
-          <TypographySection />
-          <ComponentsSection />
-          <IconsSection />
-        </div>
-      </main>
-      <Footer />
+      <BrandHeader />
+      <LogoSection />
+      <ColorPaletteSection />
+      <TypographySection />
+      <SocialMediaSection />
+      <BrandElementsSection />
+      <UsageGuidelinesSection />
+      <BrandFooter />
     </div>
   );
 };
