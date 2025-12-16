@@ -1,5 +1,5 @@
-import logoBear from '@/assets/brand/logo-bear.png';
-import logoElements from '@/assets/brand/logo-elements.png';
+import logoCasadourso from '@/assets/brand/logo-casadourso.png';
+import formas from '@/assets/brand/formas.svg';
 import { Download } from 'lucide-react';
 
 export const LogoSection = () => {
@@ -21,13 +21,8 @@ export const LogoSection = () => {
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           {/* Logo Principal */}
           <div className="bg-white rounded-3xl p-8 shadow-card border border-border">
-            <div className="aspect-video bg-gradient-to-br from-coral-light via-sky-light to-sunshine-light rounded-2xl flex items-center justify-center mb-6">
-              <div className="flex items-center gap-3">
-                <span className="text-4xl">✱</span>
-                <span className="text-coral text-4xl">❤</span>
-                <span className="text-sky text-4xl">☁</span>
-                <img src={logoBear} alt="Urso" className="w-12 h-12" />
-              </div>
+            <div className="aspect-video bg-gradient-to-br from-coral-light via-sky-light to-sunshine-light rounded-2xl flex items-center justify-center mb-6 p-8">
+              <img src={logoCasadourso} alt="Casa do Urso Logo" className="max-h-full max-w-full object-contain" />
             </div>
             <div className="flex justify-between items-center">
               <div>
@@ -41,40 +36,27 @@ export const LogoSection = () => {
             </div>
           </div>
 
-          {/* Logo Horizontal */}
+          {/* Formas da Marca */}
           <div className="bg-white rounded-3xl p-8 shadow-card border border-border">
-            <div className="aspect-video bg-white rounded-2xl flex items-center justify-center mb-6 border border-border">
-              <div className="flex items-center gap-4">
-                <div className="flex items-center gap-2">
-                  <span className="text-3xl">✱</span>
-                  <span className="text-coral text-3xl">❤</span>
-                  <span className="text-sky text-3xl">☁</span>
-                  <img src={logoBear} alt="Urso" className="w-10 h-10" />
-                </div>
-                <span className="font-display font-bold text-navy text-xl">Casa do Urso</span>
-              </div>
+            <div className="aspect-video bg-white rounded-2xl flex items-center justify-center mb-6 border border-border p-8">
+              <img src={formas} alt="Formas Casa do Urso" className="max-h-full max-w-full object-contain" />
             </div>
             <div className="flex justify-between items-center">
               <div>
-                <h3 className="font-display font-bold text-navy">Logo Horizontal</h3>
-                <p className="text-sm text-muted-foreground">Para headers e banners</p>
+                <h3 className="font-display font-bold text-navy">Formas da Marca</h3>
+                <p className="text-sm text-muted-foreground">Elementos gráficos decorativos</p>
               </div>
               <button className="flex items-center gap-2 px-4 py-2 bg-navy text-white rounded-full text-sm hover:bg-navy-light transition-colors">
                 <Download size={16} />
-                PNG
+                SVG
               </button>
             </div>
           </div>
 
           {/* Logo em Fundo Escuro */}
           <div className="bg-white rounded-3xl p-8 shadow-card border border-border">
-            <div className="aspect-video bg-navy rounded-2xl flex items-center justify-center mb-6">
-              <div className="flex items-center gap-3">
-                <span className="text-white text-4xl">✱</span>
-                <span className="text-coral text-4xl">❤</span>
-                <span className="text-sky text-4xl">☁</span>
-                <img src={logoBear} alt="Urso" className="w-12 h-12" />
-              </div>
+            <div className="aspect-video bg-navy rounded-2xl flex items-center justify-center mb-6 p-8">
+              <img src={logoCasadourso} alt="Casa do Urso Logo" className="max-h-full max-w-full object-contain brightness-0 invert" />
             </div>
             <div className="flex justify-between items-center">
               <div>
@@ -90,15 +72,15 @@ export const LogoSection = () => {
 
           {/* Favicon / Ícone */}
           <div className="bg-white rounded-3xl p-8 shadow-card border border-border">
-            <div className="aspect-video bg-muted rounded-2xl flex items-center justify-center gap-8 mb-6">
-              <div className="w-20 h-20 bg-coral-light rounded-2xl flex items-center justify-center">
-                <img src={logoBear} alt="Urso" className="w-12 h-12" />
+            <div className="aspect-video bg-muted rounded-2xl flex items-center justify-center gap-8 mb-6 p-4">
+              <div className="w-24 h-24 bg-coral-light rounded-2xl flex items-center justify-center p-2">
+                <img src={logoCasadourso} alt="Logo" className="max-h-full max-w-full object-contain" />
               </div>
-              <div className="w-12 h-12 bg-coral-light rounded-xl flex items-center justify-center">
-                <img src={logoBear} alt="Urso" className="w-8 h-8" />
+              <div className="w-16 h-16 bg-coral-light rounded-xl flex items-center justify-center p-2">
+                <img src={logoCasadourso} alt="Logo" className="max-h-full max-w-full object-contain" />
               </div>
-              <div className="w-8 h-8 bg-coral-light rounded-lg flex items-center justify-center">
-                <img src={logoBear} alt="Urso" className="w-5 h-5" />
+              <div className="w-10 h-10 bg-coral-light rounded-lg flex items-center justify-center p-1">
+                <img src={logoCasadourso} alt="Logo" className="max-h-full max-w-full object-contain" />
               </div>
             </div>
             <div className="flex justify-between items-center">
@@ -119,12 +101,7 @@ export const LogoSection = () => {
           <h3 className="font-display font-bold text-navy text-xl mb-6 text-center">Área de Proteção</h3>
           <div className="flex justify-center">
             <div className="relative inline-block p-12 border-2 border-dashed border-coral rounded-2xl">
-              <div className="flex items-center gap-3">
-                <span className="text-3xl">✱</span>
-                <span className="text-coral text-3xl">❤</span>
-                <span className="text-sky text-3xl">☁</span>
-                <img src={logoBear} alt="Urso" className="w-10 h-10" />
-              </div>
+              <img src={logoCasadourso} alt="Logo" className="h-16 object-contain" />
               <div className="absolute top-4 left-1/2 -translate-x-1/2 text-xs text-coral font-medium">
                 Mínimo 20px
               </div>
@@ -140,7 +117,7 @@ export const LogoSection = () => {
             </div>
           </div>
           <p className="text-center text-muted-foreground text-sm mt-6">
-            Mantenha sempre uma área de respiro ao redor do logo equivalente ao tamanho do ícone do urso.
+            Mantenha sempre uma área de respiro ao redor do logo.
           </p>
         </div>
       </div>
