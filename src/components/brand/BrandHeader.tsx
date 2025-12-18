@@ -1,4 +1,4 @@
-import logoBear from '@/assets/brand/logo-bear.png';
+import headerIcons from '@/assets/brand/header-icons.png';
 import { Download } from 'lucide-react';
 
 export const BrandHeader = () => {
@@ -14,11 +14,8 @@ export const BrandHeader = () => {
       
       {/* Content */}
       <div className="relative z-10 max-w-6xl mx-auto px-6 py-20">
-        <div className="flex items-center gap-3 mb-8">
-          <span className="text-3xl">✱</span>
-          <span className="text-coral text-3xl">❤</span>
-          <span className="text-sky text-3xl">☁</span>
-          <img src={logoBear} alt="Casa do Urso" className="w-10 h-10" />
+        <div className="mb-8">
+          <img src={headerIcons} alt="Casa do Urso" className="h-10" />
         </div>
         
         <h1 className="font-display text-5xl md:text-7xl font-bold text-navy mb-4">
