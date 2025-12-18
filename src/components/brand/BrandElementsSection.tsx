@@ -1,12 +1,12 @@
-import logoBear from '@/assets/brand/logo-bear.png';
+import iconsHorizontal from '@/assets/brand/icons-horizontal.png';
 import { Download } from 'lucide-react';
 
 export const BrandElementsSection = () => {
-  const elements = [
-    { icon: '✱', name: 'Asterisco', color: 'text-sunshine', bg: 'bg-sunshine-light', usage: 'Destaque, novidades' },
-    { icon: '❤', name: 'Coração', color: 'text-coral', bg: 'bg-coral-light', usage: 'Afeto, cuidado' },
-    { icon: '☁', name: 'Nuvem', color: 'text-sky', bg: 'bg-sky-light', usage: 'Leveza, imaginação' },
-    { icon: '🧸', name: 'Urso', color: 'text-navy', bg: 'bg-coral-light', usage: 'Mascote principal' },
+  const iconNames = [
+    { name: 'Asterisco', usage: 'Destaque, novidades' },
+    { name: 'Coração', usage: 'Afeto, cuidado' },
+    { name: 'Casa', usage: 'Lar, acolhimento' },
+    { name: 'Urso', usage: 'Mascote principal' },
   ];
 
   const shapes = [
@@ -34,20 +34,20 @@ export const BrandElementsSection = () => {
         {/* Ícones */}
         <div className="mb-12">
           <h3 className="font-display font-bold text-navy text-xl mb-6">Ícones Principais</h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {elements.map((el) => (
-              <div key={el.name} className="bg-white rounded-2xl p-6 shadow-card border border-border text-center">
-                <div className={`w-20 h-20 ${el.bg} rounded-2xl flex items-center justify-center mx-auto mb-4`}>
-                  {el.name === 'Urso' ? (
-                    <img src={logoBear} alt="Urso" className="w-12 h-12" />
-                  ) : (
-                    <span className={`text-4xl ${el.color}`}>{el.icon}</span>
-                  )}
+          <div className="bg-white rounded-2xl p-8 shadow-card border border-border">
+            <img 
+              src={iconsHorizontal} 
+              alt="Ícones da Casa do Urso - Asterisco, Coração, Casa, Urso" 
+              className="w-full max-w-2xl mx-auto mb-6"
+            />
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+              {iconNames.map((icon) => (
+                <div key={icon.name}>
+                  <h4 className="font-display font-bold text-navy">{icon.name}</h4>
+                  <p className="text-xs text-muted-foreground">{icon.usage}</p>
                 </div>
-                <h4 className="font-display font-bold text-navy">{el.name}</h4>
-                <p className="text-xs text-muted-foreground mt-1">{el.usage}</p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
 
@@ -84,11 +84,11 @@ export const BrandElementsSection = () => {
               
               {/* Conteúdo */}
               <div className="relative z-10 h-full flex flex-col justify-end">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-lg">✱</span>
-                  <span className="text-coral text-lg">❤</span>
-                  <span className="text-sky text-lg">☁</span>
-                  <img src={logoBear} alt="Urso" className="w-6 h-6" />
+                <div className="flex items-center gap-3 mb-2">
+                  <span className="text-sunshine text-2xl font-bold">✱</span>
+                  <span className="text-coral text-2xl">❤</span>
+                  <span className="text-sky text-2xl">⌂</span>
+                  <span className="text-2xl">🐻</span>
                 </div>
                 <h4 className="font-display font-bold text-navy text-xl">
                   Exemplo de Layout
