@@ -100,23 +100,23 @@ export const InstagramTemplates = () => {
               </div>
               <div className="absolute bottom-0 left-0 right-0 h-[55%] bg-navy" />
             </div>
-            <div className="absolute bottom-6 left-5 right-5">
-              <p className="font-display text-white text-sm leading-relaxed mb-1">
-                Quanto antes<br />o apoio chega,
-              </p>
-              <p className="font-display font-bold text-coral text-base leading-tight mb-1">
-                mais leve fica<br />o caminho
-              </p>
-              <p className="font-display font-bold text-white text-sm mb-3">
-                da criança e da família.
-              </p>
-              <p className="font-body text-white/60 text-[10px] mb-1">
-                Se algo te preocupa,<br />confie no seu olhar.
-              </p>
-              <p className="font-display font-bold text-sky text-xs">
-                Confie na Casa do Urso.
-              </p>
-              <img src={logoCasadourso} alt="Casa do Urso" className="w-20 h-auto mt-3 ml-auto" />
+            <div className="absolute bottom-6 left-5 right-5 flex flex-col h-[45%] justify-between">
+              <div>
+                <p style={{ fontFamily: 'Poppins, sans-serif' }} className="text-white text-sm leading-relaxed mb-2">
+                  Quando antes<br />o apoio chega,
+                </p>
+                <p style={{ fontFamily: 'Poppins, sans-serif' }} className="font-bold text-coral text-base leading-tight mb-2">
+                  mais leve fica<br />o caminho
+                </p>
+                <p style={{ fontFamily: 'Poppins, sans-serif' }} className="text-white text-sm leading-relaxed">
+                  da criança e da família.
+                </p>
+              </div>
+              <div className="flex items-center gap-2 px-4 py-2 border border-white/40 rounded-full w-fit">
+                <span style={{ fontFamily: 'Poppins, sans-serif' }} className="text-white text-xs font-medium">
+                  @clinicacasadourso
+                </span>
+              </div>
             </div>
           </div>
         </TemplateCard>
