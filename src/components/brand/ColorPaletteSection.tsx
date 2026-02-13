@@ -55,7 +55,7 @@ export const ColorPaletteSection = () => {
       className: 'bg-navy',
     },
     {
-      name: 'Coral',
+      name: 'Doce',
       hex: '#E8A5A5',
       rgb: '232, 165, 165',
       usage: 'Destaque emocional. Corações, CTAs, alertas.',
@@ -80,7 +80,7 @@ export const ColorPaletteSection = () => {
 
   const secondaryColors = [
     {
-      name: 'Coral Light',
+      name: 'Doce Light',
       hex: '#FADEDE',
       rgb: '250, 222, 222',
       usage: 'Fundos suaves, cards, seções.',
@@ -157,7 +157,7 @@ export const ColorPaletteSection = () => {
               <div className="h-24 gradient-hero" />
               <div className="p-4">
                 <h4 className="font-display font-bold text-navy">Hero Gradient</h4>
-                <p className="text-xs text-muted-foreground mt-1">Coral → Sky → Sunshine</p>
+                <p className="text-xs text-muted-foreground mt-1">Doce → Sky → Sunshine</p>
                 <code className="text-xs bg-muted px-2 py-1 rounded mt-2 block overflow-x-auto">
                   linear-gradient(135deg, #FADEDE 0%, #B8D6E8 50%, #FCF0C5 100%)
                 </code>
@@ -167,7 +167,7 @@ export const ColorPaletteSection = () => {
               <div className="h-24 gradient-playful" />
               <div className="p-4">
                 <h4 className="font-display font-bold text-navy">Playful Gradient</h4>
-                <p className="text-xs text-muted-foreground mt-1">Coral → Sky → Sunshine (vibrante)</p>
+                <p className="text-xs text-muted-foreground mt-1">Doce → Sky → Sunshine (vibrante)</p>
                 <code className="text-xs bg-muted px-2 py-1 rounded mt-2 block overflow-x-auto">
                   linear-gradient(135deg, #E8A5A5 0%, #4497C3 50%, #F5C842 100%)
                 </code>

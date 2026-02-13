@@ -21,7 +21,7 @@ export function ComponentsSection() {
               <div className="flex flex-wrap gap-4">
                 <Button variant="coral">
                   <Heart className="w-4 h-4" />
-                  Coral
+                  Doce
                 </Button>
                 <Button variant="sky">
                   <Star className="w-4 h-4" />
@@ -42,7 +42,7 @@ export function ComponentsSection() {
             <div>
               <p className="text-sm font-medium text-muted-foreground mb-4">Variantes Outline</p>
               <div className="flex flex-wrap gap-4">
-                <Button variant="outline-coral">Outline Coral</Button>
+                <Button variant="outline-coral">Outline Doce</Button>
                 <Button variant="outline-sky">Outline Sky</Button>
                 <Button variant="outline">Outline Default</Button>
               </div>
