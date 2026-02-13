@@ -7,90 +7,80 @@ export const TypographySection = () => {
             Tipografia
           </span>
           <h2 className="text-4xl font-display font-bold text-navy mb-4">
-            Fontes da Marca
+            Fonte da Marca
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Tipografia amigável e acessível que transmite acolhimento e profissionalismo.
+            Tipografia moderna e versátil que transmite confiança e acessibilidade em todos os pontos de contato.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
-          {/* Nunito */}
-          <div className="bg-white rounded-3xl p-8 shadow-card border border-border">
-            <div className="flex items-center justify-between mb-6">
-              <span className="px-3 py-1 bg-coral-light text-coral-dark rounded-full text-sm font-medium">
-                Display
-              </span>
-              <a 
-                href="https://fonts.google.com/specimen/Nunito"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-sky hover:underline"
-              >
-                Google Fonts →
-              </a>
-            </div>
-            <h3 className="font-display text-5xl font-bold text-navy mb-4">Nunito</h3>
-            <p className="text-muted-foreground mb-6">
-              Fonte principal para títulos e destaques. Arredondada, amigável e moderna.
-            </p>
-            <div className="space-y-4 border-t border-border pt-6">
-              <div className="flex items-baseline justify-between">
-                <span className="font-display text-4xl font-bold text-navy">Heading 1</span>
-                <span className="text-sm text-muted-foreground">Bold • 48px</span>
-              </div>
-              <div className="flex items-baseline justify-between">
-                <span className="font-display text-3xl font-bold text-navy">Heading 2</span>
-                <span className="text-sm text-muted-foreground">Bold • 36px</span>
-              </div>
-              <div className="flex items-baseline justify-between">
-                <span className="font-display text-2xl font-bold text-navy">Heading 3</span>
-                <span className="text-sm text-muted-foreground">Bold • 24px</span>
-              </div>
-              <div className="flex items-baseline justify-between">
-                <span className="font-display text-xl font-semibold text-navy">Heading 4</span>
-                <span className="text-sm text-muted-foreground">Semibold • 20px</span>
-              </div>
-            </div>
+        {/* Satoshi */}
+        <div className="bg-white rounded-3xl p-8 shadow-card border border-border mb-12">
+          <div className="flex items-center justify-between mb-6">
+            <span className="px-3 py-1 bg-coral-light text-coral-dark rounded-full text-sm font-medium">
+              Display & Body
+            </span>
+            <a 
+              href="https://www.fontshare.com/fonts/satoshi"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-sky hover:underline"
+            >
+              Fontshare →
+            </a>
           </div>
+          <h3 className="font-display text-6xl font-bold text-navy mb-2 tracking-tight">Satoshi</h3>
+          <p className="text-muted-foreground mb-8 max-w-xl">
+            Fonte principal para toda a identidade visual. Geométrica, limpa e contemporânea — usada tanto em títulos quanto em textos corridos.
+          </p>
 
-          {/* Quicksand */}
-          <div className="bg-white rounded-3xl p-8 shadow-card border border-border">
-            <div className="flex items-center justify-between mb-6">
-              <span className="px-3 py-1 bg-sky-light text-sky-dark rounded-full text-sm font-medium">
-                Body
-              </span>
-              <a 
-                href="https://fonts.google.com/specimen/Quicksand"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-sky hover:underline"
-              >
-                Google Fonts →
-              </a>
+          {/* Weights */}
+          <div className="grid md:grid-cols-2 gap-8 border-t border-border pt-8">
+            <div className="space-y-6">
+              <h4 className="text-sm text-muted-foreground uppercase tracking-wider font-medium">Pesos</h4>
+              <div className="space-y-4">
+                <div className="flex items-baseline justify-between">
+                  <span className="font-display text-3xl font-normal text-navy">Regular</span>
+                  <span className="text-sm text-muted-foreground font-mono">400</span>
+                </div>
+                <div className="flex items-baseline justify-between">
+                  <span className="font-display text-3xl font-medium text-navy">Medium</span>
+                  <span className="text-sm text-muted-foreground font-mono">500</span>
+                </div>
+                <div className="flex items-baseline justify-between">
+                  <span className="font-display text-3xl font-bold text-navy">Bold</span>
+                  <span className="text-sm text-muted-foreground font-mono">700</span>
+                </div>
+                <div className="flex items-baseline justify-between">
+                  <span className="font-display text-3xl font-black text-navy">Black</span>
+                  <span className="text-sm text-muted-foreground font-mono">900</span>
+                </div>
+              </div>
             </div>
-            <h3 className="font-body text-5xl font-bold text-navy mb-4">Quicksand</h3>
-            <p className="text-muted-foreground mb-6">
-              Fonte secundária para textos corridos. Legível, suave e acolhedora.
-            </p>
-            <div className="space-y-4 border-t border-border pt-6">
-              <div>
-                <span className="text-sm text-muted-foreground block mb-1">Regular • 16px</span>
-                <p className="font-body text-navy">
-                  A Casa do Urso oferece terapias multidisciplinares com foco em ABA para o desenvolvimento infanto-juvenil.
-                </p>
-              </div>
-              <div>
-                <span className="text-sm text-muted-foreground block mb-1">Medium • 14px</span>
-                <p className="font-body text-sm font-medium text-navy">
-                  Ambiente acolhedor e seguro para crianças e famílias.
-                </p>
-              </div>
-              <div>
-                <span className="text-sm text-muted-foreground block mb-1">Small • 12px</span>
-                <p className="font-body text-xs text-muted-foreground">
-                  Legenda ou texto de apoio com informações complementares.
-                </p>
+
+            <div className="space-y-6">
+              <h4 className="text-sm text-muted-foreground uppercase tracking-wider font-medium">Tamanhos</h4>
+              <div className="space-y-4">
+                <div className="flex items-baseline justify-between">
+                  <span className="font-display text-4xl font-bold text-navy">Heading 1</span>
+                  <span className="text-sm text-muted-foreground">Bold · 48px</span>
+                </div>
+                <div className="flex items-baseline justify-between">
+                  <span className="font-display text-3xl font-bold text-navy">Heading 2</span>
+                  <span className="text-sm text-muted-foreground">Bold · 36px</span>
+                </div>
+                <div className="flex items-baseline justify-between">
+                  <span className="font-display text-2xl font-bold text-navy">Heading 3</span>
+                  <span className="text-sm text-muted-foreground">Bold · 24px</span>
+                </div>
+                <div className="flex items-baseline justify-between">
+                  <span className="font-display text-lg font-medium text-navy">Body</span>
+                  <span className="text-sm text-muted-foreground">Medium · 18px</span>
+                </div>
+                <div className="flex items-baseline justify-between">
+                  <span className="font-display text-base text-navy">Regular</span>
+                  <span className="text-sm text-muted-foreground">Regular · 16px</span>
+                </div>
               </div>
             </div>
           </div>
@@ -101,19 +91,19 @@ export const TypographySection = () => {
           <h3 className="font-display font-bold text-navy text-xl mb-6">Hierarquia de Texto</h3>
           <div className="bg-white rounded-2xl p-6 space-y-4">
             <div className="pb-4 border-b border-border">
-              <span className="text-xs text-muted-foreground uppercase tracking-wider">H1 - Hero</span>
-              <h1 className="font-display text-4xl md:text-5xl font-bold text-navy mt-1">
+              <span className="text-xs text-muted-foreground uppercase tracking-wider">H1 — Hero</span>
+              <h1 className="font-display text-4xl md:text-5xl font-bold text-navy mt-1 tracking-tight">
                 Inovação em terapia multidisciplinar
               </h1>
             </div>
             <div className="pb-4 border-b border-border">
-              <span className="text-xs text-muted-foreground uppercase tracking-wider">H2 - Seção</span>
-              <h2 className="font-display text-3xl font-bold text-navy mt-1">
+              <span className="text-xs text-muted-foreground uppercase tracking-wider">H2 — Seção</span>
+              <h2 className="font-display text-3xl font-bold text-navy mt-1 tracking-tight">
                 Nossa visão
               </h2>
             </div>
             <div className="pb-4 border-b border-border">
-              <span className="text-xs text-muted-foreground uppercase tracking-wider">H3 - Card</span>
+              <span className="text-xs text-muted-foreground uppercase tracking-wider">H3 — Card</span>
               <h3 className="font-display text-xl font-bold text-navy mt-1">
                 Terapia ABA com excelência
               </h3>

@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Quicksand:wght@400;500;600;700&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap');
 
 @layer base {
   :root {
@@ -85,9 +85,8 @@
     --shadow-coral: 0 8px 30px -8px hsl(var(--coral) / 0.4);
     --shadow-sky: 0 8px 30px -8px hsl(var(--sky) / 0.4);
 
-    /* Typography */
-    --font-display: 'Nunito', sans-serif;
-    --font-body: 'Quicksand', sans-serif;
+    --font-display: 'Satoshi', sans-serif;
+    --font-body: 'Satoshi', sans-serif;
   }
 
   .dark {
