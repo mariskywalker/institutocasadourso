@@ -152,7 +152,7 @@ export const CarouselPostTemplate = () => (
     <TemplateCard title="Slide 5 — CTA" size="1080 × 1080px">
       <div className="aspect-square rounded-xl overflow-hidden relative bg-navy">
         {/* Photo with organic shape in top-right */}
-        <div className="absolute top-0 right-0 w-[80%] h-[48%] overflow-hidden">
+        <div className="absolute top-0 right-0 w-[80%] h-[68%] overflow-hidden">
           <img src={photoCtaNavy} alt="Ícones" className="w-full h-full object-contain object-right-top" />
         </div>
         {/* Text content on the left/bottom */}
