@@ -3,6 +3,7 @@ import logoCasadourso from '@/assets/brand/logo-casadourso.png';
 import photoChild from '@/assets/brand/photo-child-reading.jpg';
 import photoIcons from '@/assets/brand/photo-icons-wall.jpg';
 import photoTherapy from '@/assets/brand/photo-therapy-session.jpg';
+import fotoIconsForma from '@/assets/brand/foto-icons-forma.png';
 import { Download, Instagram } from 'lucide-react';
 import { CarouselPostTemplate } from './templates/CarouselPostTemplate';
 import { StoryTemplates } from './templates/StoryTemplates';
@@ -89,16 +90,17 @@ export const InstagramTemplates = () => {
 
         {/* Post CTA — Navy */}
         <TemplateCard title="Post CTA — Navy" size="1080 × 1080px">
-          <div className="aspect-square rounded-xl overflow-hidden relative">
-            {/* Top photo area with wave */}
-            <div className="absolute inset-0">
-              <img src={photoIcons} alt="Ícones" className="w-full h-1/2 object-cover" />
-              <div className="absolute top-[45%] left-0 right-0 h-[10%]">
-                <svg viewBox="0 0 400 40" className="w-full h-full" preserveAspectRatio="none">
-                  <path d="M0,20 Q100,0 200,20 Q300,40 400,20 L400,40 L0,40 Z" fill="hsl(213, 50%, 20%)" />
-                </svg>
-              </div>
-              <div className="absolute bottom-0 left-0 right-0 h-[55%] bg-navy" />
+          <div className="aspect-square rounded-xl overflow-hidden relative bg-navy">
+            {/* Organic blob with photo */}
+            <div className="absolute top-0 right-0 w-[75%] h-[60%]">
+              <svg viewBox="0 0 300 240" className="w-full h-full" preserveAspectRatio="none">
+                <defs>
+                  <clipPath id="blobClip">
+                    <path d="M300,0 L300,180 Q280,220 220,230 Q160,240 120,210 Q60,180 30,140 Q0,100 20,60 Q40,20 80,5 Q120,0 160,0 Z" />
+                  </clipPath>
+                </defs>
+                <image href={fotoIconsForma} x="0" y="0" width="300" height="240" clipPath="url(#blobClip)" preserveAspectRatio="xMidYMid slice" />
+              </svg>
             </div>
             <div className="absolute bottom-6 left-5 right-5 flex flex-col h-[45%] justify-between">
               <div>
