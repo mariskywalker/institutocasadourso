@@ -2,14 +2,14 @@ import logoBear from '@/assets/brand/logo-bear.png';
 import { Check, X } from 'lucide-react';
 import { IconAutonomia, IconEmocional, IconComunicacao, IconSocial } from './BrandIcons';
 
-const BrandIconsRow = ({ size = "w-4 h-4", className = "" }: { size?: string; className?: string }) => (
-  <div className={`flex items-center gap-1.5 ${className}`}>
+const BrandIconsRow = ({ size = "w-4 h-4", className = "" }: {size?: string;className?: string;}) =>
+<div className={`flex items-center gap-1.5 ${className}`}>
     <span className="text-sunshine"><IconAutonomia className={size} /></span>
     <span className="text-coral"><IconEmocional className={size} /></span>
     <span className="text-sky"><IconComunicacao className={size} /></span>
     <span className="text-[#CD995B]"><IconSocial className={size} /></span>
-  </div>
-);
+  </div>;
+
 
 export const UsageGuidelinesSection = () => {
   return (
@@ -47,7 +47,7 @@ export const UsageGuidelinesSection = () => {
                 </p>
               </div>
               <div className="flex gap-4 p-4 bg-muted rounded-xl">
-                <div className="w-24 h-16 bg-navy rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="w-24 h-16 rounded-lg flex items-center justify-center flex-shrink-0 bg-white">
                   <BrandIconsRow className="[&_span]:text-white" />
                 </div>
                 <p className="text-sm text-muted-foreground">
@@ -168,6 +168,6 @@ export const UsageGuidelinesSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
