@@ -81,8 +81,8 @@ export const CarouselPostTemplate = () => (
     {/* Slide 3 — Conteúdo Sky */}
     <TemplateCard title="Slide 3 — Conteúdo" size="1080 × 1080px">
       <div className="aspect-square rounded-xl overflow-hidden bg-sky relative p-4 flex flex-col">
-        {/* Sunshine blob top-left */}
-        <div className="absolute top-0 left-0 w-14 h-10 bg-sunshine rounded-br-[60%]" />
+        {/* Forma sunshine orgânica top-left */}
+        <img src={formaSunshine} alt="" className="absolute top-0 left-0 w-24 h-16 object-cover opacity-20" />
         {/* Bear-shaped photo frame */}
         <div className="absolute left-2 bottom-12 w-12 h-14 bg-white/20 rounded-[50%_50%_40%_40%] overflow-hidden">
           <img src={photoChild} alt="" className="w-full h-full object-cover" />
