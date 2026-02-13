@@ -36,11 +36,12 @@ export const BrandElementsSection = () => {
         <div className="mb-12">
           <h3 className="font-display font-bold text-navy text-xl mb-6">Ícones Principais</h3>
           <div className="bg-white rounded-2xl p-8 shadow-card border border-border">
-            <img 
-              src={iconsHorizontal} 
-              alt="Ícones da Casa do Urso - Asterisco, Coração, Casa, Urso" 
-              className="w-full max-w-2xl mx-auto mb-6"
-            />
+            <div className="flex items-center justify-center gap-16 max-w-2xl mx-auto mb-6">
+              <span className="text-sunshine"><IconAutonomia className="w-16 h-16" /></span>
+              <span className="text-coral"><IconEmocional className="w-16 h-16" /></span>
+              <span className="text-sky"><IconComunicacao className="w-16 h-16" /></span>
+              <span className="text-[#CD995B]"><IconSocial className="w-16 h-16" /></span>
+            </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
               {iconNames.map((icon) => (
                 <div key={icon.name}>
