@@ -1,5 +1,5 @@
 import logoBear from '@/assets/brand/logo-bear.png';
-import logoCasadourso from '@/assets/brand/logo-branco.png';
+import logoCasadourso from '@/assets/brand/logo-casadourso.png';
 import photoChild from '@/assets/brand/photo-child-reading.jpg';
 import photoIcons from '@/assets/brand/photo-icons-wall.jpg';
 import photoTherapy from '@/assets/brand/photo-therapy-session.jpg';
@@ -89,10 +89,16 @@ export const InstagramTemplates = () => {
 
         {/* Post CTA — Navy */}
         <TemplateCard title="Post CTA — Navy" size="1080 × 1080px">
-          <div className="aspect-square rounded-xl overflow-hidden relative bg-navy">
-            {/* Photo aligned top-right */}
-            <div className="absolute top-0 right-0 w-[75%] h-[50%]">
-              <img src={photoIcons} alt="Ícones" className="w-full h-full object-cover object-left-top" />
+          <div className="aspect-square rounded-xl overflow-hidden relative">
+            {/* Top photo area with wave */}
+            <div className="absolute inset-0">
+              
+              <div className="absolute top-[45%] left-0 right-0 h-[10%] border-0 py-0 mx-[123px]">
+                <svg viewBox="0 0 400 40" className="w-full h-full" preserveAspectRatio="none">
+                  <path d="M0,20 Q100,0 200,20 Q300,40 400,20 L400,40 L0,40 Z" fill="hsl(213, 50%, 20%)" />
+                </svg>
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 h-[55%] bg-navy" />
             </div>
             <div className="absolute bottom-6 left-5 right-5">
               <p className="font-display text-white text-sm leading-relaxed mb-1">
