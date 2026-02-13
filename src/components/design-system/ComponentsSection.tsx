@@ -29,7 +29,7 @@ export function ComponentsSection() {
                 </Button>
                 <Button variant="sunshine">
                   <Calendar className="w-4 h-4" />
-                  Sunshine
+                  Milho
                 </Button>
                 <Button variant="navy">
                   <MessageCircle className="w-4 h-4" />
