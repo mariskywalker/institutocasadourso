@@ -1,7 +1,9 @@
 import photoChild from '@/assets/brand/photo-child-reading.jpg';
 import photoIcons from '@/assets/brand/photo-icons-wall.jpg';
+import logoBranco from '@/assets/brand/logo-branco.png';
 import logoCasadourso from '@/assets/brand/logo-casadourso.png';
 import logoBear from '@/assets/brand/logo-bear.png';
+import photoCtaNavy from '@/assets/brand/foto-cta-navy.png';
 import formaSunshine from '@/assets/brand/forma-sunshine.png';
 import formaMint from '@/assets/brand/forma-mint.png';
 import iconografiaSmall from '@/assets/brand/iconografia-small.svg';
@@ -148,31 +150,29 @@ export const CarouselPostTemplate = () => (
 
     {/* Slide 5 — CTA Navy */}
     <TemplateCard title="Slide 5 — CTA" size="1080 × 1080px">
-      <div className="aspect-square rounded-xl overflow-hidden relative">
-        <img src={photoIcons} alt="Ícones" className="w-full h-[45%] object-cover" />
-        <div className="absolute top-[40%] left-0 right-0 h-[8%]">
-          <svg viewBox="0 0 400 30" className="w-full h-full" preserveAspectRatio="none">
-            <path d="M0,15 Q100,0 200,15 Q300,30 400,15 L400,30 L0,30 Z" fill="hsl(213, 50%, 20%)" />
-          </svg>
+      <div className="aspect-square rounded-xl overflow-hidden relative bg-navy">
+        {/* Photo with organic shape in top-right */}
+        <div className="absolute top-0 right-0 w-[100%] h-[80%] overflow-hidden">
+          <img src={photoCtaNavy} alt="Ícones" className="w-full h-full object-contain object-right-top" />
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-[58%] bg-navy" />
-        <div className="absolute bottom-4 left-4 right-4 z-10">
-          <p className="font-display text-white text-[10px] leading-relaxed">
+        {/* Text content on the left/bottom */}
+        <div className="absolute bottom-4 left-4 right-4">
+          <p className="font-display text-white text-[10px] leading-relaxed mb-0.5">
             Quanto antes<br />o apoio chega,
           </p>
-          <p className="font-display font-bold text-coral text-xs leading-tight">
+          <p className="font-display font-bold text-coral text-xs leading-tight mb-0.5">
             mais leve fica<br />o caminho
           </p>
           <p className="font-display font-bold text-white text-[10px] mb-2">
             da criança e da família.
           </p>
-          <p className="font-body text-white/50 text-[8px] mb-0.5">
-            Se algo te preocupa, confie no seu olhar.
+          <p className="font-body text-white/60 text-[7px] mb-0.5">
+            Se algo te preocupa,<br />confie no seu olhar.
           </p>
-          <p className="font-display font-bold text-sky text-[9px]">
+          <p className="font-display font-bold text-sky text-[8px]">
             Confie na Casa do Urso.
           </p>
-          <img src={logoCasadourso} alt="Logo" className="w-14 mt-2 ml-auto" />
+          <img src={logoBranco} alt="Casa do Urso" className="w-16 h-auto mt-2 ml-auto" />
           <CarouselDots active={4} />
         </div>
       </div>
