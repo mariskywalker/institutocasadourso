@@ -84,8 +84,8 @@ export default {
         },
       },
       fontFamily: {
-        display: ['Nunito', 'sans-serif'],
-        body: ['Quicksand', 'sans-serif'],
+        display: ['Satoshi', 'sans-serif'],
+        body: ['Satoshi', 'sans-serif'],
       },
       borderRadius: {
         lg: "var(--radius)",
