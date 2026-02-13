@@ -1,5 +1,15 @@
 import logoBear from '@/assets/brand/logo-bear.png';
 import { Check, X } from 'lucide-react';
+import { IconAutonomia, IconEmocional, IconComunicacao, IconSocial } from './BrandIcons';
+
+const BrandIconsRow = ({ size = "w-4 h-4", className = "" }: { size?: string; className?: string }) => (
+  <div className={`flex items-center gap-1.5 ${className}`}>
+    <span className="text-sunshine"><IconAutonomia className={size} /></span>
+    <span className="text-coral"><IconEmocional className={size} /></span>
+    <span className="text-sky"><IconComunicacao className={size} /></span>
+    <span className="text-[#CD995B]"><IconSocial className={size} /></span>
+  </div>
+);
 
 export const UsageGuidelinesSection = () => {
   return (
@@ -30,12 +40,7 @@ export const UsageGuidelinesSection = () => {
             <div className="space-y-4">
               <div className="flex gap-4 p-4 bg-muted rounded-xl">
                 <div className="w-24 h-16 bg-coral-light rounded-lg flex items-center justify-center flex-shrink-0">
-                  <div className="flex items-center gap-1">
-                    <span className="text-sm">✱</span>
-                    <span className="text-coral text-sm">❤</span>
-                    <span className="text-sky text-sm">☁</span>
-                    <img src={logoBear} alt="Urso" className="w-4 h-4" />
-                  </div>
+                  <BrandIconsRow />
                 </div>
                 <p className="text-sm text-muted-foreground">
                   Use o logo em fundos claros ou nas cores da paleta.
@@ -43,25 +48,15 @@ export const UsageGuidelinesSection = () => {
               </div>
               <div className="flex gap-4 p-4 bg-muted rounded-xl">
                 <div className="w-24 h-16 bg-navy rounded-lg flex items-center justify-center flex-shrink-0">
-                  <div className="flex items-center gap-1">
-                    <span className="text-white text-sm">✱</span>
-                    <span className="text-coral text-sm">❤</span>
-                    <span className="text-sky text-sm">☁</span>
-                    <img src={logoBear} alt="Urso" className="w-4 h-4" />
-                  </div>
+                  <BrandIconsRow className="[&_span]:text-white [&_span.text-coral]:text-coral [&_span.text-sky]:text-sky" />
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  Em fundos escuros, use a versão com asterisco branco.
+                  Em fundos escuros, use a versão com ícones claros.
                 </p>
               </div>
               <div className="flex gap-4 p-4 bg-muted rounded-xl">
                 <div className="w-24 h-16 rounded-lg flex items-center justify-center flex-shrink-0 border-2 border-dashed border-coral">
-                  <div className="flex items-center gap-1 p-2">
-                    <span className="text-sm">✱</span>
-                    <span className="text-coral text-sm">❤</span>
-                    <span className="text-sky text-sm">☁</span>
-                    <img src={logoBear} alt="Urso" className="w-4 h-4" />
-                  </div>
+                  <BrandIconsRow />
                 </div>
                 <p className="text-sm text-muted-foreground">
                   Mantenha sempre a área de proteção ao redor do logo.
@@ -81,12 +76,7 @@ export const UsageGuidelinesSection = () => {
             <div className="space-y-4">
               <div className="flex gap-4 p-4 bg-muted rounded-xl">
                 <div className="w-24 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center flex-shrink-0 relative">
-                  <div className="flex items-center gap-1">
-                    <span className="text-sm">✱</span>
-                    <span className="text-coral text-sm">❤</span>
-                    <span className="text-sky text-sm">☁</span>
-                    <img src={logoBear} alt="Urso" className="w-4 h-4" />
-                  </div>
+                  <BrandIconsRow />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <X className="text-red-500" size={32} strokeWidth={3} />
                   </div>
@@ -97,11 +87,8 @@ export const UsageGuidelinesSection = () => {
               </div>
               <div className="flex gap-4 p-4 bg-muted rounded-xl">
                 <div className="w-24 h-16 bg-white border border-border rounded-lg flex items-center justify-center flex-shrink-0 relative">
-                  <div className="flex items-center gap-1" style={{ transform: 'scaleX(1.5)' }}>
-                    <span className="text-sm">✱</span>
-                    <span className="text-coral text-sm">❤</span>
-                    <span className="text-sky text-sm">☁</span>
-                    <img src={logoBear} alt="Urso" className="w-4 h-4" />
+                  <div style={{ transform: 'scaleX(1.5)' }}>
+                    <BrandIconsRow />
                   </div>
                   <div className="absolute inset-0 flex items-center justify-center">
                     <X className="text-red-500" size={32} strokeWidth={3} />
@@ -113,11 +100,11 @@ export const UsageGuidelinesSection = () => {
               </div>
               <div className="flex gap-4 p-4 bg-muted rounded-xl">
                 <div className="w-24 h-16 bg-white border border-border rounded-lg flex items-center justify-center flex-shrink-0 relative">
-                  <div className="flex items-center gap-1">
-                    <span className="text-green-500 text-sm">✱</span>
-                    <span className="text-orange-500 text-sm">❤</span>
-                    <span className="text-purple-500 text-sm">☁</span>
-                    <img src={logoBear} alt="Urso" className="w-4 h-4 grayscale" />
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-green-500"><IconAutonomia className="w-4 h-4" /></span>
+                    <span className="text-orange-500"><IconEmocional className="w-4 h-4" /></span>
+                    <span className="text-purple-500"><IconComunicacao className="w-4 h-4" /></span>
+                    <span className="grayscale"><IconSocial className="w-4 h-4" /></span>
                   </div>
                   <div className="absolute inset-0 flex items-center justify-center">
                     <X className="text-red-500" size={32} strokeWidth={3} />

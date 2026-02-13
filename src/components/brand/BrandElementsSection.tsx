@@ -1,5 +1,6 @@
 import iconsHorizontal from '@/assets/brand/icons-horizontal.png';
 import { Download } from 'lucide-react';
+import { IconAutonomia, IconEmocional, IconComunicacao, IconSocial } from './BrandIcons';
 
 export const BrandElementsSection = () => {
   const iconNames = [
@@ -85,10 +86,10 @@ export const BrandElementsSection = () => {
               {/* Conteúdo */}
               <div className="relative z-10 h-full flex flex-col justify-end">
                 <div className="flex items-center gap-3 mb-2">
-                  <span className="text-sunshine text-2xl font-bold">✱</span>
-                  <span className="text-coral text-2xl">❤</span>
-                  <span className="text-sky text-2xl">⌂</span>
-                  <span className="text-2xl">🐻</span>
+                  <span className="text-sunshine"><IconAutonomia className="w-6 h-6" /></span>
+                  <span className="text-coral"><IconEmocional className="w-6 h-6" /></span>
+                  <span className="text-sky"><IconComunicacao className="w-6 h-6" /></span>
+                  <span className="text-[#CD995B]"><IconSocial className="w-6 h-6" /></span>
                 </div>
                 <h4 className="font-display font-bold text-navy text-xl">
                   Exemplo de Layout
