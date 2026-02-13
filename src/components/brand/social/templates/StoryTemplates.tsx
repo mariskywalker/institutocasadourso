@@ -13,8 +13,8 @@ export const StoryTemplates = () => (
       {/* Story — Dica Coral */}
       <TemplateCard title="Story — Dica" size="1080 × 1920px">
         <div className="aspect-[9/16] max-h-72 rounded-xl overflow-hidden bg-coral relative p-4 flex flex-col justify-between mx-auto">
-          <div className="absolute top-0 right-0 w-16 h-12 bg-sunshine rounded-bl-[60%]" />
-          <div className="absolute bottom-0 left-0 w-12 h-16 bg-mint rounded-tr-[60%]" />
+          <img src={formaSunshine} alt="" className="absolute top-0 right-0 w-20 h-16 object-cover opacity-25 rotate-12" />
+          <img src={formaMint} alt="" className="absolute bottom-0 left-0 w-16 h-20 object-cover opacity-25 -rotate-12" />
           <span className="text-white/60 text-[8px] font-medium text-center">@clinicacasadourso</span>
           <div className="text-center flex-1 flex flex-col justify-center relative z-10">
             <span className="font-display font-black text-white text-lg leading-none mb-1">"</span>
@@ -23,7 +23,7 @@ export const StoryTemplates = () => (
               <span className="bg-navy px-1.5 py-0.5 text-white inline-block mt-1">de aprendizado</span>
             </h4>
           </div>
-          <img src={logoBear} alt="Urso" className="w-6 h-6 mx-auto" />
+          <img src={logoBear} alt="Urso" className="w-6 h-6 mx-auto relative z-10" />
         </div>
       </TemplateCard>
 
