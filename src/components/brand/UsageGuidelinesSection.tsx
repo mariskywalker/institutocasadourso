@@ -48,7 +48,7 @@ export const UsageGuidelinesSection = () => {
               </div>
               <div className="flex gap-4 p-4 bg-muted rounded-xl">
                 <div className="w-24 h-16 bg-navy rounded-lg flex items-center justify-center flex-shrink-0">
-                  <BrandIconsRow className="[&_span]:text-white [&_span.text-coral]:text-coral [&_span.text-sky]:text-sky" />
+                  <BrandIconsRow className="[&_span]:text-white" />
                 </div>
                 <p className="text-sm text-muted-foreground">
                   Em fundos escuros, use a versão com ícones claros.
