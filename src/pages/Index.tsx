@@ -1,7 +1,7 @@
 import { BrandHeader } from '@/components/brand/BrandHeader';
 import { BrandFooter } from '@/components/brand/BrandFooter';
 import { Link } from 'react-router-dom';
-import { Palette, Type, Image, Share2, Shapes, ShieldCheck, Heart, TrendingUp } from 'lucide-react';
+import { Palette, Type, Image, Share2, Shapes, ShieldCheck, Heart, TrendingUp, MessageSquareHeart } from 'lucide-react';
 
 const sections = [
   {
@@ -67,6 +67,14 @@ const sections = [
     href: '/progresso',
     color: 'bg-mint-light',
     iconColor: 'text-mint',
+  },
+  {
+    title: 'Voz e Tom',
+    description: 'Linguagem humanizada, princípios de comunicação e exemplos de microcopy.',
+    icon: <MessageSquareHeart className="w-6 h-6" />,
+    href: '/voz-tom',
+    color: 'bg-coral-light',
+    iconColor: 'text-coral',
   },
 ];
 
