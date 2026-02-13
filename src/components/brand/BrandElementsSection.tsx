@@ -36,19 +36,35 @@ export const BrandElementsSection = () => {
         <div className="mb-12">
           <h3 className="font-display font-bold text-navy text-xl mb-6">Ícones Principais</h3>
           <div className="bg-white rounded-2xl p-8 shadow-card border border-border">
-            <div className="flex items-center justify-center gap-16 max-w-2xl mx-auto mb-6">
-              <span className="text-sunshine"><IconAutonomia className="w-16 h-16" /></span>
-              <span className="text-coral"><IconEmocional className="w-16 h-16" /></span>
-              <span className="text-sky"><IconComunicacao className="w-16 h-16" /></span>
-              <span className="text-[#CD995B]"><IconSocial className="w-16 h-16" /></span>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-              {iconNames.map((icon) => (
-                <div key={icon.name}>
-                  <h4 className="font-display font-bold text-navy">{icon.name}</h4>
-                  <p className="text-xs text-muted-foreground">{icon.usage}</p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center max-w-2xl mx-auto">
+              <div className="flex flex-col items-center gap-3">
+                <span className="text-sunshine"><IconAutonomia className="w-16 h-16" /></span>
+                <div>
+                  <h4 className="font-display font-bold text-navy">Asterisco</h4>
+                  <p className="text-xs text-muted-foreground">Destaque, novidades</p>
                 </div>
-              ))}
+              </div>
+              <div className="flex flex-col items-center gap-3">
+                <span className="text-coral"><IconEmocional className="w-16 h-16" /></span>
+                <div>
+                  <h4 className="font-display font-bold text-navy">Coração</h4>
+                  <p className="text-xs text-muted-foreground">Afeto, cuidado</p>
+                </div>
+              </div>
+              <div className="flex flex-col items-center gap-3">
+                <span className="text-sky"><IconComunicacao className="w-16 h-16" /></span>
+                <div>
+                  <h4 className="font-display font-bold text-navy">Casa</h4>
+                  <p className="text-xs text-muted-foreground">Lar, acolhimento</p>
+                </div>
+              </div>
+              <div className="flex flex-col items-center gap-3">
+                <span className="text-[#CD995B]"><IconSocial className="w-16 h-16" /></span>
+                <div>
+                  <h4 className="font-display font-bold text-navy">Urso</h4>
+                  <p className="text-xs text-muted-foreground">Mascote principal</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
