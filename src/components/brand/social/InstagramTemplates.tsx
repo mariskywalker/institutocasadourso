@@ -92,7 +92,7 @@ export const InstagramTemplates = () => {
           <div className="aspect-square rounded-xl overflow-hidden relative">
             {/* Top photo area with wave */}
             <div className="absolute inset-0">
-              <img src={photoIcons} alt="Ícones" className="w-full h-1/2 object-cover" />
+              <img src={photoIcons} alt="Ícones" className="w-full h-1/2 object-cover object-center" />
               <div className="absolute top-[45%] left-0 right-0 h-[10%] border-0 py-0 mx-[123px]">
                 <svg viewBox="0 0 400 40" className="w-full h-full" preserveAspectRatio="none">
                   <path d="M0,20 Q100,0 200,20 Q300,40 400,20 L400,40 L0,40 Z" fill="hsl(213, 50%, 20%)" />
