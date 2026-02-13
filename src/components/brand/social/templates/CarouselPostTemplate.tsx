@@ -2,6 +2,9 @@ import photoChild from '@/assets/brand/photo-child-reading.jpg';
 import photoIcons from '@/assets/brand/photo-icons-wall.jpg';
 import logoCasadourso from '@/assets/brand/logo-casadourso.png';
 import logoBear from '@/assets/brand/logo-bear.png';
+import formaSunshine from '@/assets/brand/forma-sunshine.png';
+import formaMint from '@/assets/brand/forma-mint.png';
+import iconografiaSmall from '@/assets/brand/iconografia-small.svg';
 import { TemplateCard } from '../InstagramTemplates';
 
 const CarouselDots = ({ active = 0, total = 5, light = false }: { active?: number; total?: number; light?: boolean }) => (
@@ -25,6 +28,7 @@ export const CarouselPostTemplate = () => (
     <TemplateCard title="Slide 1 — Capa" size="1080 × 1080px">
       <div className="aspect-square rounded-xl overflow-hidden bg-coral relative">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-coral/90" />
+        <img src={formaSunshine} alt="" className="absolute top-0 right-0 w-48 h-40 object-cover opacity-30" />
         <div className="absolute top-4 left-0 right-0 text-center">
           <span className="text-white/60 text-[9px] font-medium">@clinicacasadourso</span>
         </div>
@@ -46,9 +50,10 @@ export const CarouselPostTemplate = () => (
     {/* Slide 2 — Frase Coral */}
     <TemplateCard title="Slide 2 — Frase" size="1080 × 1080px">
       <div className="aspect-square rounded-xl overflow-hidden bg-coral relative p-4 flex flex-col justify-center">
-        {/* Organic blobs */}
-        <div className="absolute top-0 right-0 w-20 h-16 bg-sunshine rounded-bl-[60%] rounded-br-[30%]" />
-        <div className="absolute bottom-0 left-0 w-16 h-24 bg-mint rounded-tr-[60%] rounded-tl-[20%]" />
+        {/* Forma sunshine orgânica */}
+        <img src={formaSunshine} alt="" className="absolute top-0 right-0 w-32 h-24 object-cover opacity-20 rotate-12" />
+        {/* Forma mint */}
+        <img src={formaMint} alt="" className="absolute bottom-0 left-0 w-24 h-20 object-cover opacity-20 -rotate-12" />
         {/* Photo in bear frame bottom-right */}
         <div className="absolute bottom-0 right-0 w-14 h-16 rounded-tl-[50%] overflow-hidden">
           <img src={photoChild} alt="" className="w-full h-full object-cover" />
@@ -76,8 +81,8 @@ export const CarouselPostTemplate = () => (
     {/* Slide 3 — Conteúdo Sky */}
     <TemplateCard title="Slide 3 — Conteúdo" size="1080 × 1080px">
       <div className="aspect-square rounded-xl overflow-hidden bg-sky relative p-4 flex flex-col">
-        {/* Sunshine blob top-left */}
-        <div className="absolute top-0 left-0 w-14 h-10 bg-sunshine rounded-br-[60%]" />
+        {/* Forma sunshine orgânica top-left */}
+        <img src={formaSunshine} alt="" className="absolute top-0 left-0 w-24 h-16 object-cover opacity-20" />
         {/* Bear-shaped photo frame */}
         <div className="absolute left-2 bottom-12 w-12 h-14 bg-white/20 rounded-[50%_50%_40%_40%] overflow-hidden">
           <img src={photoChild} alt="" className="w-full h-full object-cover" />
@@ -120,13 +125,8 @@ export const CarouselPostTemplate = () => (
     {/* Slide 4 — Frase Mint */}
     <TemplateCard title="Slide 4 — Destaque" size="1080 × 1080px">
       <div className="aspect-square rounded-xl overflow-hidden bg-mint relative p-5 flex flex-col justify-center items-center text-center">
-        {/* Decorative elements */}
-        <div className="absolute top-3 right-4 w-3 h-3 bg-coral/50 rounded-full" />
-        <div className="absolute top-5 right-8 w-2 h-2 bg-coral/40 rounded-full" />
-        <div className="absolute top-8 right-3 w-2 h-2 bg-coral/30 rounded-full" />
-        <div className="absolute top-3 right-10 w-16 h-16 bg-white/15 rounded-full" />
-        <div className="absolute bottom-4 left-4 w-3 h-3 bg-coral/50 rounded-full" />
-        <div className="absolute bottom-6 left-8 w-2 h-2 bg-coral/40 rounded-full" />
+        {/* Forma sunshine decorativa */}
+        <img src={formaSunshine} alt="" className="absolute top-3 right-4 w-16 h-12 object-cover opacity-20 rotate-45" />
         {/* Concentric circles */}
         <div className="absolute inset-8 rounded-full border border-white/10" />
         <div className="absolute inset-14 rounded-full border border-white/8" />
