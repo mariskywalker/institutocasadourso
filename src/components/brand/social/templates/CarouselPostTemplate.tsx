@@ -2,6 +2,9 @@ import photoChild from '@/assets/brand/photo-child-reading.jpg';
 import photoIcons from '@/assets/brand/photo-icons-wall.jpg';
 import logoCasadourso from '@/assets/brand/logo-casadourso.png';
 import logoBear from '@/assets/brand/logo-bear.png';
+import formaSunshine from '@/assets/brand/forma-sunshine.png';
+import formaMint from '@/assets/brand/forma-mint.png';
+import iconografiaSmall from '@/assets/brand/iconografia-small.svg';
 import { TemplateCard } from '../InstagramTemplates';
 
 const CarouselDots = ({ active = 0, total = 5, light = false }: { active?: number; total?: number; light?: boolean }) => (
