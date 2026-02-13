@@ -121,7 +121,7 @@ export const InstagramTemplates = () => {
                   Confie na Casa do Urso.
                 </p>
               </div>
-              <img src={logoCasadourso} alt="Casa do Urso" className="w-20 h-auto self-end" />
+              <img src={logoCasadourso} alt="Casa do Urso" className="h-auto self-end" />
             </div>
           </div>
         </TemplateCard>
