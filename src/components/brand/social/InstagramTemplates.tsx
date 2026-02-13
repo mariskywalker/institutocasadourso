@@ -91,15 +91,15 @@ export const InstagramTemplates = () => {
         {/* Post CTA — Navy */}
         <TemplateCard title="Post CTA — Navy" size="1080 × 1080px">
           <div className="aspect-square rounded-xl overflow-hidden relative bg-navy">
-            {/* Organic blob with photo — full width, covers top ~55% */}
-            <div className="absolute inset-0">
-              <svg viewBox="0 0 400 400" className="w-full h-full">
+            {/* Organic blob with photo — top right area */}
+            <div className="absolute top-0 right-0 w-[80%] h-[55%]">
+              <svg viewBox="0 0 320 220" className="w-full h-full">
                 <defs>
                   <clipPath id="blobClipCTA">
-                    <path d="M0,0 L400,0 L400,180 Q380,240 320,270 Q260,300 200,280 Q140,260 80,300 Q40,330 0,280 Z" />
+                    <path d="M80,0 L320,0 L320,220 Q280,220 240,200 Q180,180 140,200 Q100,220 60,200 Q20,180 0,140 Q0,100 30,60 Q60,20 80,0 Z" />
                   </clipPath>
                 </defs>
-                <image href={fotoIconsForma} x="0" y="-40" width="400" height="300" clipPath="url(#blobClipCTA)" preserveAspectRatio="xMidYMid slice" />
+                <image href={fotoIconsForma} x="0" y="0" width="320" height="220" clipPath="url(#blobClipCTA)" preserveAspectRatio="xMidYMid slice" />
               </svg>
             </div>
             {/* Text content */}
