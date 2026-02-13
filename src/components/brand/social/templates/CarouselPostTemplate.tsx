@@ -50,9 +50,10 @@ export const CarouselPostTemplate = () => (
     {/* Slide 2 — Frase Coral */}
     <TemplateCard title="Slide 2 — Frase" size="1080 × 1080px">
       <div className="aspect-square rounded-xl overflow-hidden bg-coral relative p-4 flex flex-col justify-center">
-        {/* Organic blobs */}
-        <div className="absolute top-0 right-0 w-20 h-16 bg-sunshine rounded-bl-[60%] rounded-br-[30%]" />
-        <div className="absolute bottom-0 left-0 w-16 h-24 bg-mint rounded-tr-[60%] rounded-tl-[20%]" />
+        {/* Forma sunshine orgânica */}
+        <img src={formaSunshine} alt="" className="absolute top-0 right-0 w-32 h-24 object-cover opacity-20 rotate-12" />
+        {/* Forma mint */}
+        <img src={formaMint} alt="" className="absolute bottom-0 left-0 w-24 h-20 object-cover opacity-20 -rotate-12" />
         {/* Photo in bear frame bottom-right */}
         <div className="absolute bottom-0 right-0 w-14 h-16 rounded-tl-[50%] overflow-hidden">
           <img src={photoChild} alt="" className="w-full h-full object-cover" />
