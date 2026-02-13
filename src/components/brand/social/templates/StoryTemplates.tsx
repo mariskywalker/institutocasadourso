@@ -52,7 +52,7 @@ export const StoryTemplates = () => (
       {/* Story — Depoimento Sunshine */}
       <TemplateCard title="Story — Depoimento" size="1080 × 1920px">
         <div className="aspect-[9/16] max-h-72 rounded-xl overflow-hidden bg-sunshine-light relative p-4 flex flex-col justify-between mx-auto">
-          <div className="absolute top-0 left-0 w-10 h-14 bg-coral/20 rounded-br-[60%]" />
+          <img src={formaSunshine} alt="" className="absolute top-0 left-0 w-14 h-16 object-cover opacity-20 -rotate-12" />
           <div className="flex items-center justify-center gap-1">
             <span className="text-sunshine text-sm">★</span>
             <span className="text-sunshine text-sm">★</span>
@@ -65,7 +65,7 @@ export const StoryTemplates = () => (
             </p>
             <p className="text-[8px] text-navy/50 font-medium">— Mãe do Pedro</p>
           </div>
-          <img src={logoBear} alt="Urso" className="w-5 h-5 mx-auto" />
+          <img src={logoBear} alt="Urso" className="w-5 h-5 mx-auto relative z-10" />
         </div>
       </TemplateCard>
 
