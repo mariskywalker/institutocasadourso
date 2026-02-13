@@ -1,5 +1,6 @@
 import headerIcons from '@/assets/brand/header-icons.png';
-import { Download } from 'lucide-react';
+import { Download, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export const BrandHeader = () => {
   return (
@@ -28,6 +29,13 @@ export const BrandHeader = () => {
         </p>
         
         <div className="flex flex-wrap gap-4">
+          <Link 
+            to="/pilares"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-sky text-white rounded-full font-display font-semibold hover:bg-sky-dark transition-colors shadow-elevated"
+          >
+            <ArrowRight size={20} />
+            Pilares de Desenvolvimento
+          </Link>
           <button className="inline-flex items-center gap-2 px-6 py-3 bg-navy text-white rounded-full font-display font-semibold hover:bg-navy-light transition-colors shadow-elevated">
             <Download size={20} />
             Baixar Brand Kit Completo
