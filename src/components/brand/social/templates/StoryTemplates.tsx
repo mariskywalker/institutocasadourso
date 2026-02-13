@@ -72,8 +72,8 @@ export const StoryTemplates = () => (
       {/* Story — Equipe Sky */}
       <TemplateCard title="Story — Equipe" size="1080 × 1920px">
         <div className="aspect-[9/16] max-h-72 rounded-xl overflow-hidden bg-sky-light relative p-4 flex flex-col justify-between mx-auto">
-          <div className="absolute top-0 right-0 w-12 h-8 bg-sunshine/30 rounded-bl-[60%]" />
-          <div className="absolute bottom-0 left-0 w-8 h-12 bg-coral/20 rounded-tr-[60%]" />
+          <img src={formaSunshine} alt="" className="absolute top-0 right-0 w-14 h-10 object-cover opacity-25 rotate-45" />
+          <img src={formaMint} alt="" className="absolute bottom-0 left-0 w-10 h-14 object-cover opacity-20 -rotate-12" />
           <img src={logoBear} alt="Urso" className="w-5 h-5 mx-auto relative z-10" />
           <div className="text-center flex-1 flex flex-col justify-center relative z-10">
             <div className="w-10 h-10 rounded-full bg-white/60 mx-auto mb-2 overflow-hidden">
