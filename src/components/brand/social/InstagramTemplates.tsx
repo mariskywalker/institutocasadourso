@@ -109,7 +109,7 @@ export const InstagramTemplates = () => {
                   Quando antes<br />o apoio chega,
                 </p>
                 <p style={{ fontFamily: 'Poppins, sans-serif' }} className="font-bold text-coral text-lg leading-tight mb-1">
-                  mais leve fica<br />o caminho
+                  Mais leve fica<br />o caminho
                 </p>
                 <p style={{ fontFamily: 'Poppins, sans-serif' }} className="font-bold text-white text-base leading-snug mb-3">
                   da criança e da família.
