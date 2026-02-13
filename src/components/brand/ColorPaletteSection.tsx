@@ -69,7 +69,7 @@ export const ColorPaletteSection = () => {
       className: 'bg-sky',
     },
     {
-      name: 'Sunshine',
+      name: 'Milho',
       hex: '#F5C842',
       rgb: '245, 200, 66',
       usage: 'Energia e alegria. Alertas positivos, destaques.',
@@ -96,7 +96,7 @@ export const ColorPaletteSection = () => {
       textColor: 'text-navy',
     },
     {
-      name: 'Sunshine Light',
+      name: 'Milho Light',
       hex: '#FCF0C5',
       rgb: '252, 240, 197',
       usage: 'Fundos suaves, avisos.',
@@ -157,7 +157,7 @@ export const ColorPaletteSection = () => {
               <div className="h-24 gradient-hero" />
               <div className="p-4">
                 <h4 className="font-display font-bold text-navy">Hero Gradient</h4>
-                <p className="text-xs text-muted-foreground mt-1">Doce → Sky → Sunshine</p>
+                <p className="text-xs text-muted-foreground mt-1">Doce → Sky → Milho</p>
                 <code className="text-xs bg-muted px-2 py-1 rounded mt-2 block overflow-x-auto">
                   linear-gradient(135deg, #FADEDE 0%, #B8D6E8 50%, #FCF0C5 100%)
                 </code>
@@ -167,7 +167,7 @@ export const ColorPaletteSection = () => {
               <div className="h-24 gradient-playful" />
               <div className="p-4">
                 <h4 className="font-display font-bold text-navy">Playful Gradient</h4>
-                <p className="text-xs text-muted-foreground mt-1">Doce → Sky → Sunshine (vibrante)</p>
+                <p className="text-xs text-muted-foreground mt-1">Doce → Sky → Milho (vibrante)</p>
                 <code className="text-xs bg-muted px-2 py-1 rounded mt-2 block overflow-x-auto">
                   linear-gradient(135deg, #E8A5A5 0%, #4497C3 50%, #F5C842 100%)
                 </code>
