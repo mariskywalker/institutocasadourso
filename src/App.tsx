@@ -11,6 +11,7 @@ import TipografiaPage from "./pages/TipografiaPage";
 import SocialPage from "./pages/SocialPage";
 import ElementosPage from "./pages/ElementosPage";
 import DiretrizesPage from "./pages/DiretrizesPage";
+import SistemaProgressoPage from "./pages/SistemaProgressoPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -30,6 +31,7 @@ const App = () => (
           <Route path="/social" element={<SocialPage />} />
           <Route path="/elementos" element={<ElementosPage />} />
           <Route path="/diretrizes" element={<DiretrizesPage />} />
+          <Route path="/progresso" element={<SistemaProgressoPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

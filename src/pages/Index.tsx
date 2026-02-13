@@ -1,7 +1,7 @@
 import { BrandHeader } from '@/components/brand/BrandHeader';
 import { BrandFooter } from '@/components/brand/BrandFooter';
 import { Link } from 'react-router-dom';
-import { Palette, Type, Image, Share2, Shapes, ShieldCheck, Heart } from 'lucide-react';
+import { Palette, Type, Image, Share2, Shapes, ShieldCheck, Heart, TrendingUp } from 'lucide-react';
 
 const sections = [
   {
@@ -59,6 +59,14 @@ const sections = [
     href: '/diretrizes',
     color: 'bg-sunshine-light',
     iconColor: 'text-sunshine',
+  },
+  {
+    title: 'Sistema de Progresso',
+    description: 'Como o app acompanha o desenvolvimento infantil com clareza e humanidade.',
+    icon: <TrendingUp className="w-6 h-6" />,
+    href: '/progresso',
+    color: 'bg-mint-light',
+    iconColor: 'text-mint',
   },
 ];
 
