@@ -1,16 +1,16 @@
-import logoBear from '@/assets/brand/logo-bear.png';
 import { Instagram, Mail, Phone } from 'lucide-react';
+import { IconAutonomia, IconEmocional, IconComunicacao, IconSocial } from './BrandIcons';
 
 export const BrandFooter = () => {
   return (
     <footer className="bg-navy py-12 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="flex items-center gap-3">
-            <span className="text-white text-2xl">✱</span>
-            <span className="text-coral text-2xl">❤</span>
-            <span className="text-sky text-2xl">☁</span>
-            <img src={logoBear} alt="Casa do Urso" className="w-8 h-8" />
+          <div className="flex items-center gap-2">
+            <span className="text-sunshine"><IconAutonomia className="w-6 h-6" /></span>
+            <span className="text-coral"><IconEmocional className="w-6 h-6" /></span>
+            <span className="text-sky"><IconComunicacao className="w-6 h-6" /></span>
+            <span className="text-white"><IconSocial className="w-6 h-6" /></span>
             <span className="font-display font-bold text-white text-lg ml-2">
               Casa do Urso
             </span>

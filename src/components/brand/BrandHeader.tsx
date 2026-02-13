@@ -1,4 +1,4 @@
-import headerIcons from '@/assets/brand/header-icons.png';
+import { IconAutonomia, IconEmocional, IconComunicacao, IconSocial } from './BrandIcons';
 import { Download, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -15,8 +15,11 @@ export const BrandHeader = () => {
       
       {/* Content */}
       <div className="relative z-10 max-w-6xl mx-auto px-6 py-20">
-        <div className="mb-8">
-          <img src={headerIcons} alt="Casa do Urso" className="h-10" />
+        <div className="mb-8 flex items-center gap-3">
+          <span className="text-sunshine"><IconAutonomia className="w-8 h-8" /></span>
+          <span className="text-coral"><IconEmocional className="w-8 h-8" /></span>
+          <span className="text-sky"><IconComunicacao className="w-8 h-8" /></span>
+          <span className="text-[#CD995B]"><IconSocial className="w-8 h-8" /></span>
         </div>
         
         <h1 className="font-display text-5xl md:text-7xl font-bold text-navy mb-4">

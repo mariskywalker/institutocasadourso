@@ -1,5 +1,5 @@
-import logoBear from '@/assets/brand/logo-bear.png';
 import { Download, Facebook, Linkedin } from 'lucide-react';
+import { IconAutonomia, IconEmocional, IconComunicacao, IconSocial } from '../BrandIcons';
 
 export const FacebookLinkedInTemplates = () => {
   return (
@@ -13,10 +13,10 @@ export const FacebookLinkedInTemplates = () => {
         <div className="aspect-[851/315] rounded-xl overflow-hidden gradient-hero flex items-center justify-between p-6">
           <div>
             <div className="flex items-center gap-1.5 mb-2">
-              <span className="text-lg">✱</span>
-              <span className="text-coral text-lg">❤</span>
-              <span className="text-sky text-lg">☁</span>
-              <img src={logoBear} alt="Urso" className="w-6 h-6" />
+              <span className="text-sunshine"><IconAutonomia className="w-5 h-5" /></span>
+              <span className="text-coral"><IconEmocional className="w-5 h-5" /></span>
+              <span className="text-sky"><IconComunicacao className="w-5 h-5" /></span>
+              <span className="text-[#CD995B]"><IconSocial className="w-5 h-5" /></span>
             </div>
             <h3 className="font-display font-bold text-navy text-lg">Clínica Casa do Urso</h3>
             <p className="text-xs text-navy/60">Inovação em terapia multidisciplinar</p>
@@ -44,10 +44,10 @@ export const FacebookLinkedInTemplates = () => {
         <div className="aspect-[1584/396] rounded-xl overflow-hidden bg-navy flex items-center justify-between p-6">
           <div>
             <div className="flex items-center gap-1.5 mb-2">
-              <span className="text-white/60 text-lg">✱</span>
-              <span className="text-coral text-lg">❤</span>
-              <span className="text-sky text-lg">☁</span>
-              <img src={logoBear} alt="Urso" className="w-6 h-6" />
+              <span className="text-white/60"><IconAutonomia className="w-5 h-5" /></span>
+              <span className="text-coral"><IconEmocional className="w-5 h-5" /></span>
+              <span className="text-sky"><IconComunicacao className="w-5 h-5" /></span>
+              <span className="text-white"><IconSocial className="w-5 h-5" /></span>
             </div>
             <h3 className="font-display font-bold text-white text-lg">Clínica Casa do Urso</h3>
             <p className="text-xs text-white/60">Terapia ABA • Multidisciplinar</p>

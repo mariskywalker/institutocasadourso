@@ -1,6 +1,6 @@
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import headerIcons from '@/assets/brand/header-icons.png';
+import { IconAutonomia, IconEmocional, IconComunicacao, IconSocial } from './BrandIcons';
 import { BrandFooter } from './BrandFooter';
 import { ReactNode } from 'react';
 
@@ -13,8 +13,12 @@ export const BrandPageLayout = ({ children }: BrandPageLayoutProps) => {
     <div className="min-h-screen bg-background">
       <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-3">
-            <img src={headerIcons} alt="Casa do Urso" className="h-8" />
+          <Link to="/" className="flex items-center gap-2">
+            <span className="text-sunshine"><IconAutonomia className="w-6 h-6" /></span>
+            <span className="text-coral"><IconEmocional className="w-6 h-6" /></span>
+            <span className="text-sky"><IconComunicacao className="w-6 h-6" /></span>
+            <span className="text-[#CD995B]"><IconSocial className="w-6 h-6" /></span>
+            <span className="font-display font-bold text-navy ml-1">Casa do Urso</span>
           </Link>
           <Link
             to="/"
