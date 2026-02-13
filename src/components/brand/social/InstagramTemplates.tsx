@@ -1,15 +1,14 @@
 import logoBear from '@/assets/brand/logo-bear.png';
-import logoCasadourso from '@/assets/brand/logo-branco.png';
+import logoCasadourso from '@/assets/brand/logo-casadourso.png';
 import photoChild from '@/assets/brand/photo-child-reading.jpg';
 import photoIcons from '@/assets/brand/photo-icons-wall.jpg';
 import photoTherapy from '@/assets/brand/photo-therapy-session.jpg';
-import fotoIconsForma from '@/assets/brand/foto-icons-forma.png';
 import { Download, Instagram } from 'lucide-react';
 import { CarouselPostTemplate } from './templates/CarouselPostTemplate';
 import { StoryTemplates } from './templates/StoryTemplates';
 
-const TemplateCard = ({ children, title, size, format = "PSD" }: { children: React.ReactNode; title: string; size: string; format?: string }) => (
-  <div className="bg-card rounded-2xl p-4 shadow-card border border-border">
+const TemplateCard = ({ children, title, size, format = "PSD" }: {children: React.ReactNode;title: string;size: string;format?: string;}) =>
+<div className="bg-card rounded-2xl p-4 shadow-card border border-border">
     {children}
     <div className="flex justify-between items-center mt-4">
       <div>
@@ -21,8 +20,8 @@ const TemplateCard = ({ children, title, size, format = "PSD" }: { children: Rea
         {format}
       </button>
     </div>
-  </div>
-);
+  </div>;
+
 
 export { TemplateCard };
 
@@ -90,38 +89,34 @@ export const InstagramTemplates = () => {
 
         {/* Post CTA — Navy */}
         <TemplateCard title="Post CTA — Navy" size="1080 × 1080px">
-          <div className="aspect-square rounded-xl overflow-hidden relative bg-navy">
-            {/* Organic blob with photo — top right area */}
-            <div className="absolute top-0 right-0 w-[80%] h-[55%]">
-              <svg viewBox="0 0 320 220" className="w-full h-full">
-                <defs>
-                  <clipPath id="blobClipCTA">
-                    <path d="M80,0 L320,0 L320,220 Q280,220 240,200 Q180,180 140,200 Q100,220 60,200 Q20,180 0,140 Q0,100 30,60 Q60,20 80,0 Z" />
-                  </clipPath>
-                </defs>
-                <image href={fotoIconsForma} x="0" y="0" width="320" height="220" clipPath="url(#blobClipCTA)" preserveAspectRatio="xMidYMid slice" />
-              </svg>
-            </div>
-            {/* Text content */}
-            <div className="absolute bottom-4 left-5 right-5 flex flex-col justify-end" style={{ height: '55%' }}>
-              <div className="mb-3">
-                <p style={{ fontFamily: 'Poppins, sans-serif' }} className="text-white text-base font-medium leading-snug mb-1">
-                  Quando antes<br />o apoio chega,
-                </p>
-                <p style={{ fontFamily: 'Poppins, sans-serif' }} className="font-bold text-coral text-lg leading-tight mb-1">
-                  Mais leve fica<br />o caminho
-                </p>
-                <p style={{ fontFamily: 'Poppins, sans-serif' }} className="font-bold text-white text-base leading-snug mb-3">
-                  da criança e da família.
-                </p>
-                <p style={{ fontFamily: 'Poppins, sans-serif' }} className="text-white/60 text-[10px] leading-relaxed mb-0.5">
-                  Se algo te preocupa,<br />confie no seu olhar.
-                </p>
-                <p style={{ fontFamily: 'Poppins, sans-serif' }} className="font-bold text-coral text-xs">
-                  Confie na Casa do Urso.
-                </p>
+          <div className="aspect-square rounded-xl overflow-hidden relative">
+            {/* Top photo area with wave */}
+            <div className="absolute inset-0">
+              <img src={photoIcons} alt="Ícones" className="w-full h-1/2 object-cover" />
+              <div className="absolute top-[45%] left-0 right-0 h-[10%] border-0 py-0 mx-[123px]">
+                <svg viewBox="0 0 400 40" className="w-full h-full" preserveAspectRatio="none">
+                  <path d="M0,20 Q100,0 200,20 Q300,40 400,20 L400,40 L0,40 Z" fill="hsl(213, 50%, 20%)" />
+                </svg>
               </div>
-              <img src={logoCasadourso} alt="Casa do Urso" className="h-auto self-end" />
+              <div className="absolute bottom-0 left-0 right-0 h-[55%] bg-navy" />
+            </div>
+            <div className="absolute bottom-6 left-5 right-5">
+              <p className="font-display text-white text-sm leading-relaxed mb-1">
+                Quanto antes<br />o apoio chega,
+              </p>
+              <p className="font-display font-bold text-coral text-base leading-tight mb-1">
+                mais leve fica<br />o caminho
+              </p>
+              <p className="font-display font-bold text-white text-sm mb-3">
+                da criança e da família.
+              </p>
+              <p className="font-body text-white/60 text-[10px] mb-1">
+                Se algo te preocupa,<br />confie no seu olhar.
+              </p>
+              <p className="font-display font-bold text-sky text-xs">
+                Confie na Casa do Urso.
+              </p>
+              <img src={logoCasadourso} alt="Casa do Urso" className="w-20 h-auto mt-3 ml-auto" />
             </div>
           </div>
         </TemplateCard>
@@ -129,6 +124,6 @@ export const InstagramTemplates = () => {
 
       {/* Story Templates */}
       <StoryTemplates />
-    </div>
-  );
+    </div>);
+
 };
