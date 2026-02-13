@@ -1,6 +1,11 @@
 import logoBear from '@/assets/brand/logo-bear.png';
-import heroChild from '@/assets/brand/hero-child.png';
+import logoCasadourso from '@/assets/brand/logo-casadourso.png';
+import photoChild from '@/assets/brand/photo-child-reading.jpg';
+import photoIcons from '@/assets/brand/photo-icons-wall.jpg';
+import photoTherapy from '@/assets/brand/photo-therapy-session.jpg';
 import { Download, Instagram } from 'lucide-react';
+import { CarouselPostTemplate } from './templates/CarouselPostTemplate';
+import { StoryTemplates } from './templates/StoryTemplates';
 
 const TemplateCard = ({ children, title, size, format = "PSD" }: { children: React.ReactNode; title: string; size: string; format?: string }) => (
   <div className="bg-card rounded-2xl p-4 shadow-card border border-border">
@@ -18,6 +23,8 @@ const TemplateCard = ({ children, title, size, format = "PSD" }: { children: Rea
   </div>
 );
 
+export { TemplateCard };
+
 export const InstagramTemplates = () => {
   return (
     <div className="mb-12">
@@ -26,183 +33,97 @@ export const InstagramTemplates = () => {
         <h3 className="font-display font-bold text-foreground text-xl">Instagram</h3>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-6">
-        {/* Post Educativo - Dica */}
-        <TemplateCard title="Post Educativo" size="1080 × 1080px">
-          <div className="aspect-square rounded-xl overflow-hidden bg-coral-light p-6 flex flex-col justify-between relative">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-1.5">
-                <span className="text-coral text-sm">✱</span>
-                <span className="text-coral text-sm">❤</span>
-                <span className="text-sky text-sm">☁</span>
-              </div>
-              <img src={logoBear} alt="Urso" className="w-8 h-8" />
+      {/* Carrossel Educativo */}
+      <div className="mb-8">
+        <h4 className="font-display font-semibold text-foreground mb-4">Carrossel Educativo — 5 slides</h4>
+        <CarouselPostTemplate />
+      </div>
+
+      {/* Posts individuais */}
+      <h4 className="font-display font-semibold text-foreground mb-4">Posts Individuais</h4>
+      <div className="grid md:grid-cols-3 gap-6 mb-8">
+        {/* Post Capa com Foto */}
+        <TemplateCard title="Post Capa — Foto" size="1080 × 1080px">
+          <div className="aspect-square rounded-xl overflow-hidden relative">
+            <img src={photoTherapy} alt="Terapia" className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/20 to-transparent" />
+            <div className="absolute top-4 left-4">
+              <span className="text-white/70 text-xs font-medium">@clinicacasadourso</span>
             </div>
-            <div className="flex-1 flex flex-col justify-center items-center text-center py-4">
-              <span className="text-4xl mb-3">🧸</span>
-              <p className="text-xs font-medium text-coral uppercase tracking-widest mb-2">Dica do Urso</p>
-              <h4 className="font-display font-bold text-navy text-lg leading-tight mb-2">
-                Rotina visual ajuda no desenvolvimento
+            <div className="absolute bottom-6 left-5 right-5">
+              <h4 className="font-display font-bold text-white text-lg leading-tight mb-1">
+                O brincar é a
               </h4>
-              <p className="font-body text-xs text-navy/70 max-w-[80%]">
-                Criar rotinas visuais pode facilitar a compreensão e autonomia da criança.
-              </p>
-            </div>
-            <div className="flex items-center justify-between">
-              <div className="w-8 h-8 rounded-lg bg-coral/20 rotate-12" />
-              <div className="w-full h-0.5 bg-coral/30 mx-3 rounded-full" />
-              <div className="w-8 h-8 rounded-full bg-sky/20" />
+              <h4 className="font-display font-bold text-lg leading-tight mb-2">
+                <span className="bg-coral px-2 py-0.5 text-white inline-block">linguagem da criança</span>
+              </h4>
+              <p className="font-body text-xs text-white/70">Deslize para saber mais →</p>
             </div>
           </div>
         </TemplateCard>
 
-        {/* Post Carrossel - Terapia ABA */}
-        <TemplateCard title="Carrossel Educativo" size="1080 × 1080px">
-          <div className="aspect-square rounded-xl overflow-hidden bg-navy p-6 flex flex-col justify-between relative">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-1.5">
-                <span className="text-white/60 text-sm">✱</span>
-                <span className="text-coral text-sm">❤</span>
-                <span className="text-sky text-sm">☁</span>
-              </div>
-              <img src={logoBear} alt="Urso" className="w-8 h-8" />
-            </div>
-            <div className="flex-1 flex flex-col justify-center text-center py-4">
-              <p className="text-xs font-medium text-sky uppercase tracking-widest mb-2">Terapia ABA</p>
-              <h4 className="font-display font-bold text-white text-xl leading-tight mb-3">
-                O que é a Análise do Comportamento?
-              </h4>
-              <p className="font-body text-xs text-white/60">
-                Deslize para saber mais →
-              </p>
-            </div>
-            <div className="flex justify-center gap-1.5">
-              <div className="w-6 h-1 bg-coral rounded-full" />
-              <div className="w-1.5 h-1 bg-white/30 rounded-full" />
-              <div className="w-1.5 h-1 bg-white/30 rounded-full" />
-              <div className="w-1.5 h-1 bg-white/30 rounded-full" />
-            </div>
+        {/* Post Frase — Mint */}
+        <TemplateCard title="Post Frase — Mint" size="1080 × 1080px">
+          <div className="aspect-square rounded-xl overflow-hidden bg-mint relative p-6 flex flex-col justify-center items-center text-center">
+            {/* Organic blobs */}
+            <div className="absolute top-0 right-0 w-24 h-24 bg-coral/30 rounded-full blur-sm translate-x-8 -translate-y-8" />
+            <div className="absolute top-4 right-8 w-3 h-3 bg-coral/60 rounded-full" />
+            <div className="absolute top-8 right-4 w-2 h-2 bg-coral/50 rounded-full" />
+            <div className="absolute top-12 right-12 w-2 h-2 bg-coral/40 rounded-full" />
+            <div className="absolute bottom-6 left-6 w-3 h-3 bg-coral/50 rounded-full" />
+            <div className="absolute bottom-10 left-10 w-2 h-2 bg-coral/40 rounded-full" />
+            {/* Bear shape top right */}
+            <div className="absolute top-6 right-6 w-16 h-16 bg-white/20 rounded-full" />
+
+            <h4 className="font-display font-black text-white text-2xl leading-tight mb-3">
+              Quando não<br />há evolução,
+            </h4>
+            <p className="font-display font-medium text-white/80 text-sm leading-relaxed mb-1">
+              e o comportamento se<br />repete ou se intensifica,
+            </p>
+            <p className="font-display text-white/80 text-sm">
+              é hora de observar com<br /><strong className="text-white">mais atenção.</strong>
+            </p>
           </div>
         </TemplateCard>
 
-        {/* Post Institucional */}
-        <TemplateCard title="Post Institucional" size="1080 × 1080px">
-          <div className="aspect-square rounded-xl overflow-hidden bg-sky-light p-6 flex flex-col justify-between relative">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-1.5">
-                <span className="text-sky text-sm">✱</span>
-                <span className="text-coral text-sm">❤</span>
-                <span className="text-sky text-sm">☁</span>
+        {/* Post CTA — Navy */}
+        <TemplateCard title="Post CTA — Navy" size="1080 × 1080px">
+          <div className="aspect-square rounded-xl overflow-hidden relative">
+            {/* Top photo area with wave */}
+            <div className="absolute inset-0">
+              <img src={photoIcons} alt="Ícones" className="w-full h-1/2 object-cover" />
+              <div className="absolute top-[45%] left-0 right-0 h-[10%]">
+                <svg viewBox="0 0 400 40" className="w-full h-full" preserveAspectRatio="none">
+                  <path d="M0,20 Q100,0 200,20 Q300,40 400,20 L400,40 L0,40 Z" fill="hsl(213, 50%, 20%)" />
+                </svg>
               </div>
-              <img src={logoBear} alt="Urso" className="w-8 h-8" />
+              <div className="absolute bottom-0 left-0 right-0 h-[55%] bg-navy" />
             </div>
-            <div className="flex-1 flex flex-col justify-center items-center text-center py-4">
-              <div className="w-16 h-16 rounded-2xl bg-white/60 flex items-center justify-center mb-3 shadow-sm">
-                <img src={heroChild} alt="Criança" className="w-12 h-12 rounded-xl object-cover" />
-              </div>
-              <p className="text-xs font-medium text-sky uppercase tracking-widest mb-2">Nossa Equipe</p>
-              <h4 className="font-display font-bold text-navy text-lg leading-tight mb-1">
-                Conheça nossos profissionais
-              </h4>
-              <p className="font-body text-xs text-navy/60">
-                Equipe multidisciplinar especializada
+            <div className="absolute bottom-6 left-5 right-5">
+              <p className="font-display text-white text-sm leading-relaxed mb-1">
+                Quanto antes<br />o apoio chega,
               </p>
-            </div>
-            <div className="flex items-center justify-center gap-2">
-              <div className="w-6 h-6 rounded-full bg-coral/20" />
-              <div className="w-4 h-4 rounded-lg bg-sky/30 rotate-45" />
-              <div className="w-5 h-5 rounded-full bg-sunshine/30" />
+              <p className="font-display font-bold text-coral text-base leading-tight mb-1">
+                mais leve fica<br />o caminho
+              </p>
+              <p className="font-display font-bold text-white text-sm mb-3">
+                da criança e da família.
+              </p>
+              <p className="font-body text-white/60 text-[10px] mb-1">
+                Se algo te preocupa,<br />confie no seu olhar.
+              </p>
+              <p className="font-display font-bold text-sky text-xs">
+                Confie na Casa do Urso.
+              </p>
+              <img src={logoCasadourso} alt="Casa do Urso" className="w-20 h-auto mt-3 ml-auto" />
             </div>
           </div>
         </TemplateCard>
       </div>
 
       {/* Story Templates */}
-      <div className="grid md:grid-cols-4 gap-6 mt-6">
-        {/* Story Dica */}
-        <TemplateCard title="Story — Dica" size="1080 × 1920px">
-          <div className="aspect-[9/16] max-h-72 rounded-xl overflow-hidden bg-coral-light p-4 flex flex-col justify-between mx-auto">
-            <div className="flex items-center justify-center gap-1.5">
-              <span className="text-sm">✱</span>
-              <span className="text-coral text-sm">❤</span>
-              <span className="text-sky text-sm">☁</span>
-            </div>
-            <div className="text-center flex-1 flex flex-col justify-center">
-              <p className="text-[10px] font-medium text-coral uppercase tracking-widest mb-1">Você sabia?</p>
-              <h4 className="font-display font-bold text-navy text-sm leading-tight mb-2">
-                A brincadeira é a principal ferramenta de aprendizado
-              </h4>
-              <div className="w-8 h-0.5 bg-coral rounded-full mx-auto" />
-            </div>
-            <div className="text-center">
-              <img src={logoBear} alt="Urso" className="w-6 h-6 mx-auto" />
-            </div>
-          </div>
-        </TemplateCard>
-
-        {/* Story CTA */}
-        <TemplateCard title="Story — CTA" size="1080 × 1920px">
-          <div className="aspect-[9/16] max-h-72 rounded-xl overflow-hidden bg-navy p-4 flex flex-col justify-between mx-auto">
-            <img src={logoBear} alt="Urso" className="w-6 h-6 mx-auto" />
-            <div className="text-center flex-1 flex flex-col justify-center">
-              <span className="text-3xl mb-2">🐻</span>
-              <h4 className="font-display font-bold text-white text-sm leading-tight mb-2">
-                Agende uma avaliação
-              </h4>
-              <p className="font-body text-[10px] text-white/60 mb-3">
-                Fale com nossa equipe
-              </p>
-              <div className="mx-auto px-3 py-1 bg-coral rounded-full">
-                <span className="text-white text-[10px] font-medium">Saiba mais</span>
-              </div>
-            </div>
-            <div className="flex justify-center gap-1">
-              <div className="w-3 h-3 rounded-full bg-coral/30" />
-              <div className="w-3 h-3 rounded-lg bg-sky/30 rotate-45" />
-            </div>
-          </div>
-        </TemplateCard>
-
-        {/* Story Depoimento */}
-        <TemplateCard title="Story — Depoimento" size="1080 × 1920px">
-          <div className="aspect-[9/16] max-h-72 rounded-xl overflow-hidden bg-sunshine-light p-4 flex flex-col justify-between mx-auto">
-            <div className="flex items-center justify-center gap-1.5">
-              <span className="text-sunshine text-lg">★</span>
-              <span className="text-sunshine text-lg">★</span>
-              <span className="text-sunshine text-lg">★</span>
-            </div>
-            <div className="text-center flex-1 flex flex-col justify-center">
-              <span className="text-2xl mb-2">"</span>
-              <p className="font-body text-xs text-navy/80 italic leading-relaxed mb-2">
-                A evolução do meu filho foi incrível com a terapia ABA
-              </p>
-              <p className="text-[10px] text-navy/50 font-medium">— Mãe do Pedro</p>
-            </div>
-            <img src={logoBear} alt="Urso" className="w-6 h-6 mx-auto" />
-          </div>
-        </TemplateCard>
-
-        {/* Story Equipe */}
-        <TemplateCard title="Story — Equipe" size="1080 × 1920px">
-          <div className="aspect-[9/16] max-h-72 rounded-xl overflow-hidden bg-sky-light p-4 flex flex-col justify-between mx-auto">
-            <img src={logoBear} alt="Urso" className="w-6 h-6 mx-auto" />
-            <div className="text-center flex-1 flex flex-col justify-center">
-              <div className="w-12 h-12 rounded-full bg-white/60 mx-auto mb-2 flex items-center justify-center">
-                <span className="text-xl">👩‍⚕️</span>
-              </div>
-              <p className="text-[10px] font-medium text-sky uppercase tracking-widest mb-1">Conheça</p>
-              <h4 className="font-display font-bold text-navy text-sm leading-tight">
-                Dra. Nome
-              </h4>
-              <p className="font-body text-[10px] text-navy/60">Terapeuta ABA</p>
-            </div>
-            <div className="flex items-center justify-center gap-2">
-              <div className="w-4 h-4 rounded-full bg-coral/20" />
-              <div className="w-3 h-3 rounded-lg bg-sky/30 rotate-45" />
-            </div>
-          </div>
-        </TemplateCard>
-      </div>
+      <StoryTemplates />
     </div>
   );
 };
