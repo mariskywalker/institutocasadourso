@@ -117,7 +117,7 @@ export const InstagramTemplates = () => {
                 <p style={{ fontFamily: 'Poppins, sans-serif' }} className="text-white/60 text-[10px] leading-relaxed mb-0.5">
                   Se algo te preocupa,<br />confie no seu olhar.
                 </p>
-                <p style={{ fontFamily: 'Poppins, sans-serif' }} className="font-bold text-sky text-xs">
+                <p style={{ fontFamily: 'Poppins, sans-serif' }} className="font-bold text-coral text-xs">
                   Confie na Casa do Urso.
                 </p>
               </div>
