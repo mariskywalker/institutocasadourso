@@ -91,34 +91,37 @@ export const InstagramTemplates = () => {
         {/* Post CTA — Navy */}
         <TemplateCard title="Post CTA — Navy" size="1080 × 1080px">
           <div className="aspect-square rounded-xl overflow-hidden relative bg-navy">
-            {/* Organic blob with photo */}
-            <div className="absolute top-0 right-0 w-[75%] h-[60%]">
-              <svg viewBox="0 0 300 240" className="w-full h-full" preserveAspectRatio="none">
+            {/* Organic blob with photo — full width, covers top ~55% */}
+            <div className="absolute inset-0">
+              <svg viewBox="0 0 400 400" className="w-full h-full">
                 <defs>
-                  <clipPath id="blobClip">
-                    <path d="M300,0 L300,180 Q280,220 220,230 Q160,240 120,210 Q60,180 30,140 Q0,100 20,60 Q40,20 80,5 Q120,0 160,0 Z" />
+                  <clipPath id="blobClipCTA">
+                    <path d="M0,0 L400,0 L400,180 Q380,240 320,270 Q260,300 200,280 Q140,260 80,300 Q40,330 0,280 Z" />
                   </clipPath>
                 </defs>
-                <image href={fotoIconsForma} x="0" y="0" width="300" height="240" clipPath="url(#blobClip)" preserveAspectRatio="xMidYMid slice" />
+                <image href={fotoIconsForma} x="0" y="-40" width="400" height="300" clipPath="url(#blobClipCTA)" preserveAspectRatio="xMidYMid slice" />
               </svg>
             </div>
-            <div className="absolute bottom-6 left-5 right-5 flex flex-col h-[45%] justify-between">
-              <div>
-                <p style={{ fontFamily: 'Poppins, sans-serif' }} className="text-white text-sm leading-relaxed mb-2">
+            {/* Text content */}
+            <div className="absolute bottom-4 left-5 right-5 flex flex-col justify-end" style={{ height: '55%' }}>
+              <div className="mb-3">
+                <p style={{ fontFamily: 'Poppins, sans-serif' }} className="text-white text-base font-medium leading-snug mb-1">
                   Quando antes<br />o apoio chega,
                 </p>
-                <p style={{ fontFamily: 'Poppins, sans-serif' }} className="font-bold text-coral text-base leading-tight mb-2">
+                <p style={{ fontFamily: 'Poppins, sans-serif' }} className="font-bold text-coral text-lg leading-tight mb-1">
                   mais leve fica<br />o caminho
                 </p>
-                <p style={{ fontFamily: 'Poppins, sans-serif' }} className="text-white text-sm leading-relaxed">
+                <p style={{ fontFamily: 'Poppins, sans-serif' }} className="font-bold text-white text-base leading-snug mb-3">
                   da criança e da família.
                 </p>
+                <p style={{ fontFamily: 'Poppins, sans-serif' }} className="text-white/60 text-[10px] leading-relaxed mb-0.5">
+                  Se algo te preocupa,<br />confie no seu olhar.
+                </p>
+                <p style={{ fontFamily: 'Poppins, sans-serif' }} className="font-bold text-sky text-xs">
+                  Confie na Casa do Urso.
+                </p>
               </div>
-              <div className="flex items-center gap-2 px-4 py-2 border border-white/40 rounded-full w-fit">
-                <span style={{ fontFamily: 'Poppins, sans-serif' }} className="text-white text-xs font-medium">
-                  @clinicacasadourso
-                </span>
-              </div>
+              <img src={logoCasadourso} alt="Casa do Urso" className="w-20 h-auto self-end" />
             </div>
           </div>
         </TemplateCard>
