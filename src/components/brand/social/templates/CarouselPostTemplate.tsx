@@ -28,6 +28,7 @@ export const CarouselPostTemplate = () => (
     <TemplateCard title="Slide 1 — Capa" size="1080 × 1080px">
       <div className="aspect-square rounded-xl overflow-hidden bg-coral relative">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-coral/90" />
+        <img src={formaSunshine} alt="" className="absolute top-0 right-0 w-48 h-40 object-cover opacity-30" />
         <div className="absolute top-4 left-0 right-0 text-center">
           <span className="text-white/60 text-[9px] font-medium">@clinicacasadourso</span>
         </div>
