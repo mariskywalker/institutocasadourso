@@ -1,4 +1,6 @@
 import logoCasadourso from '@/assets/brand/logo-casadourso.png';
+import logoExtensoBranco from '@/assets/brand/logo-extenso-branco.png';
+import iconografia from '@/assets/brand/iconografia.svg';
 import formas from '@/assets/brand/formas.svg';
 import { Download } from 'lucide-react';
 
@@ -70,6 +72,23 @@ export const LogoSection = () => {
             </div>
           </div>
 
+          {/* Logo por Extenso */}
+          <div className="bg-white rounded-3xl p-8 shadow-card border border-border">
+            <div className="aspect-video bg-navy rounded-2xl flex items-center justify-center mb-6 p-8">
+              <img src={logoExtensoBranco} alt="Casa do Urso Logo por Extenso" className="max-h-full max-w-full object-contain" />
+            </div>
+            <div className="flex justify-between items-center">
+              <div>
+                <h3 className="font-display font-bold text-navy">Logo por Extenso</h3>
+                <p className="text-sm text-muted-foreground">Versão tipográfica para fundos escuros</p>
+              </div>
+              <button className="flex items-center gap-2 px-4 py-2 bg-navy text-white rounded-full text-sm hover:bg-navy-light transition-colors">
+                <Download size={16} />
+                PNG
+              </button>
+            </div>
+          </div>
+
           {/* Favicon / Ícone */}
           <div className="bg-white rounded-3xl p-8 shadow-card border border-border">
             <div className="aspect-video bg-muted rounded-2xl flex items-center justify-center gap-8 mb-6 p-4">
@@ -91,6 +110,23 @@ export const LogoSection = () => {
               <button className="flex items-center gap-2 px-4 py-2 bg-navy text-white rounded-full text-sm hover:bg-navy-light transition-colors">
                 <Download size={16} />
                 PNG
+              </button>
+            </div>
+          </div>
+
+          {/* Iconografia */}
+          <div className="bg-white rounded-3xl p-8 shadow-card border border-border md:col-span-2">
+            <div className="aspect-video bg-white rounded-2xl flex items-center justify-center mb-6 border border-border p-8">
+              <img src={iconografia} alt="Iconografia Casa do Urso" className="max-h-full max-w-full object-contain" />
+            </div>
+            <div className="flex justify-between items-center">
+              <div>
+                <h3 className="font-display font-bold text-navy">Iconografia</h3>
+                <p className="text-sm text-muted-foreground">Ícones temáticos dos pilares de desenvolvimento</p>
+              </div>
+              <button className="flex items-center gap-2 px-4 py-2 bg-navy text-white rounded-full text-sm hover:bg-navy-light transition-colors">
+                <Download size={16} />
+                SVG
               </button>
             </div>
           </div>
