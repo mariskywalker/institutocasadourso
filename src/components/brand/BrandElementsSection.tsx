@@ -11,7 +11,7 @@ export const BrandElementsSection = () => {
   ];
 
   const shapes = [
-    { name: 'Bloco Rosa', className: 'bg-coral-light rounded-2xl', usage: 'Cards, fundos' },
+    { name: 'Bloco Doce', className: 'bg-coral rounded-2xl', usage: 'Cards, fundos' },
     { name: 'Bloco Azul', className: 'bg-sky rounded-2xl', usage: 'Botões, ícones' },
     { name: 'Bloco Amarelo', className: 'bg-sunshine rounded-2xl', usage: 'Alertas, destaques' },
     { name: 'Bloco Navy', className: 'bg-navy rounded-2xl', usage: 'Fundos, headers' },
