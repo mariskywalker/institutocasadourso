@@ -2,6 +2,8 @@ import logoBear from '@/assets/brand/logo-bear.png';
 import logoCasadourso from '@/assets/brand/logo-casadourso.png';
 import photoChild from '@/assets/brand/photo-child-reading.jpg';
 import photoTherapy from '@/assets/brand/photo-therapy-session.jpg';
+import formaSunshine from '@/assets/brand/forma-sunshine.png';
+import formaMint from '@/assets/brand/forma-mint.png';
 import { TemplateCard } from '../InstagramTemplates';
 
 export const StoryTemplates = () => (
