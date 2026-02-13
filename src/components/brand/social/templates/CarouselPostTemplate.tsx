@@ -125,13 +125,8 @@ export const CarouselPostTemplate = () => (
     {/* Slide 4 — Frase Mint */}
     <TemplateCard title="Slide 4 — Destaque" size="1080 × 1080px">
       <div className="aspect-square rounded-xl overflow-hidden bg-mint relative p-5 flex flex-col justify-center items-center text-center">
-        {/* Decorative elements */}
-        <div className="absolute top-3 right-4 w-3 h-3 bg-coral/50 rounded-full" />
-        <div className="absolute top-5 right-8 w-2 h-2 bg-coral/40 rounded-full" />
-        <div className="absolute top-8 right-3 w-2 h-2 bg-coral/30 rounded-full" />
-        <div className="absolute top-3 right-10 w-16 h-16 bg-white/15 rounded-full" />
-        <div className="absolute bottom-4 left-4 w-3 h-3 bg-coral/50 rounded-full" />
-        <div className="absolute bottom-6 left-8 w-2 h-2 bg-coral/40 rounded-full" />
+        {/* Forma sunshine decorativa */}
+        <img src={formaSunshine} alt="" className="absolute top-3 right-4 w-16 h-12 object-cover opacity-20 rotate-45" />
         {/* Concentric circles */}
         <div className="absolute inset-8 rounded-full border border-white/10" />
         <div className="absolute inset-14 rounded-full border border-white/8" />
