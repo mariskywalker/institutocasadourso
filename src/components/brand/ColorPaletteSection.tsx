@@ -63,8 +63,8 @@ export const ColorPaletteSection = () => {
     },
     {
       name: 'Sky Blue',
-      hex: '#6BB8D9',
-      rgb: '107, 184, 217',
+      hex: '#4497C3',
+      rgb: '68, 151, 195',
       usage: 'Elementos de apoio. Ícones, badges, destaques.',
       className: 'bg-sky',
     },
@@ -89,8 +89,8 @@ export const ColorPaletteSection = () => {
     },
     {
       name: 'Sky Light',
-      hex: '#C5E4F0',
-      rgb: '197, 228, 240',
+      hex: '#B8D6E8',
+      rgb: '184, 214, 232',
       usage: 'Fundos suaves, highlights.',
       className: 'bg-sky-light',
       textColor: 'text-navy',
@@ -159,7 +159,7 @@ export const ColorPaletteSection = () => {
                 <h4 className="font-display font-bold text-navy">Hero Gradient</h4>
                 <p className="text-xs text-muted-foreground mt-1">Coral → Sky → Sunshine</p>
                 <code className="text-xs bg-muted px-2 py-1 rounded mt-2 block overflow-x-auto">
-                  linear-gradient(135deg, #FADEDE 0%, #C5E4F0 50%, #FCF0C5 100%)
+                  linear-gradient(135deg, #FADEDE 0%, #B8D6E8 50%, #FCF0C5 100%)
                 </code>
               </div>
             </div>
@@ -169,7 +169,7 @@ export const ColorPaletteSection = () => {
                 <h4 className="font-display font-bold text-navy">Playful Gradient</h4>
                 <p className="text-xs text-muted-foreground mt-1">Coral → Sky → Sunshine (vibrante)</p>
                 <code className="text-xs bg-muted px-2 py-1 rounded mt-2 block overflow-x-auto">
-                  linear-gradient(135deg, #E8A5A5 0%, #6BB8D9 50%, #F5C842 100%)
+                  linear-gradient(135deg, #E8A5A5 0%, #4497C3 50%, #F5C842 100%)
                 </code>
               </div>
             </div>
