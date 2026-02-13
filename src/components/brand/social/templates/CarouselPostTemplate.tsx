@@ -1,4 +1,5 @@
 import photoChild from '@/assets/brand/photo-child-reading.jpg';
+import bebe2 from '@/assets/brand/bebe-2.png';
 import photoIcons from '@/assets/brand/photo-icons-wall.jpg';
 import logoBranco from '@/assets/brand/logo-branco.png';
 import logoCasadourso from '@/assets/brand/logo-casadourso.png';
@@ -82,22 +83,22 @@ export const CarouselPostTemplate = () => (
 
     {/* Slide 3 — Conteúdo Sky */}
     <TemplateCard title="Slide 3 — Conteúdo" size="1080 × 1080px">
-      <div className="aspect-square rounded-xl overflow-hidden bg-sky relative p-4 flex flex-col">
+      <div className="aspect-square rounded-xl overflow-hidden bg-sky relative p-4 flex flex-col items-center justify-center text-center">
         {/* Forma sunshine orgânica top-left */}
         <img src={formaSunshine} alt="" className="absolute top-0 left-0 w-24 h-16 object-cover opacity-20" />
         {/* Bear-shaped photo frame */}
-        <div className="absolute left-2 bottom-12 w-12 h-14 bg-white/20 rounded-[50%_50%_40%_40%] overflow-hidden">
-          <img src={photoChild} alt="" className="w-full h-full object-cover" />
+        <div className="absolute right-3 bottom-3 w-14 h-14 rounded-full overflow-hidden border-2 border-white/30">
+          <img src={bebe2} alt="" className="w-full h-full object-cover" />
         </div>
         {/* Cloud dots */}
         <div className="absolute top-6 right-6 w-2 h-2 bg-white/30 rounded-full" />
         <div className="absolute top-10 right-3 w-1.5 h-1.5 bg-white/20 rounded-full" />
 
-        <div className="relative z-10 ml-auto mr-1 mt-6 max-w-[65%]">
+        <div className="relative z-10 px-2">
           <h4 className="font-display font-black text-white text-sm leading-tight mb-3">
             Geralmente,<br />uma fase:
           </h4>
-          <ul className="space-y-2">
+          <ul className="space-y-2 text-left inline-block">
             {[
               'Surge e desaparece com o tempo;',
               'A criança continua avançando em outras áreas;',
@@ -118,9 +119,6 @@ export const CarouselPostTemplate = () => (
         <div className="absolute bottom-2 left-0 right-0">
           <CarouselDots active={2} />
         </div>
-        {/* Dots bottom right */}
-        <div className="absolute bottom-4 right-3 w-2 h-2 bg-coral/50 rounded-full" />
-        <div className="absolute bottom-6 right-5 w-1.5 h-1.5 bg-coral/40 rounded-full" />
       </div>
     </TemplateCard>
 
