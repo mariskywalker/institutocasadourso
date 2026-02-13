@@ -1,4 +1,5 @@
 import logoBear from '@/assets/brand/logo-bear.png';
+import logoBranco from '@/assets/brand/logo-branco.png';
 import logoCasadourso from '@/assets/brand/logo-casadourso.png';
 import photoChild from '@/assets/brand/photo-child-reading.jpg';
 import photoIcons from '@/assets/brand/photo-icons-wall.jpg';
@@ -112,7 +113,7 @@ export const InstagramTemplates = () => {
               <p className="font-display font-bold text-sky text-xs">
                 Confie na Casa do Urso.
               </p>
-              <img src={logoCasadourso} alt="Casa do Urso" className="w-20 h-auto mt-3 ml-auto" />
+              <img src={logoBranco} alt="Casa do Urso" className="w-24 h-auto mt-3 ml-auto" />
             </div>
           </div>
         </TemplateCard>
