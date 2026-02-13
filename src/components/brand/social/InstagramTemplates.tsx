@@ -1,5 +1,5 @@
 import logoBear from '@/assets/brand/logo-bear.png';
-import logoCasadourso from '@/assets/brand/logo-casadourso.png';
+import logoCasadourso from '@/assets/brand/logo-branco.png';
 import photoChild from '@/assets/brand/photo-child-reading.jpg';
 import photoIcons from '@/assets/brand/photo-icons-wall.jpg';
 import photoTherapy from '@/assets/brand/photo-therapy-session.jpg';
