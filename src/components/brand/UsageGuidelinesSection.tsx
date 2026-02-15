@@ -39,7 +39,7 @@ export const UsageGuidelinesSection = () => {
             </div>
             <div className="space-y-4">
               <div className="flex gap-4 p-4 bg-muted rounded-xl">
-                <div className="w-24 h-16 bg-coral-light rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="w-24 h-16 bg-navy rounded-lg flex items-center justify-center flex-shrink-0">
                   <BrandIconsRow />
                 </div>
                 <p className="text-sm text-muted-foreground">
