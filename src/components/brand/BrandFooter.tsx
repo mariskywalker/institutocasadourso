@@ -10,7 +10,7 @@ export const BrandFooter = () => {
             <span className="text-sunshine"><IconAutonomia className="w-6 h-6" /></span>
             <span className="text-coral"><IconEmocional className="w-6 h-6" /></span>
             <span className="text-sky"><IconComunicacao className="w-6 h-6" /></span>
-            <span className="text-white"><IconSocial className="w-6 h-6" /></span>
+            <span className="text-[#CD995B]"><IconSocial className="w-6 h-6" /></span>
             <span className="font-display font-bold text-white text-lg ml-2">
               Casa do Urso
             </span>
