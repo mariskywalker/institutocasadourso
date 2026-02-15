@@ -16,10 +16,10 @@ const accessibleTextColor: Record<string, string> = {
 const textOf = (c: string) => accessibleTextColor[c] ?? c;
 
 const pilares = [
-  { name: 'Emocional', color: '#E8A5A5', icon: <IconEmocional /> },
-  { name: 'Social', color: '#CD995B', icon: <IconSocial /> },
-  { name: 'Comunicação', color: '#4497C3', icon: <IconComunicacao /> },
-  { name: 'Autonomia', color: '#F5C842', icon: <IconAutonomia /> },
+  { name: 'Emocional', color: '#E8A5A5', iconColor: '#E8A5A5', icon: <IconEmocional /> },
+  { name: 'Social', color: '#99D6C9', iconColor: '#CD995B', icon: <IconSocial /> },
+  { name: 'Comunicação', color: '#4497C3', iconColor: '#4497C3', icon: <IconComunicacao /> },
+  { name: 'Autonomia', color: '#F5C842', iconColor: '#F5C842', icon: <IconAutonomia /> },
 ];
 
 const statusLevels = [
@@ -156,7 +156,7 @@ const SistemaProgressoPage = () => {
                     className="w-10 h-10 rounded-xl flex items-center justify-center"
                     style={{ backgroundColor: `${p.color}25` }}
                   >
-                    <span style={{ color: p.color }}>{p.icon}</span>
+                    <span style={{ color: p.iconColor }}>{p.icon}</span>
                   </div>
                 ))}
               </div>
