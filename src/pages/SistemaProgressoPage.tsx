@@ -182,7 +182,7 @@ const SistemaProgressoPage = () => {
                   <span
                     key={t}
                     className="px-3 py-1 rounded-full text-xs font-display font-semibold"
-                    style={{ backgroundColor: `${getTagColor(t)}20`, color: getTagColor(t) }}
+                    style={{ backgroundColor: `${getTagColor(t)}20`, color: textOf(getTagColor(t)) }}
                   >
                     {t}
                   </span>
