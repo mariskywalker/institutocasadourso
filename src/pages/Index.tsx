@@ -175,11 +175,28 @@ const Index = () => {
           );
         })}
 
-        {/* Decorative floating shapes */}
-        <div className="absolute top-[15%] left-[28%] w-16 h-16 bg-coral-light rounded-2xl animate-float opacity-60 blur-sm pointer-events-none" />
-        <div className="absolute top-[45%] right-[25%] w-12 h-12 bg-sky-light rounded-xl animate-float-delayed opacity-60 blur-sm pointer-events-none" />
-        <div className="absolute bottom-[20%] left-[35%] w-10 h-10 bg-sunshine-light rounded-lg animate-float opacity-50 blur-sm pointer-events-none" />
-        <div className="absolute top-[70%] right-[30%] w-14 h-14 bg-mint-light rounded-2xl animate-float-delayed opacity-50 blur-sm pointer-events-none" />
+        {/* Floating brand icons */}
+        <div className="absolute top-[10%] left-[30%] opacity-[0.12] blur-[1px] animate-float pointer-events-none text-sunshine">
+          <IconAutonomia className="w-24 h-24" />
+        </div>
+        <div className="absolute top-[42%] right-[22%] opacity-[0.12] blur-[1px] animate-float-delayed pointer-events-none text-coral">
+          <IconEmocional className="w-20 h-20" />
+        </div>
+        <div className="absolute bottom-[22%] left-[32%] opacity-[0.10] blur-[1px] animate-float pointer-events-none text-sky">
+          <IconComunicacao className="w-16 h-16" />
+        </div>
+        <div className="absolute top-[68%] right-[28%] opacity-[0.12] blur-[1px] animate-float-delayed pointer-events-none text-[#CD995B]">
+          <IconSocial className="w-22 h-22" />
+        </div>
+        <div className="absolute top-[20%] right-[35%] opacity-[0.08] blur-[2px] animate-float pointer-events-none text-mint">
+          <IconEmocional className="w-14 h-14" />
+        </div>
+        <div className="absolute bottom-[35%] right-[40%] opacity-[0.08] blur-[2px] animate-float-delayed pointer-events-none text-sunshine">
+          <IconAutonomia className="w-12 h-12" />
+        </div>
+        <div className="absolute top-[50%] left-[22%] opacity-[0.10] blur-[1px] animate-float pointer-events-none text-coral">
+          <IconSocial className="w-16 h-16" />
+        </div>
       </div>
 
       <BrandFooter />
