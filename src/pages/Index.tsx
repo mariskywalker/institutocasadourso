@@ -123,7 +123,7 @@ const Index = () => {
       </nav>
 
       {/* Hero + Floating Cards */}
-      <div className="relative min-h-[calc(100vh-80px)] overflow-hidden">
+      <div className="relative min-h-[140vh] overflow-hidden">
         {/* Ambient glow blobs */}
         <div className="absolute top-1/4 left-1/3 w-[500px] h-[500px] bg-sky-light/40 rounded-full blur-[120px] pointer-events-none" />
         <div className="absolute bottom-1/4 right-1/3 w-[400px] h-[400px] bg-coral-light/40 rounded-full blur-[100px] pointer-events-none" />
