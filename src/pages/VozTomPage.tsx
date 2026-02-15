@@ -45,6 +45,7 @@ const microcopyExamples = [
   {
     category: 'Atualizações de progresso',
     color: '#99D6C9',
+    textColor: '#2E7A66',
     examples: [
       { label: 'Status positivo', text: 'João está cada vez mais à vontade para iniciar conversas com os colegas. 💚' },
       { label: 'Em desenvolvimento', text: 'Ainda estamos trabalhando essa habilidade. Cada sessão conta — e ele está no caminho certo.' },
@@ -54,6 +55,7 @@ const microcopyExamples = [
   {
     category: 'Resumo de sessão',
     color: '#4497C3',
+    textColor: '#265F85',
     examples: [
       { label: 'Abertura', text: 'Hoje trabalhamos atividades de cooperação em dupla. Veja como foi:' },
       { label: 'Observação', text: 'João mostrou mais iniciativa para escolher a atividade. Isso é um ótimo sinal de autonomia.' },
@@ -63,6 +65,7 @@ const microcopyExamples = [
   {
     category: 'Orientações para pais',
     color: '#F5C842',
+    textColor: '#7A6510',
     examples: [
       { label: 'Sugestão prática', text: 'Experimente dar duas opções para ele escolher na hora de se vestir. Isso exercita a autonomia.' },
       { label: 'Reforço positivo', text: 'Quando ele contar algo do dia, tente parar e ouvir com atenção. Isso fortalece o vínculo.' },
@@ -93,10 +96,10 @@ const diretrizes = [
 ];
 
 const tracosComunicacao = [
-  { trait: 'Humana', description: 'Falamos de criança para criança, de pessoa para pessoa. Sem frieza institucional.', color: '#E8A5A5' },
-  { trait: 'Acolhedora', description: 'Cada palavra transmite cuidado. Os pais precisam sentir que estão em boas mãos.', color: '#99D6C9' },
-  { trait: 'Clara', description: 'Sem ambiguidade. O que dizemos é o que queremos dizer — direto e compreensível.', color: '#4497C3' },
-  { trait: 'Segura', description: 'Transmitimos confiança sem arrogância. Sabemos do que estamos falando.', color: '#F5C842' },
+  { trait: 'Humana', description: 'Falamos de criança para criança, de pessoa para pessoa. Sem frieza institucional.', color: '#E8A5A5', textColor: '#A63D3D' },
+  { trait: 'Acolhedora', description: 'Cada palavra transmite cuidado. Os pais precisam sentir que estão em boas mãos.', color: '#99D6C9', textColor: '#2E7A66' },
+  { trait: 'Clara', description: 'Sem ambiguidade. O que dizemos é o que queremos dizer — direto e compreensível.', color: '#4497C3', textColor: '#265F85' },
+  { trait: 'Segura', description: 'Transmitimos confiança sem arrogância. Sabemos do que estamos falando.', color: '#F5C842', textColor: '#7A6510' },
 ];
 
 /* ── Page ── */
@@ -144,7 +147,7 @@ const VozTomPage = () => {
               <div key={t.trait} className="bg-card rounded-2xl border border-border p-6 shadow-card">
                 <div
                   className="w-10 h-10 rounded-xl flex items-center justify-center mb-4 font-display font-bold text-sm"
-                  style={{ backgroundColor: `${t.color}20`, color: t.color }}
+                  style={{ backgroundColor: `${t.color}20`, color: t.textColor }}
                 >
                   {t.trait.charAt(0)}
                 </div>
@@ -181,13 +184,13 @@ const VozTomPage = () => {
             {evitarPreferir.map((item, i) => (
               <div key={i} className="grid md:grid-cols-2 gap-4">
                 <div className="rounded-2xl border border-border p-6 bg-coral-light/30">
-                  <span className="inline-block px-3 py-1 rounded-full text-xs font-display font-semibold bg-coral/20 text-coral mb-3">
+                  <span className="inline-block px-3 py-1 rounded-full text-xs font-display font-semibold bg-coral/20 text-coral-dark mb-3">
                     ✗ Evitar
                   </span>
                   <p className="font-body text-sm text-foreground leading-relaxed">{item.evitar}</p>
                 </div>
                 <div className="rounded-2xl border border-border p-6 bg-mint-light/30">
-                  <span className="inline-block px-3 py-1 rounded-full text-xs font-display font-semibold bg-mint/20 text-mint mb-3">
+                  <span className="inline-block px-3 py-1 rounded-full text-xs font-display font-semibold bg-mint/20 text-mint-dark mb-3">
                     ✓ Preferir
                   </span>
                   <p className="font-body text-sm text-foreground leading-relaxed">{item.preferir}</p>
@@ -215,7 +218,7 @@ const VozTomPage = () => {
                     <div key={ex.label} className="bg-card rounded-2xl border border-border p-5 shadow-card">
                       <span
                         className="inline-block px-3 py-1 rounded-full text-xs font-display font-semibold mb-3"
-                        style={{ backgroundColor: `${group.color}18`, color: group.color }}
+                        style={{ backgroundColor: `${group.color}18`, color: group.textColor }}
                       >
                         {ex.label}
                       </span>
@@ -238,13 +241,13 @@ const VozTomPage = () => {
                 <p className="font-body text-muted-foreground leading-relaxed mb-6">{d.description}</p>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="rounded-xl bg-mint-light/30 p-5 border border-mint/20">
-                    <span className="inline-block px-3 py-1 rounded-full text-xs font-display font-semibold bg-mint/20 text-mint mb-3">
+                    <span className="inline-block px-3 py-1 rounded-full text-xs font-display font-semibold bg-mint/20 text-mint-dark mb-3">
                       ✓ Assim
                     </span>
                     <p className="font-body text-sm text-foreground leading-relaxed italic">"{d.do}"</p>
                   </div>
                   <div className="rounded-xl bg-coral-light/30 p-5 border border-coral/20">
-                    <span className="inline-block px-3 py-1 rounded-full text-xs font-display font-semibold bg-coral/20 text-coral mb-3">
+                    <span className="inline-block px-3 py-1 rounded-full text-xs font-display font-semibold bg-coral/20 text-coral-dark mb-3">
                       ✗ Não assim
                     </span>
                     <p className="font-body text-sm text-foreground leading-relaxed italic">"{d.dont}"</p>

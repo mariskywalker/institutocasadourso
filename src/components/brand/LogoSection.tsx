@@ -138,16 +138,16 @@ export const LogoSection = () => {
           <div className="flex justify-center">
             <div className="relative inline-block p-12 border-2 border-dashed border-coral rounded-2xl">
               <img src={logoCasadourso} alt="Logo" className="h-16 object-contain" />
-              <div className="absolute top-4 left-1/2 -translate-x-1/2 text-xs text-coral font-medium">
+              <div className="absolute top-4 left-1/2 -translate-x-1/2 text-xs text-coral-dark font-medium">
                 Mínimo 20px
               </div>
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-xs text-coral font-medium">
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-xs text-coral-dark font-medium">
                 Mínimo 20px
               </div>
-              <div className="absolute left-4 top-1/2 -translate-y-1/2 text-xs text-coral font-medium rotate-90">
+              <div className="absolute left-4 top-1/2 -translate-y-1/2 text-xs text-coral-dark font-medium rotate-90">
                 Mínimo 20px
               </div>
-              <div className="absolute right-4 top-1/2 -translate-y-1/2 text-xs text-coral font-medium -rotate-90">
+              <div className="absolute right-4 top-1/2 -translate-y-1/2 text-xs text-coral-dark font-medium -rotate-90">
                 Mínimo 20px
               </div>
             </div>

@@ -44,15 +44,15 @@
     /* Brand Specific Colors */
     --coral: 0 70% 75%;
     --coral-light: 0 70% 92%;
-    --coral-dark: 0 65% 60%;
+    --coral-dark: 0 55% 42%;
     
     --sky: 201 51% 52%;
     --sky-light: 201 45% 82%;
-    --sky-dark: 201 55% 38%;
+    --sky-dark: 201 55% 33%;
     
     --sunshine: 45 90% 65%;
     --sunshine-light: 45 90% 85%;
-    --sunshine-dark: 45 85% 50%;
+    --sunshine-dark: 45 80% 32%;
     
     --navy: 213 50% 20%;
     --navy-light: 213 40% 35%;
@@ -60,6 +60,7 @@
 
     --mint: 160 50% 70%;
     --mint-light: 160 50% 88%;
+    --mint-dark: 160 50% 30%;
 
     /* Sidebar */
     --sidebar-background: 0 0% 98%;

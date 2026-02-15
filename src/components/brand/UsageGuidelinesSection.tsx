@@ -149,7 +149,7 @@ export const UsageGuidelinesSection = () => {
             <h4 className="font-display font-bold text-navy mb-4">Exemplos de Comunicação</h4>
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <span className="text-xs text-mint font-medium uppercase tracking-wider">✓ Prefira</span>
+                <span className="text-xs text-mint-dark font-medium uppercase tracking-wider">✓ Prefira</span>
                 <p className="text-navy mt-1">"Cada criança tem seu tempo e suas conquistas únicas."</p>
               </div>
               <div>
@@ -157,7 +157,7 @@ export const UsageGuidelinesSection = () => {
                 <p className="text-muted-foreground mt-1">"Tratamento para crianças com problemas."</p>
               </div>
               <div>
-                <span className="text-xs text-mint font-medium uppercase tracking-wider">✓ Prefira</span>
+                <span className="text-xs text-mint-dark font-medium uppercase tracking-wider">✓ Prefira</span>
                 <p className="text-navy mt-1">"Venha conhecer nossa família!"</p>
               </div>
               <div>
