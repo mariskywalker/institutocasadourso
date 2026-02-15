@@ -1,179 +1,30 @@
-import photoChild from '@/assets/brand/photo-child-reading.jpg';
-import bebe2 from '@/assets/brand/bebe-2.png';
-import photoIcons from '@/assets/brand/photo-icons-wall.jpg';
-import logoBranco from '@/assets/brand/logo-branco.png';
-import logoCasadourso from '@/assets/brand/logo-casadourso.png';
-import logoBear from '@/assets/brand/logo-bear.png';
-import photoCtaNavy from '@/assets/brand/foto-cta-navy.png';
-import formaSunshine from '@/assets/brand/forma-sunshine.png';
-import formaMint from '@/assets/brand/forma-mint.png';
-import iconografiaSmall from '@/assets/brand/iconografia-small.svg';
+import carouselEdu1 from '@/assets/brand/carousel-edu-1.png';
+import carouselEdu2 from '@/assets/brand/carousel-edu-2.png';
+import carouselEdu3 from '@/assets/brand/carousel-edu-3.png';
+import carouselEdu4 from '@/assets/brand/carousel-edu-4.png';
+import carouselEdu5 from '@/assets/brand/carousel-edu-5.png';
 import { TemplateCard } from '../InstagramTemplates';
 
-const CarouselDots = ({ active = 0, total = 5, light = false }: { active?: number; total?: number; light?: boolean }) => (
-  <div className="flex justify-center gap-1.5 mt-2">
-    {Array.from({ length: total }).map((_, i) => (
-      <div
-        key={i}
-        className={`w-1.5 h-1.5 rounded-full ${
-          i === active
-            ? light ? 'bg-white' : 'bg-white'
-            : light ? 'bg-white/30' : 'bg-white/30'
-        }`}
-      />
-    ))}
-  </div>
-);
+const slides = [
+  { src: carouselEdu1, title: 'Slide 1 — Capa' },
+  { src: carouselEdu2, title: 'Slide 2 — Frase' },
+  { src: carouselEdu3, title: 'Slide 3 — Conteúdo' },
+  { src: carouselEdu4, title: 'Slide 4 — Destaque' },
+  { src: carouselEdu5, title: 'Slide 5 — CTA' },
+];
 
 export const CarouselPostTemplate = () => (
   <div className="grid grid-cols-5 gap-3 overflow-x-auto pb-2">
-    {/* Slide 1 — Capa Coral */}
-    <TemplateCard title="Slide 1 — Capa" size="1080 × 1080px">
-      <div className="aspect-square rounded-xl overflow-hidden bg-coral relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-coral/90" />
-        <img src={formaSunshine} alt="" className="absolute top-0 right-0 w-48 h-40 object-cover opacity-30" />
-        <div className="absolute top-4 left-0 right-0 text-center">
-          <span className="text-white/60 text-[9px] font-medium">@clinicacasadourso</span>
+    {slides.map((slide) => (
+      <TemplateCard key={slide.title} title={slide.title} size="1080 × 1080px">
+        <div className="aspect-square rounded-xl overflow-hidden">
+          <img
+            src={slide.src}
+            alt={slide.title}
+            className="w-full h-full object-cover"
+          />
         </div>
-        <div className="absolute bottom-4 left-3 right-3 text-center">
-          <h4 className="font-display font-black text-white text-sm leading-tight mb-1">
-            Recebi o diagnóstico
-          </h4>
-          <h4 className="font-display font-black text-sm leading-tight mb-1">
-            <span className="bg-coral-dark px-1.5 py-0.5 text-white">do meu filho</span>
-          </h4>
-          <div className="inline-block bg-mint px-2 py-0.5 rounded-sm mt-1">
-            <span className="font-display font-black text-white text-base">E agora?</span>
-          </div>
-          <CarouselDots active={0} />
-        </div>
-      </div>
-    </TemplateCard>
-
-    {/* Slide 2 — Frase Coral */}
-    <TemplateCard title="Slide 2 — Frase" size="1080 × 1080px">
-      <div className="aspect-square rounded-xl overflow-hidden bg-coral relative p-4 flex flex-col justify-center">
-        {/* Forma sunshine orgânica */}
-        <img src={formaSunshine} alt="" className="absolute top-0 right-0 w-32 h-24 object-cover opacity-20 rotate-12" />
-        {/* Forma mint */}
-        <img src={formaMint} alt="" className="absolute bottom-0 left-0 w-24 h-20 object-cover opacity-20 -rotate-12" />
-        {/* Photo in bear frame bottom-right */}
-        <div className="absolute bottom-0 right-0 w-14 h-16 rounded-tl-[50%] overflow-hidden">
-          <img src={photoChild} alt="" className="w-full h-full object-cover" />
-        </div>
-
-        <div className="relative z-10 px-2">
-          <span className="font-display font-black text-white text-2xl leading-none">"</span>
-          <h4 className="font-display font-black text-white text-sm leading-tight mb-1.5">
-            Cada criança<br />tem <span className="bg-navy px-1 text-white">seu tempo."</span>
-          </h4>
-          <p className="font-body text-white/80 text-[9px] leading-relaxed">
-            E sim, isso é verdade.<br />
-            Mas essa frase não pode<br />
-            silenciar as dúvidas de<br />
-            quem convive com a<br />
-            criança todos os dias.
-          </p>
-        </div>
-        <div className="absolute bottom-2 left-0 right-0">
-          <CarouselDots active={1} />
-        </div>
-      </div>
-    </TemplateCard>
-
-    {/* Slide 3 — Conteúdo Sky */}
-    <TemplateCard title="Slide 3 — Conteúdo" size="1080 × 1080px">
-      <div className="aspect-square rounded-xl overflow-hidden bg-sky relative p-4 flex flex-col items-center justify-center text-center">
-        {/* Forma sunshine orgânica top-left */}
-        <img src={formaSunshine} alt="" className="absolute top-0 left-0 w-24 h-16 object-cover opacity-20" />
-        {/* Bear-shaped photo frame */}
-        <div className="absolute right-3 bottom-3 w-14 h-14 rounded-full overflow-hidden border-2 border-white/30">
-          <img src={bebe2} alt="" className="w-full h-full object-cover" />
-        </div>
-        {/* Cloud dots */}
-        <div className="absolute top-6 right-6 w-2 h-2 bg-white/30 rounded-full" />
-        <div className="absolute top-10 right-3 w-1.5 h-1.5 bg-white/20 rounded-full" />
-
-        <div className="relative z-10 px-2">
-          <h4 className="font-display font-black text-white text-sm leading-tight mb-3">
-            Geralmente,<br />uma fase:
-          </h4>
-          <ul className="space-y-2 text-left inline-block">
-            {[
-              'Surge e desaparece com o tempo;',
-              'A criança continua avançando em outras áreas;',
-              'Não impede a comunicação, o brincar ou a interação;',
-            ].map((item, i) => (
-              <li key={i} className="flex items-start gap-1.5 text-[8px]">
-                <span className="text-sunshine font-bold mt-0.5 text-[10px]">✱</span>
-                <span className="text-white/90 leading-relaxed">{item}</span>
-              </li>
-            ))}
-          </ul>
-          <div className="bg-coral/80 rounded-lg px-2 py-1.5 mt-3 inline-block">
-            <p className="font-display text-white text-[8px] font-medium">
-              Fases passam.<br />Desenvolvimento segue.
-            </p>
-          </div>
-        </div>
-        <div className="absolute bottom-2 left-0 right-0">
-          <CarouselDots active={2} />
-        </div>
-      </div>
-    </TemplateCard>
-
-    {/* Slide 4 — Frase Mint */}
-    <TemplateCard title="Slide 4 — Destaque" size="1080 × 1080px">
-      <div className="aspect-square rounded-xl overflow-hidden bg-mint relative p-5 flex flex-col justify-center items-center text-center">
-        {/* Forma sunshine decorativa */}
-        <img src={formaSunshine} alt="" className="absolute top-3 right-4 w-16 h-12 object-cover opacity-20 rotate-45" />
-        {/* Concentric circles */}
-        <div className="absolute inset-8 rounded-full border border-white/10" />
-        <div className="absolute inset-14 rounded-full border border-white/8" />
-
-        <h4 className="font-display font-black text-white text-lg leading-tight mb-2 relative z-10">
-          Quando não<br />há evolução,
-        </h4>
-        <p className="font-display font-medium text-white/80 text-xs leading-relaxed relative z-10">
-          e o comportamento se<br />repete ou se intensifica,
-        </p>
-        <p className="font-display text-white/80 text-xs mt-1 relative z-10">
-          é hora de observar com<br /><strong className="text-white">mais atenção.</strong>
-        </p>
-        <div className="absolute bottom-2 left-0 right-0">
-          <CarouselDots active={3} />
-        </div>
-      </div>
-    </TemplateCard>
-
-    {/* Slide 5 — CTA Navy */}
-    <TemplateCard title="Slide 5 — CTA" size="1080 × 1080px">
-      <div className="aspect-square rounded-xl overflow-hidden relative bg-navy">
-        {/* Photo with organic shape in top-right */}
-        <div className="absolute top-0 right-0 w-[80%] h-[64%] overflow-hidden">
-          <img src={photoCtaNavy} alt="Ícones" className="w-full h-full object-contain object-right-top" />
-        </div>
-        {/* Text content on the left/bottom */}
-        <div className="absolute bottom-4 left-4 right-4">
-          <p className="font-display text-white text-[10px] leading-relaxed mb-0.5">
-            Quanto antes<br />o apoio chega,
-          </p>
-          <p className="font-display font-bold text-coral text-xs leading-tight mb-0.5">
-            mais leve fica<br />o caminho
-          </p>
-          <p className="font-display font-bold text-white text-[10px] mb-2">
-            da criança e da família.
-          </p>
-          <p className="font-body text-white/60 text-[7px] mb-0.5">
-            Se algo te preocupa,<br />confie no seu olhar.
-          </p>
-          <p className="font-display font-bold text-sky text-[8px]">
-            Confie na Casa do Urso.
-          </p>
-          <img src={logoBranco} alt="Casa do Urso" className="w-16 h-auto mt-2 ml-auto" />
-          <CarouselDots active={4} />
-        </div>
-      </div>
-    </TemplateCard>
+      </TemplateCard>
+    ))}
   </div>
 );
