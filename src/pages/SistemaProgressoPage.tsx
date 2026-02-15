@@ -7,7 +7,7 @@ import { IconEmocional, IconSocial, IconComunicacao, IconAutonomia } from '@/com
 
 const pilares = [
   { name: 'Emocional', color: '#E8A5A5', icon: <IconEmocional /> },
-  { name: 'Social', color: '#99D6C9', icon: <IconSocial /> },
+  { name: 'Social', color: '#CD995B', icon: <IconSocial /> },
   { name: 'Comunicação', color: '#4497C3', icon: <IconComunicacao /> },
   { name: 'Autonomia', color: '#F5C842', icon: <IconAutonomia /> },
 ];
@@ -256,9 +256,9 @@ const SistemaProgressoPage = () => {
             <div className="flex items-start gap-4 mb-8">
               <div
                 className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
-                style={{ backgroundColor: '#99D6C920' }}
+                style={{ backgroundColor: '#CD995B20' }}
               >
-                <span style={{ color: '#99D6C9' }}><IconSocial className="w-6 h-6" /></span>
+                <span style={{ color: '#CD995B' }}><IconSocial className="w-6 h-6" /></span>
               </div>
               <div>
                 <p className="text-xs font-display font-semibold text-muted-foreground uppercase tracking-wider mb-1">
