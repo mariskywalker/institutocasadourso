@@ -1,4 +1,5 @@
 import iconsHorizontal from '@/assets/brand/icons-horizontal.png';
+import exemploLayout from '@/assets/brand/exemplo-layout-social.png';
 import { Download } from 'lucide-react';
 import { IconAutonomia, IconEmocional, IconComunicacao, IconSocial } from './BrandIcons';
 
@@ -94,24 +95,12 @@ export const BrandElementsSection = () => {
           <h3 className="font-display font-bold text-navy text-xl mb-6">Composição Visual</h3>
           <div className="grid md:grid-cols-2 gap-8">
             {/* Exemplo de composição */}
-            <div className="relative aspect-video bg-gradient-to-br from-coral-light via-white to-sky-light rounded-2xl overflow-hidden p-6">
-              {/* Blocos decorativos */}
-              <div className="absolute top-4 right-4 w-16 h-16 bg-coral-light rounded-xl opacity-80" />
-              <div className="absolute top-12 right-12 w-12 h-12 bg-sky rounded-xl opacity-80" />
-              <div className="absolute bottom-4 left-4 w-20 h-20 bg-sunshine-light rounded-xl opacity-80" />
-              
-              {/* Conteúdo */}
-              <div className="relative z-10 h-full flex flex-col justify-end">
-                <div className="flex items-center gap-3 mb-2">
-                  <span className="text-sunshine"><IconAutonomia className="w-6 h-6" /></span>
-                  <span className="text-coral"><IconEmocional className="w-6 h-6" /></span>
-                  <span className="text-sky"><IconComunicacao className="w-6 h-6" /></span>
-                  <span className="text-[#CD995B]"><IconSocial className="w-6 h-6" /></span>
-                </div>
-                <h4 className="font-display font-bold text-navy text-xl">
-                  Exemplo de Layout
-                </h4>
-              </div>
+            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden">
+              <img 
+                src={exemploLayout} 
+                alt="Exemplo de layout para redes sociais da Casa do Urso" 
+                className="w-full h-full object-cover"
+              />
             </div>
 
             {/* Diretrizes */}
