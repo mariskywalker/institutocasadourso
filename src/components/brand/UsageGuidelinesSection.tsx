@@ -43,7 +43,7 @@ export const UsageGuidelinesSection = () => {
                   <BrandIconsRow />
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  Use o logo em fundos claros ou nas cores da paleta.
+                  Use o logo em fundos com contraste das cores da paleta.
                 </p>
               </div>
               <div className="flex gap-4 p-4 bg-muted rounded-xl">
