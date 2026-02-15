@@ -102,7 +102,7 @@ const cardPositions = [
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-navy-dark">
+    <div className="min-h-screen bg-background">
       {/* Nav */}
       <nav className="relative z-50 flex items-center justify-between max-w-7xl mx-auto px-6 py-6">
         <div className="flex items-center gap-2">
@@ -110,13 +110,13 @@ const Index = () => {
           <span className="text-coral"><IconEmocional className="w-6 h-6" /></span>
           <span className="text-sky"><IconComunicacao className="w-6 h-6" /></span>
           <span className="text-[#CD995B]"><IconSocial className="w-6 h-6" /></span>
-          <span className="font-display font-bold text-white/90 ml-1 text-lg">Casa do Urso</span>
+          <span className="font-display font-bold text-navy ml-1 text-lg">Casa do Urso</span>
         </div>
         <a
           href="https://www.clinicacasadourso.com.br"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-sm font-display font-medium text-white/60 hover:text-white transition-colors"
+          className="text-sm font-display font-medium text-muted-foreground hover:text-navy transition-colors"
         >
           Visitar Site →
         </a>
@@ -125,16 +125,16 @@ const Index = () => {
       {/* Hero + Floating Cards */}
       <div className="relative min-h-[calc(100vh-80px)] overflow-hidden">
         {/* Ambient glow blobs */}
-        <div className="absolute top-1/4 left-1/3 w-[500px] h-[500px] bg-sky/10 rounded-full blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-1/4 right-1/3 w-[400px] h-[400px] bg-coral/10 rounded-full blur-[100px] pointer-events-none" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-sunshine/8 rounded-full blur-[80px] pointer-events-none" />
+        <div className="absolute top-1/4 left-1/3 w-[500px] h-[500px] bg-sky-light/40 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-1/4 right-1/3 w-[400px] h-[400px] bg-coral-light/40 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-sunshine-light/30 rounded-full blur-[80px] pointer-events-none" />
 
         {/* Center text */}
         <div className="absolute inset-0 flex flex-col items-center justify-center z-20 pointer-events-none px-6">
-          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-black text-white text-center leading-[0.95] tracking-tight mb-6">
+          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-black text-navy text-center leading-[0.95] tracking-tight mb-6">
             Brand<br />Guidelines
           </h1>
-          <p className="font-body text-lg md:text-xl text-white/50 text-center max-w-md">
+          <p className="font-body text-lg md:text-xl text-muted-foreground text-center max-w-md">
             Manual de identidade visual da Clínica Casa do Urso
           </p>
         </div>
@@ -156,19 +156,18 @@ const Index = () => {
               }}
             >
               <div className={`
-                bg-white/[0.07] backdrop-blur-md border border-white/[0.12] 
+                bg-card backdrop-blur-md border border-border 
                 rounded-2xl p-5 w-[200px] md:w-[220px]
-                hover:bg-white/[0.14] hover:border-white/[0.25] hover:scale-105
-                transition-all duration-300 cursor-pointer
-                ${section.glowColor}
+                hover:shadow-elevated hover:scale-105 hover:border-sky-light
+                transition-all duration-300 cursor-pointer shadow-card
               `}>
                 <div className={`w-9 h-9 ${section.color} rounded-xl flex items-center justify-center mb-3 text-white`}>
                   {section.icon}
                 </div>
-                <h3 className="font-display font-bold text-white text-sm mb-1 group-hover:text-coral-light transition-colors">
+                <h3 className="font-display font-bold text-navy text-sm mb-1 group-hover:text-sky transition-colors">
                   {section.title}
                 </h3>
-                <p className="text-xs text-white/40 leading-relaxed">
+                <p className="text-xs text-muted-foreground leading-relaxed">
                   {section.description}
                 </p>
               </div>
@@ -177,10 +176,10 @@ const Index = () => {
         })}
 
         {/* Decorative floating shapes */}
-        <div className="absolute top-[15%] left-[28%] w-16 h-16 bg-coral/30 rounded-2xl animate-float opacity-60 blur-sm pointer-events-none" />
-        <div className="absolute top-[45%] right-[25%] w-12 h-12 bg-sky/30 rounded-xl animate-float-delayed opacity-60 blur-sm pointer-events-none" />
-        <div className="absolute bottom-[20%] left-[35%] w-10 h-10 bg-sunshine/30 rounded-lg animate-float opacity-50 blur-sm pointer-events-none" />
-        <div className="absolute top-[70%] right-[30%] w-14 h-14 bg-mint/25 rounded-2xl animate-float-delayed opacity-50 blur-sm pointer-events-none" />
+        <div className="absolute top-[15%] left-[28%] w-16 h-16 bg-coral-light rounded-2xl animate-float opacity-60 blur-sm pointer-events-none" />
+        <div className="absolute top-[45%] right-[25%] w-12 h-12 bg-sky-light rounded-xl animate-float-delayed opacity-60 blur-sm pointer-events-none" />
+        <div className="absolute bottom-[20%] left-[35%] w-10 h-10 bg-sunshine-light rounded-lg animate-float opacity-50 blur-sm pointer-events-none" />
+        <div className="absolute top-[70%] right-[30%] w-14 h-14 bg-mint-light rounded-2xl animate-float-delayed opacity-50 blur-sm pointer-events-none" />
       </div>
 
       <BrandFooter />
