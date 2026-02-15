@@ -5,6 +5,16 @@ import { IconEmocional, IconSocial, IconComunicacao, IconAutonomia } from '@/com
 
 /* ── Data ── */
 
+/* Accessible dark text variants for brand colors (WCAG AA 4.5:1 on white) */
+const accessibleTextColor: Record<string, string> = {
+  '#E8A5A5': '#A63D3D',
+  '#99D6C9': '#2E7A66',
+  '#F5C842': '#7A6510',
+  '#4497C3': '#265F85',
+  '#CD995B': '#8A6B2E',
+};
+const textOf = (c: string) => accessibleTextColor[c] ?? c;
+
 const pilares = [
   { name: 'Emocional', color: '#E8A5A5', icon: <IconEmocional /> },
   { name: 'Social', color: '#CD995B', icon: <IconSocial /> },
@@ -239,7 +249,7 @@ const SistemaProgressoPage = () => {
                 <span
                   key={tag.label}
                   className="px-4 py-2 rounded-full text-sm font-display font-semibold"
-                  style={{ backgroundColor: `${tag.color}18`, color: tag.color }}
+                  style={{ backgroundColor: `${tag.color}18`, color: textOf(tag.color) }}
                 >
                   {tag.label}
                 </span>
@@ -283,7 +293,7 @@ const SistemaProgressoPage = () => {
                     <span className="font-display font-bold text-navy text-sm">{entry.week}</span>
                     <span
                       className="px-3 py-0.5 rounded-full text-xs font-display font-semibold"
-                      style={{ backgroundColor: `${entry.statusColor}20`, color: entry.statusColor }}
+                      style={{ backgroundColor: `${entry.statusColor}20`, color: textOf(entry.statusColor) }}
                     >
                       {entry.status}
                     </span>
@@ -296,7 +306,7 @@ const SistemaProgressoPage = () => {
                       <span
                         key={t}
                         className="px-3 py-1 rounded-full text-xs font-display font-semibold"
-                        style={{ backgroundColor: `${getTagColor(t)}15`, color: getTagColor(t) }}
+                        style={{ backgroundColor: `${getTagColor(t)}15`, color: textOf(getTagColor(t)) }}
                       >
                         {t}
                       </span>

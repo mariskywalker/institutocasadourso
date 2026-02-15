@@ -71,6 +71,7 @@ export default {
         mint: {
           DEFAULT: "hsl(var(--mint))",
           light: "hsl(var(--mint-light))",
+          dark: "hsl(var(--mint-dark))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
