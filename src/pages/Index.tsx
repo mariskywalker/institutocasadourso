@@ -80,14 +80,11 @@ const sections = [
 
 // Cards positioned in a circle around the center
 const getCirclePosition = (index: number, total: number) => {
-  const angle = (index / total) * 2 * Math.PI - Math.PI / 2; // start from top
-  const radiusX = 38; // % from center horizontally
-  const radiusY = 35; // % from center vertically
-  const centerX = 50;
-  const centerY = 45;
-  const x = centerX + radiusX * Math.cos(angle);
-  const y = centerY + radiusY * Math.sin(angle);
-  const rotate = `${Math.round(Math.cos(angle) * 6)}deg`;
+  const angle = (index / total) * 2 * Math.PI - Math.PI / 2;
+  const radius = 340; // px from center — true circle
+  const x = radius * Math.cos(angle);
+  const y = radius * Math.sin(angle);
+  const rotate = `${Math.round(Math.cos(angle) * 5)}deg`;
   const delay = `${(index * 0.3).toFixed(1)}s`;
   const floatClass = index % 2 === 0 ? 'animate-float' : 'animate-float-delayed';
   return { x, y, rotate, delay, floatClass };
@@ -116,14 +113,14 @@ const Index = () => {
       </nav>
 
       {/* Hero + Floating Cards */}
-      <div className="relative min-h-[100vh] overflow-hidden">
+      <div className="relative min-h-[100vh] overflow-hidden flex items-center justify-center">
         {/* Ambient glow blobs */}
         <div className="absolute top-1/4 left-1/3 w-[500px] h-[500px] bg-sky-light/40 rounded-full blur-[120px] pointer-events-none" />
         <div className="absolute bottom-1/4 right-1/3 w-[400px] h-[400px] bg-coral-light/40 rounded-full blur-[100px] pointer-events-none" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-sunshine-light/30 rounded-full blur-[80px] pointer-events-none" />
 
         {/* Center text */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center z-20 pointer-events-none px-6">
+        <div className="flex flex-col items-center justify-center z-20 pointer-events-none px-6">
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-black text-navy text-center leading-[0.95] tracking-tight mb-6">
             Brand<br />Guidelines
           </h1>
@@ -132,18 +129,18 @@ const Index = () => {
           </p>
         </div>
 
-        {/* Floating cards */}
+        {/* Floating cards in a circle */}
         {sections.map((section, i) => {
           const pos = getCirclePosition(i, sections.length);
           return (
             <Link
               key={section.href}
               to={section.href}
-              className={`absolute z-30 group ${pos.floatClass} -translate-x-1/2 -translate-y-1/2`}
+              className={`absolute z-30 group ${pos.floatClass}`}
               style={{
-                top: `${pos.y}%`,
-                left: `${pos.x}%`,
-                transform: `translate(-50%, -50%) rotate(${pos.rotate})`,
+                top: '50%',
+                left: '50%',
+                transform: `translate(calc(-50% + ${pos.x}px), calc(-50% + ${pos.y}px)) rotate(${pos.rotate})`,
                 animationDelay: pos.delay,
               }}
             >
