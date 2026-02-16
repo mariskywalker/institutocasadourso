@@ -194,6 +194,28 @@
 }
 
 @layer utilities {
+  :root {
+    --orbit-radius: 380px;
+  }
+
+  @media (max-width: 1024px) {
+    :root {
+      --orbit-radius: 320px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    :root {
+      --orbit-radius: 240px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    :root {
+      --orbit-radius: 180px;
+    }
+  }
+
   .animate-float {
     animation: float 6s ease-in-out infinite;
   }
@@ -202,12 +224,30 @@
     animation: float 6s ease-in-out infinite 2s;
   }
 
+  .animate-orbit {
+    animation: orbit 90s linear infinite;
+  }
+
+  .animate-orbit-reverse {
+    animation: orbit-reverse 90s linear infinite;
+  }
+
   .animate-bounce-soft {
     animation: bounce-soft 2s ease-in-out infinite;
   }
 
   .animate-pulse-soft {
     animation: pulse-soft 3s ease-in-out infinite;
+  }
+
+  @keyframes orbit {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes orbit-reverse {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(-360deg); }
   }
 
   @keyframes float {
