@@ -4,91 +4,16 @@ import { Palette, Type, Image, Share2, Shapes, ShieldCheck, Heart, TrendingUp, M
 import { IconAutonomia, IconEmocional, IconComunicacao, IconSocial } from '@/components/brand/BrandIcons';
 
 const sections = [
-  {
-    title: 'Logotipos',
-    description: 'Variações do logo e versões para fundos claros e escuros.',
-    icon: <Image className="w-5 h-5" />,
-    href: '/logos',
-    color: 'bg-coral',
-    glowColor: 'shadow-coral',
-  },
-  {
-    title: 'Paleta de Cores',
-    description: 'Cores primárias, secundárias e gradientes.',
-    icon: <Palette className="w-5 h-5" />,
-    href: '/cores',
-    color: 'bg-sky',
-    glowColor: 'shadow-sky',
-  },
-  {
-    title: 'Tipografia',
-    description: 'Fonte Satoshi — pesos e hierarquia.',
-    icon: <Type className="w-5 h-5" />,
-    href: '/tipografia',
-    color: 'bg-sunshine',
-    glowColor: '',
-  },
-  {
-    title: 'Pilares',
-    description: 'Os 4 pilares do desenvolvimento infantil.',
-    icon: <Heart className="w-5 h-5" />,
-    href: '/pilares',
-    color: 'bg-mint',
-    glowColor: '',
-  },
-  {
-    title: 'Social Media',
-    description: 'Templates para Instagram, Facebook e LinkedIn.',
-    icon: <Share2 className="w-5 h-5" />,
-    href: '/social',
-    color: 'bg-coral',
-    glowColor: 'shadow-coral',
-  },
-  {
-    title: 'Elementos',
-    description: 'Ícones, formas e composição.',
-    icon: <Shapes className="w-5 h-5" />,
-    href: '/elementos',
-    color: 'bg-sky',
-    glowColor: 'shadow-sky',
-  },
-  {
-    title: 'Diretrizes',
-    description: 'Regras de aplicação e tom de voz.',
-    icon: <ShieldCheck className="w-5 h-5" />,
-    href: '/diretrizes',
-    color: 'bg-sunshine',
-    glowColor: '',
-  },
-  {
-    title: 'Progresso',
-    description: 'Sistema de acompanhamento do desenvolvimento.',
-    icon: <TrendingUp className="w-5 h-5" />,
-    href: '/progresso',
-    color: 'bg-mint',
-    glowColor: '',
-  },
-  {
-    title: 'Voz e Tom',
-    description: 'Linguagem e princípios de comunicação.',
-    icon: <MessageSquareHeart className="w-5 h-5" />,
-    href: '/voz-tom',
-    color: 'bg-coral',
-    glowColor: 'shadow-coral',
-  },
+  { title: 'Logotipos', description: 'Variações do logo e versões para fundos claros e escuros.', icon: <Image className="w-5 h-5" />, href: '/logos', color: 'bg-coral' },
+  { title: 'Paleta de Cores', description: 'Cores primárias, secundárias e gradientes.', icon: <Palette className="w-5 h-5" />, href: '/cores', color: 'bg-sky' },
+  { title: 'Tipografia', description: 'Fonte Satoshi — pesos e hierarquia.', icon: <Type className="w-5 h-5" />, href: '/tipografia', color: 'bg-sunshine' },
+  { title: 'Pilares', description: 'Os 4 pilares do desenvolvimento infantil.', icon: <Heart className="w-5 h-5" />, href: '/pilares', color: 'bg-mint' },
+  { title: 'Social Media', description: 'Templates para Instagram, Facebook e LinkedIn.', icon: <Share2 className="w-5 h-5" />, href: '/social', color: 'bg-coral' },
+  { title: 'Elementos', description: 'Ícones, formas e composição.', icon: <Shapes className="w-5 h-5" />, href: '/elementos', color: 'bg-sky' },
+  { title: 'Diretrizes', description: 'Regras de aplicação e tom de voz.', icon: <ShieldCheck className="w-5 h-5" />, href: '/diretrizes', color: 'bg-sunshine' },
+  { title: 'Progresso', description: 'Sistema de acompanhamento do desenvolvimento.', icon: <TrendingUp className="w-5 h-5" />, href: '/progresso', color: 'bg-mint' },
+  { title: 'Voz e Tom', description: 'Linguagem e princípios de comunicação.', icon: <MessageSquareHeart className="w-5 h-5" />, href: '/voz-tom', color: 'bg-coral' },
 ];
-
-// Cards positioned in a circle around the center
-const getCirclePosition = (index: number, total: number) => {
-  const angle = (index / total) * 2 * Math.PI - Math.PI / 2;
-  const radius = 340; // px from center — true circle
-  const x = radius * Math.cos(angle);
-  const y = radius * Math.sin(angle);
-  const rotate = `${Math.round(Math.cos(angle) * 5)}deg`;
-  const delay = `${(index * 0.3).toFixed(1)}s`;
-  const floatClass = index % 2 === 0 ? 'animate-float' : 'animate-float-delayed';
-  return { x, y, rotate, delay, floatClass };
-};
 
 const Index = () => {
   return (
@@ -112,8 +37,8 @@ const Index = () => {
         </a>
       </nav>
 
-      {/* Hero + Floating Cards */}
-      <div className="relative min-h-[100vh] overflow-hidden flex items-center justify-center">
+      {/* Hero + Orbiting Cards */}
+      <div className="relative min-h-[100vh] overflow-x-clip flex items-center justify-center">
         {/* Ambient glow blobs */}
         <div className="absolute top-1/4 left-1/3 w-[500px] h-[500px] bg-sky-light/40 rounded-full blur-[120px] pointer-events-none" />
         <div className="absolute bottom-1/4 right-1/3 w-[400px] h-[400px] bg-coral-light/40 rounded-full blur-[100px] pointer-events-none" />
@@ -129,40 +54,48 @@ const Index = () => {
           </p>
         </div>
 
-        {/* Floating cards in a circle */}
-        {sections.map((section, i) => {
-          const pos = getCirclePosition(i, sections.length);
-          return (
-            <Link
-              key={section.href}
-              to={section.href}
-              className={`absolute z-30 group ${pos.floatClass}`}
-              style={{
-                top: '50%',
-                left: '50%',
-                transform: `translate(calc(-50% + ${pos.x}px), calc(-50% + ${pos.y}px)) rotate(${pos.rotate})`,
-                animationDelay: pos.delay,
-              }}
-            >
-              <div className={`
-                bg-card backdrop-blur-md border border-border 
-                rounded-2xl p-5 w-[200px] md:w-[220px]
-                hover:shadow-elevated hover:scale-105 hover:border-sky-light
-                transition-all duration-300 cursor-pointer shadow-card
-              `}>
-                <div className={`w-9 h-9 ${section.color} rounded-xl flex items-center justify-center mb-3 text-white`}>
-                  {section.icon}
-                </div>
-                <h3 className="font-display font-bold text-navy text-sm mb-1 group-hover:text-sky transition-colors">
-                  {section.title}
-                </h3>
-                <p className="text-xs text-muted-foreground leading-relaxed">
-                  {section.description}
-                </p>
-              </div>
-            </Link>
-          );
-        })}
+        {/* Orbiting cards container — spins slowly */}
+        <div className="absolute inset-0 flex items-center justify-center z-30">
+          <div className="relative animate-orbit" style={{ width: 0, height: 0 }}>
+            {sections.map((section, i) => {
+              const angle = (i / sections.length) * 360 - 90;
+              return (
+                <Link
+                  key={section.href}
+                  to={section.href}
+                  className="absolute group"
+                  style={{
+                    // Position on circle using CSS custom properties
+                    transform: `rotate(${angle}deg) translateX(var(--orbit-radius)) rotate(${-angle}deg)`,
+                    transformOrigin: '0 0',
+                    marginLeft: '-100px',
+                    marginTop: '-70px',
+                  }}
+                >
+                  {/* Counter-rotate to cancel orbit spin + card stays upright */}
+                  <div className="animate-orbit-reverse">
+                    <div className="
+                      bg-card backdrop-blur-md border border-border 
+                      rounded-2xl p-4 md:p-5 w-[170px] md:w-[200px] lg:w-[220px]
+                      hover:shadow-elevated hover:scale-105 hover:border-sky-light
+                      transition-all duration-300 cursor-pointer shadow-card
+                    ">
+                      <div className={`w-9 h-9 ${section.color} rounded-xl flex items-center justify-center mb-3 text-white`}>
+                        {section.icon}
+                      </div>
+                      <h3 className="font-display font-bold text-navy text-sm mb-1 group-hover:text-sky transition-colors">
+                        {section.title}
+                      </h3>
+                      <p className="text-xs text-muted-foreground leading-relaxed">
+                        {section.description}
+                      </p>
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
 
         {/* Floating brand icons */}
         <div className="absolute top-[10%] left-[30%] opacity-[0.12] blur-[1px] animate-float pointer-events-none text-sunshine">
