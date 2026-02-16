@@ -78,27 +78,20 @@ const sections = [
   },
 ];
 
-// Positions for floating cards scattered around the viewport
-const cardPositions = [
-  // Top-left area
-  { top: '8%', left: '3%', rotate: '-6deg', delay: '0s', floatClass: 'animate-float' },
-  // Top-right area
-  { top: '5%', right: '4%', rotate: '4deg', delay: '1s', floatClass: 'animate-float-delayed' },
-  // Left side middle
-  { top: '30%', left: '1%', rotate: '-3deg', delay: '0.5s', floatClass: 'animate-float' },
-  // Right side middle
-  { top: '28%', right: '2%', rotate: '5deg', delay: '1.5s', floatClass: 'animate-float-delayed' },
-  // Bottom-left
-  { top: '58%', left: '5%', rotate: '-4deg', delay: '0.8s', floatClass: 'animate-float-delayed' },
-  // Bottom-right
-  { top: '55%', right: '3%', rotate: '3deg', delay: '0.3s', floatClass: 'animate-float' },
-  // Far bottom-left
-  { top: '78%', left: '8%', rotate: '6deg', delay: '1.2s', floatClass: 'animate-float' },
-  // Far bottom-right
-  { top: '75%', right: '6%', rotate: '-5deg', delay: '0.7s', floatClass: 'animate-float-delayed' },
-  // Bottom center-right
-  { top: '85%', left: '38%', rotate: '2deg', delay: '1s', floatClass: 'animate-float' },
-];
+// Cards positioned in a circle around the center
+const getCirclePosition = (index: number, total: number) => {
+  const angle = (index / total) * 2 * Math.PI - Math.PI / 2; // start from top
+  const radiusX = 38; // % from center horizontally
+  const radiusY = 35; // % from center vertically
+  const centerX = 50;
+  const centerY = 45;
+  const x = centerX + radiusX * Math.cos(angle);
+  const y = centerY + radiusY * Math.sin(angle);
+  const rotate = `${Math.round(Math.cos(angle) * 6)}deg`;
+  const delay = `${(index * 0.3).toFixed(1)}s`;
+  const floatClass = index % 2 === 0 ? 'animate-float' : 'animate-float-delayed';
+  return { x, y, rotate, delay, floatClass };
+};
 
 const Index = () => {
   return (
@@ -123,7 +116,7 @@ const Index = () => {
       </nav>
 
       {/* Hero + Floating Cards */}
-      <div className="relative min-h-[140vh] overflow-hidden">
+      <div className="relative min-h-[100vh] overflow-hidden">
         {/* Ambient glow blobs */}
         <div className="absolute top-1/4 left-1/3 w-[500px] h-[500px] bg-sky-light/40 rounded-full blur-[120px] pointer-events-none" />
         <div className="absolute bottom-1/4 right-1/3 w-[400px] h-[400px] bg-coral-light/40 rounded-full blur-[100px] pointer-events-none" />
@@ -141,17 +134,16 @@ const Index = () => {
 
         {/* Floating cards */}
         {sections.map((section, i) => {
-          const pos = cardPositions[i];
+          const pos = getCirclePosition(i, sections.length);
           return (
             <Link
               key={section.href}
               to={section.href}
-              className={`absolute z-30 group ${pos.floatClass}`}
+              className={`absolute z-30 group ${pos.floatClass} -translate-x-1/2 -translate-y-1/2`}
               style={{
-                top: pos.top,
-                left: pos.left,
-                right: pos.right,
-                transform: `rotate(${pos.rotate})`,
+                top: `${pos.y}%`,
+                left: `${pos.x}%`,
+                transform: `translate(-50%, -50%) rotate(${pos.rotate})`,
                 animationDelay: pos.delay,
               }}
             >
