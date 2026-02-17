@@ -87,6 +87,7 @@ export default {
       fontFamily: {
         display: ['Satoshi', 'sans-serif'],
         body: ['Satoshi', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif'],
       },
       borderRadius: {
         lg: "var(--radius)",
