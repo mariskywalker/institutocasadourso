@@ -86,6 +86,106 @@ export const TypographySection = () => {
           </div>
         </div>
 
+        {/* Poppins */}
+        <div className="bg-white rounded-3xl p-8 shadow-card border border-border mb-12">
+          <div className="flex items-center justify-between mb-6">
+            <span className="px-3 py-1 bg-sky-light text-sky-dark rounded-full text-sm font-medium">
+              Social Media & CTA
+            </span>
+            <a 
+              href="https://fonts.google.com/specimen/Poppins"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-sky hover:underline"
+            >
+              Google Fonts →
+            </a>
+          </div>
+          <h3 className="font-poppins text-6xl font-bold text-navy mb-2 tracking-tight">Poppins</h3>
+          <p className="text-muted-foreground mb-8 max-w-xl">
+            Fonte complementar para templates de redes sociais e peças de marketing. Geométrica e altamente legível — ideal para CTAs e posts.
+          </p>
+
+          {/* Weights */}
+          <div className="grid md:grid-cols-2 gap-8 border-t border-border pt-8">
+            <div className="space-y-6">
+              <h4 className="text-sm text-muted-foreground uppercase tracking-wider font-medium">Pesos</h4>
+              <div className="space-y-4">
+                <div className="flex items-baseline justify-between">
+                  <span className="font-poppins text-3xl font-light text-navy">Light</span>
+                  <span className="text-sm text-muted-foreground font-mono">300</span>
+                </div>
+                <div className="flex items-baseline justify-between">
+                  <span className="font-poppins text-3xl font-normal text-navy">Regular</span>
+                  <span className="text-sm text-muted-foreground font-mono">400</span>
+                </div>
+                <div className="flex items-baseline justify-between">
+                  <span className="font-poppins text-3xl font-medium text-navy">Medium</span>
+                  <span className="text-sm text-muted-foreground font-mono">500</span>
+                </div>
+                <div className="flex items-baseline justify-between">
+                  <span className="font-poppins text-3xl font-semibold text-navy">SemiBold</span>
+                  <span className="text-sm text-muted-foreground font-mono">600</span>
+                </div>
+                <div className="flex items-baseline justify-between">
+                  <span className="font-poppins text-3xl font-bold text-navy">Bold</span>
+                  <span className="text-sm text-muted-foreground font-mono">700</span>
+                </div>
+                <div className="flex items-baseline justify-between">
+                  <span className="font-poppins text-3xl font-extrabold text-navy">ExtraBold</span>
+                  <span className="text-sm text-muted-foreground font-mono">800</span>
+                </div>
+                <div className="flex items-baseline justify-between">
+                  <span className="font-poppins text-3xl font-black text-navy">Black</span>
+                  <span className="text-sm text-muted-foreground font-mono">900</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-6">
+              <h4 className="text-sm text-muted-foreground uppercase tracking-wider font-medium">Tamanhos</h4>
+              <div className="space-y-4">
+                <div className="flex items-baseline justify-between">
+                  <span className="font-poppins text-5xl font-bold text-navy">Display</span>
+                  <span className="text-sm text-muted-foreground">Bold · 48px</span>
+                </div>
+                <div className="flex items-baseline justify-between">
+                  <span className="font-poppins text-4xl font-bold text-navy">Heading 1</span>
+                  <span className="text-sm text-muted-foreground">Bold · 36px</span>
+                </div>
+                <div className="flex items-baseline justify-between">
+                  <span className="font-poppins text-3xl font-semibold text-navy">Heading 2</span>
+                  <span className="text-sm text-muted-foreground">SemiBold · 30px</span>
+                </div>
+                <div className="flex items-baseline justify-between">
+                  <span className="font-poppins text-2xl font-semibold text-navy">Heading 3</span>
+                  <span className="text-sm text-muted-foreground">SemiBold · 24px</span>
+                </div>
+                <div className="flex items-baseline justify-between">
+                  <span className="font-poppins text-xl font-medium text-navy">Subtitle</span>
+                  <span className="text-sm text-muted-foreground">Medium · 20px</span>
+                </div>
+                <div className="flex items-baseline justify-between">
+                  <span className="font-poppins text-lg font-medium text-navy">Body Large</span>
+                  <span className="text-sm text-muted-foreground">Medium · 18px</span>
+                </div>
+                <div className="flex items-baseline justify-between">
+                  <span className="font-poppins text-base text-navy">Body</span>
+                  <span className="text-sm text-muted-foreground">Regular · 16px</span>
+                </div>
+                <div className="flex items-baseline justify-between">
+                  <span className="font-poppins text-sm text-navy">Small</span>
+                  <span className="text-sm text-muted-foreground">Regular · 14px</span>
+                </div>
+                <div className="flex items-baseline justify-between">
+                  <span className="font-poppins text-xs text-navy">Caption</span>
+                  <span className="text-sm text-muted-foreground">Regular · 12px</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Hierarquia de Texto */}
         <div className="bg-muted rounded-3xl p-8">
           <h3 className="font-display font-bold text-navy text-xl mb-6">Hierarquia de Texto</h3>
