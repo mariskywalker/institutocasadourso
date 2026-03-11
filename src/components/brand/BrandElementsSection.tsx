@@ -56,7 +56,7 @@ export const BrandElementsSection = () => {
                 <span className="text-sky"><IconComunicacao className="w-16 h-16" /></span>
                 <div>
                   <h4 className="font-display font-bold text-navy">Casa</h4>
-                  <p className="text-xs text-muted-foreground">Lar, acolhimento</p>
+                  <p className="text-xs text-muted-foreground">Clínica</p>
                 </div>
               </div>
               <div className="flex flex-col items-center gap-3">
