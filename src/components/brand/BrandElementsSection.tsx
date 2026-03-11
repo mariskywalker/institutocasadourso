@@ -5,10 +5,10 @@ import { IconAutonomia, IconEmocional, IconComunicacao, IconSocial } from './Bra
 
 export const BrandElementsSection = () => {
   const iconNames = [
-    { name: 'Asterisco', usage: 'Destaque, novidades' },
-    { name: 'Coração', usage: 'Afeto, cuidado' },
-    { name: 'Casa', usage: 'Lar, acolhimento' },
-    { name: 'Urso', usage: 'Mascote principal' },
+    { name: 'Asterisco', usage: 'Escola' },
+    { name: 'Coração', usage: 'Família' },
+    { name: 'Casa', usage: 'Clínica' },
+    { name: 'Urso', usage: 'Metodologia' },
   ];
 
   const shapes = [
