@@ -42,7 +42,7 @@ export const BrandElementsSection = () => {
                 <span className="text-sunshine"><IconAutonomia className="w-16 h-16" /></span>
                 <div>
                   <h4 className="font-display font-bold text-navy">Asterisco</h4>
-                  <p className="text-xs text-muted-foreground">Destaque, novidades</p>
+                  <p className="text-xs text-muted-foreground">Escola</p>
                 </div>
               </div>
               <div className="flex flex-col items-center gap-3">
