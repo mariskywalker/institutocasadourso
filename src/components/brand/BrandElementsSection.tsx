@@ -5,10 +5,10 @@ import { IconAutonomia, IconEmocional, IconComunicacao, IconSocial } from './Bra
 
 export const BrandElementsSection = () => {
   const iconNames = [
-    { name: 'Asterisco', usage: 'Destaque, novidades' },
-    { name: 'Coração', usage: 'Afeto, cuidado' },
-    { name: 'Casa', usage: 'Lar, acolhimento' },
-    { name: 'Urso', usage: 'Mascote principal' },
+    { name: 'Asterisco', usage: 'Escola' },
+    { name: 'Coração', usage: 'Família' },
+    { name: 'Casa', usage: 'Clínica' },
+    { name: 'Urso', usage: 'Metodologia' },
   ];
 
   const shapes = [
@@ -42,28 +42,28 @@ export const BrandElementsSection = () => {
                 <span className="text-sunshine"><IconAutonomia className="w-16 h-16" /></span>
                 <div>
                   <h4 className="font-display font-bold text-navy">Asterisco</h4>
-                  <p className="text-xs text-muted-foreground">Destaque, novidades</p>
+                  <p className="text-xs text-muted-foreground">Escola</p>
                 </div>
               </div>
               <div className="flex flex-col items-center gap-3">
                 <span className="text-coral"><IconEmocional className="w-16 h-16" /></span>
                 <div>
                   <h4 className="font-display font-bold text-navy">Coração</h4>
-                  <p className="text-xs text-muted-foreground">Afeto, cuidado</p>
+                  <p className="text-xs text-muted-foreground">Família</p>
                 </div>
               </div>
               <div className="flex flex-col items-center gap-3">
                 <span className="text-sky"><IconComunicacao className="w-16 h-16" /></span>
                 <div>
                   <h4 className="font-display font-bold text-navy">Casa</h4>
-                  <p className="text-xs text-muted-foreground">Lar, acolhimento</p>
+                  <p className="text-xs text-muted-foreground">Clínica</p>
                 </div>
               </div>
               <div className="flex flex-col items-center gap-3">
                 <span className="text-[#CD995B]"><IconSocial className="w-16 h-16" /></span>
                 <div>
                   <h4 className="font-display font-bold text-navy">Urso</h4>
-                  <p className="text-xs text-muted-foreground">Mascote principal</p>
+                  <p className="text-xs text-muted-foreground">Metodologia</p>
                 </div>
               </div>
             </div>
