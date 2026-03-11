@@ -63,7 +63,7 @@ export const BrandElementsSection = () => {
                 <span className="text-[#CD995B]"><IconSocial className="w-16 h-16" /></span>
                 <div>
                   <h4 className="font-display font-bold text-navy">Urso</h4>
-                  <p className="text-xs text-muted-foreground">Mascote principal</p>
+                  <p className="text-xs text-muted-foreground">Metodologia</p>
                 </div>
               </div>
             </div>
