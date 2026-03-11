@@ -5,18 +5,18 @@ import { IconAutonomia, IconEmocional, IconComunicacao, IconSocial } from './Bra
 
 export const BrandElementsSection = () => {
   const iconNames = [
-    { name: 'Asterisco', usage: 'Escola' },
-    { name: 'Coração', usage: 'Família' },
-    { name: 'Casa', usage: 'Clínica' },
-    { name: 'Urso', usage: 'Metodologia' },
-  ];
+  { name: 'Asterisco', usage: 'Escola' },
+  { name: 'Coração', usage: 'Família' },
+  { name: 'Casa', usage: 'Clínica' },
+  { name: 'Urso', usage: 'Metodologia' }];
+
 
   const shapes = [
-    { name: 'Bloco Doce', className: 'bg-coral rounded-2xl', usage: 'Cards, fundos' },
-    { name: 'Bloco Azul', className: 'bg-sky rounded-2xl', usage: 'Botões, ícones' },
-    { name: 'Bloco Amarelo', className: 'bg-sunshine rounded-2xl', usage: 'Alertas, destaques' },
-    { name: 'Bloco Navy', className: 'bg-navy rounded-2xl', usage: 'Fundos, headers' },
-  ];
+  { name: 'Bloco Doce', className: 'bg-coral rounded-2xl', usage: 'Cards, fundos' },
+  { name: 'Bloco Azul', className: 'bg-sky rounded-2xl', usage: 'Botões, ícones' },
+  { name: 'Bloco Amarelo', className: 'bg-sunshine rounded-2xl', usage: 'Alertas, destaques' },
+  { name: 'Bloco Navy', className: 'bg-navy rounded-2xl', usage: 'Fundos, headers' }];
+
 
   return (
     <section className="py-16 px-6">
@@ -49,14 +49,14 @@ export const BrandElementsSection = () => {
                 <span className="text-coral"><IconEmocional className="w-16 h-16" /></span>
                 <div>
                   <h4 className="font-display font-bold text-navy">Coração</h4>
-                  <p className="text-xs text-muted-foreground">Família</p>
+                  <p className="text-xs text-muted-foreground">Clínica</p>
                 </div>
               </div>
               <div className="flex flex-col items-center gap-3">
                 <span className="text-sky"><IconComunicacao className="w-16 h-16" /></span>
                 <div>
                   <h4 className="font-display font-bold text-navy">Casa</h4>
-                  <p className="text-xs text-muted-foreground">Clínica</p>
+                  <p className="text-xs text-muted-foreground">Família</p>
                 </div>
               </div>
               <div className="flex flex-col items-center gap-3">
@@ -75,13 +75,13 @@ export const BrandElementsSection = () => {
           <h3 className="font-display font-bold text-navy text-xl mb-6">Blocos Geométricos</h3>
           <div className="bg-muted rounded-3xl p-8">
             <div className="flex flex-wrap justify-center gap-6 mb-6">
-              {shapes.map((shape) => (
-                <div key={shape.name} className="text-center">
+              {shapes.map((shape) =>
+              <div key={shape.name} className="text-center">
                   <div className={`w-24 h-24 ${shape.className}`} />
                   <p className="text-sm font-medium text-navy mt-2">{shape.name}</p>
                   <p className="text-xs text-muted-foreground">{shape.usage}</p>
                 </div>
-              ))}
+              )}
             </div>
             <p className="text-center text-sm text-muted-foreground">
               Os blocos coloridos fazem referência aos brinquedos de montar, 
@@ -96,11 +96,11 @@ export const BrandElementsSection = () => {
           <div className="grid md:grid-cols-2 gap-8">
             {/* Exemplo de composição */}
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden">
-              <img 
-                src={exemploLayout} 
-                alt="Exemplo de layout para redes sociais da Casa do Urso" 
-                className="w-full h-full object-cover"
-              />
+              <img
+                src={exemploLayout}
+                alt="Exemplo de layout para redes sociais da Casa do Urso"
+                className="w-full h-full object-cover" />
+              
             </div>
 
             {/* Diretrizes */}
@@ -144,6 +144,6 @@ export const BrandElementsSection = () => {
           </button>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
