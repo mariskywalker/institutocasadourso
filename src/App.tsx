@@ -13,6 +13,7 @@ import ElementosPage from "./pages/ElementosPage";
 import DiretrizesPage from "./pages/DiretrizesPage";
 import SistemaProgressoPage from "./pages/SistemaProgressoPage";
 import VozTomPage from "./pages/VozTomPage";
+import WebPage from "./pages/WebPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -34,6 +35,7 @@ const App = () => (
           <Route path="/diretrizes" element={<DiretrizesPage />} />
           <Route path="/progresso" element={<SistemaProgressoPage />} />
           <Route path="/voz-tom" element={<VozTomPage />} />
+          <Route path="/web" element={<WebPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
