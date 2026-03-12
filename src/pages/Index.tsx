@@ -13,6 +13,7 @@ const sections = [
   { title: 'Diretrizes', description: 'Regras de aplicação e tom de voz.', icon: <ShieldCheck className="w-5 h-5" />, href: '/diretrizes', color: 'bg-sunshine' },
   { title: 'Progresso', description: 'Sistema de acompanhamento do desenvolvimento.', icon: <TrendingUp className="w-5 h-5" />, href: '/progresso', color: 'bg-mint' },
   { title: 'Voz e Tom', description: 'Linguagem e princípios de comunicação.', icon: <MessageSquareHeart className="w-5 h-5" />, href: '/voz-tom', color: 'bg-coral' },
+  { title: 'Web', description: 'Botões, componentes e diretrizes para a web.', icon: <Monitor className="w-5 h-5" />, href: '/web', color: 'bg-sky' },
 ];
 
 const Index = () => {

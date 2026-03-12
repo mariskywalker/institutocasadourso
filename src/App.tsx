@@ -35,6 +35,7 @@ const App = () => (
           <Route path="/diretrizes" element={<DiretrizesPage />} />
           <Route path="/progresso" element={<SistemaProgressoPage />} />
           <Route path="/voz-tom" element={<VozTomPage />} />
+          <Route path="/web" element={<WebPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
