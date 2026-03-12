@@ -145,7 +145,7 @@ export const WebGuidelinesSection = () => {
             <h4 className="font-display font-bold text-foreground text-lg mb-1">Primárias da Marca</h4>
             <p className="text-xs text-muted-foreground mb-6">O verde (mint) é o CTA padrão. Use coral e sky como complemento.</p>
             <div className="flex flex-wrap gap-4 items-center mb-4">
-              <Button variant="mint"><Check className="w-4 h-4" />Principal (Mint)</Button>
+              <Button variant="mint"><Check className="w-4 h-4" />Mint (Verde)</Button>
               <Button variant="coral"><Heart className="w-4 h-4" />Doce (Coral)</Button>
               <Button variant="sky"><Star className="w-4 h-4" />Sky</Button>
               <Button variant="sunshine"><Calendar className="w-4 h-4" />Milho</Button>
