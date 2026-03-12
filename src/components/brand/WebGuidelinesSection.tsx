@@ -255,7 +255,7 @@ export const WebGuidelinesSection = () => {
             <div className="bg-card rounded-3xl p-8 shadow-card border border-border flex flex-col items-center gap-4" role="group" aria-label="Botões em fundo claro">
               <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Fundo Claro</p>
               <div className="flex gap-3 flex-wrap justify-center">
-                <Button variant="mint">Mint</Button>
+                <Button variant="mint">Mint (Verde)</Button>
                 <Button variant="coral">Doce</Button>
                 <Button variant="outline-mint">Outline</Button>
               </div>
