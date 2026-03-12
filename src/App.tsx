@@ -13,6 +13,7 @@ import ElementosPage from "./pages/ElementosPage";
 import DiretrizesPage from "./pages/DiretrizesPage";
 import SistemaProgressoPage from "./pages/SistemaProgressoPage";
 import VozTomPage from "./pages/VozTomPage";
+import WebPage from "./pages/WebPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
