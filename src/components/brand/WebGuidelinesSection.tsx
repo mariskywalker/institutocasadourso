@@ -159,7 +159,7 @@ export const WebGuidelinesSection = () => {
             <h4 className="font-display font-bold text-foreground text-lg mb-1">Outline</h4>
             <p className="text-xs text-muted-foreground mb-6">Para ações secundárias ou contextos onde o fundo precisa respirar.</p>
             <div className="flex flex-wrap gap-4 items-center">
-              <Button variant="outline-mint">Outline Mint</Button>
+              <Button variant="outline-mint">Outline Mint (Verde)</Button>
               <Button variant="outline-coral">Outline Doce</Button>
               <Button variant="outline-sky">Outline Sky</Button>
               <Button variant="outline">Outline Padrão</Button>
