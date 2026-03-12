@@ -1,6 +1,6 @@
 import { BrandFooter } from '@/components/brand/BrandFooter';
 import { Link } from 'react-router-dom';
-import { Palette, Type, Image, Share2, Shapes, ShieldCheck, Heart, TrendingUp, MessageSquareHeart } from 'lucide-react';
+import { Palette, Type, Image, Share2, Shapes, ShieldCheck, Heart, TrendingUp, MessageSquareHeart, Monitor } from 'lucide-react';
 import { IconAutonomia, IconEmocional, IconComunicacao, IconSocial } from '@/components/brand/BrandIcons';
 
 const sections = [
