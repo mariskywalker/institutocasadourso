@@ -23,7 +23,7 @@ export const BrandHeader = () => {
         </div>
         
         <h1 className="font-display text-5xl md:text-7xl font-bold text-navy mb-4">
-          Brand Guidelines
+          Manual de Marca
         </h1>
         <p className="font-body text-xl text-muted-foreground max-w-2xl mb-8">
           Manual de identidade visual e diretrizes de marca para a 
@@ -41,7 +41,7 @@ export const BrandHeader = () => {
           </Link>
           <button className="inline-flex items-center gap-2 px-6 py-3 bg-navy text-white rounded-full font-display font-semibold hover:bg-navy-light transition-colors shadow-elevated">
             <Download size={20} />
-            Baixar Brand Kit Completo
+            Baixar Kit da Marca
           </button>
           <a 
             href="https://www.clinicacasadourso.com.br" 

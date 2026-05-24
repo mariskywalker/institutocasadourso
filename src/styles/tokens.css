@@ -1,0 +1,115 @@
+:root {
+  /* Core semantic tokens */
+  --background: 0 0% 100%;
+  --foreground: 213 50% 15%;
+  --card: 0 0% 100%;
+  --card-foreground: 213 50% 15%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 213 50% 15%;
+  --primary: 213 50% 20%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 0 70% 92%;
+  --secondary-foreground: 213 50% 20%;
+  --muted: 210 20% 96%;
+  --muted-foreground: 213 20% 45%;
+  --accent: 200 70% 65%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 210 20% 90%;
+  --input: 210 20% 90%;
+  --ring: 200 70% 65%;
+
+  /* Brand tokens */
+  --coral: 0 70% 75%;
+  --coral-light: 0 70% 92%;
+  --coral-dark: 0 55% 42%;
+  --sky: 201 51% 52%;
+  --sky-light: 201 45% 82%;
+  --sky-dark: 201 55% 33%;
+  --sunshine: 45 90% 65%;
+  --sunshine-light: 45 90% 85%;
+  --sunshine-dark: 45 80% 32%;
+  --navy: 213 50% 20%;
+  --navy-light: 213 40% 35%;
+  --navy-dark: 213 55% 12%;
+  --mint: 160 50% 70%;
+  --mint-light: 160 50% 88%;
+  --mint-dark: 160 50% 30%;
+  --social: 20 100% 60%;
+  --social-dark: 20 77% 27%;
+
+  /* Foundation tokens */
+  --radius: 1rem;
+  --font-display: "Satoshi", sans-serif;
+  --font-body: "Satoshi", sans-serif;
+  --font-support: "Poppins", sans-serif;
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+
+  /* Surfaces */
+  --sidebar-background: 0 0% 98%;
+  --sidebar-foreground: 213 50% 20%;
+  --sidebar-primary: 213 50% 20%;
+  --sidebar-primary-foreground: 0 0% 98%;
+  --sidebar-accent: 200 70% 95%;
+  --sidebar-accent-foreground: 213 50% 20%;
+  --sidebar-border: 210 20% 90%;
+  --sidebar-ring: 200 70% 65%;
+
+  /* Effects */
+  --gradient-hero: linear-gradient(
+    135deg,
+    hsl(var(--coral-light)) 0%,
+    hsl(var(--sky-light)) 50%,
+    hsl(var(--sunshine-light)) 100%
+  );
+  --gradient-coral: linear-gradient(135deg, hsl(var(--coral)) 0%, hsl(var(--coral-dark)) 100%);
+  --gradient-sky: linear-gradient(135deg, hsl(var(--sky)) 0%, hsl(var(--sky-dark)) 100%);
+  --gradient-sunshine: linear-gradient(135deg, hsl(var(--sunshine)) 0%, hsl(var(--sunshine-dark)) 100%);
+  --gradient-playful: linear-gradient(
+    135deg,
+    hsl(var(--coral)) 0%,
+    hsl(var(--sky)) 50%,
+    hsl(var(--sunshine)) 100%
+  );
+  --shadow-soft: 0 4px 20px -4px hsl(var(--navy) / 0.1);
+  --shadow-card: 0 8px 30px -8px hsl(var(--navy) / 0.12);
+  --shadow-elevated: 0 20px 50px -15px hsl(var(--navy) / 0.15);
+  --shadow-coral: 0 8px 30px -8px hsl(var(--coral) / 0.4);
+  --shadow-sky: 0 8px 30px -8px hsl(var(--sky) / 0.4);
+}
+
+.dark {
+  --background: 213 50% 8%;
+  --foreground: 0 0% 98%;
+  --card: 213 45% 12%;
+  --card-foreground: 0 0% 98%;
+  --popover: 213 45% 12%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 200 70% 65%;
+  --primary-foreground: 213 50% 10%;
+  --secondary: 213 40% 18%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 213 40% 15%;
+  --muted-foreground: 210 20% 65%;
+  --accent: 0 70% 75%;
+  --accent-foreground: 213 50% 10%;
+  --border: 213 40% 18%;
+  --input: 213 40% 18%;
+  --ring: 200 70% 65%;
+  --sidebar-background: 213 50% 10%;
+  --sidebar-foreground: 0 0% 98%;
+  --sidebar-primary: 200 70% 65%;
+  --sidebar-primary-foreground: 213 50% 10%;
+  --sidebar-accent: 213 40% 18%;
+  --sidebar-accent-foreground: 0 0% 98%;
+  --sidebar-border: 213 40% 18%;
+  --sidebar-ring: 200 70% 65%;
+}

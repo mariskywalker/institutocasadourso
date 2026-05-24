@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design Neuroafetivo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,200;9..40,300;9..40,400&display=swap" rel="stylesheet">
+<script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"></script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:     #16151A;
+  --text:   #EDE8DF;
+  --dim:    rgba(237,232,223,.42);
+  --sage:   #8EA890;
+  --blue:   #6D8FA9;
+  --clay:   #AC8468;
+  --sand:   #C8B699;
+  --serif:  'Instrument Serif', Georgia, serif;
+  --sans:   'DM Sans', system-ui, sans-serif;
+}
+
+html { overflow-x: hidden; scroll-behavior: auto; }
+
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  cursor: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── CURSOR ─────────────────────────────── */
+#cur { position:fixed; top:0; left:0; z-index:9999; pointer-events:none; }
+#cur-dot {
+  position:absolute; width:7px; height:7px;
+  background:var(--text); border-radius:50%;
+  transform:translate(-50%,-50%);
+  mix-blend-mode: difference;
+  transition: width .3s, height .3s;
+}
+#cur-ring {
+  position:absolute; width:34px; height:34px;
+  border:1px solid rgba(237,232,223,.22); border-radius:50%;
+  transform:translate(-50%,-50%);
+  transition: width .55s cubic-bezier(.16,1,.3,1), height .55s cubic-bezier(.16,1,.3,1), opacity .3s;
+}
+.hov #cur-dot  { width:16px; height:16px; }
+.hov #cur-ring { width:54px; height:54px; opacity:.15; }
+
+/* ── NAV ─────────────────────────────────── */
+nav {
+  position:fixed; top:0; left:0; right:0; z-index:300;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:2rem 3.5rem;
+  transition: background .5s, backdrop-filter .5s;
+}
+nav.scrolled {
+  background: rgba(22,21,26,.82);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(237,232,223,.05);
+}
+.nav-logo {
+  font-family:var(--serif); font-size:.92rem; letter-spacing:.03em;
+  color:var(--text); text-decoration:none;
+}
+.nav-r { display:flex; align-items:center; gap:2.2rem; }
+.nav-links { display:flex; gap:2rem; list-style:none; }
+.nav-links a {
+  font-size:.68rem; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--dim); text-decoration:none; transition:color .25s;
+}
+.nav-links a:hover { color:var(--text); }
+.nav-badge {
+  font-size:.66rem; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--dim); border:1px solid rgba(237,232,223,.12);
+  padding:.38rem .9rem; border-radius:2rem;
+}
+
+/* ── HERO ────────────────────────────────── */
+.hero {
+  position:relative;
+  width:100vw; height:100vh;
+  overflow:hidden;
+  display:flex; align-items:center;
+}
+
+/* ── SPLINE LAYER ────────────────────────── */
+.spline-wrap {
+  position:absolute; inset:0; z-index:1;
+  pointer-events:none;
+}
+spline-viewer {
+  width:100%; height:100%;
+  --spline-bg: transparent;
+}
+
+/* Mask: fade left edge so type can breathe */
+.spline-wrap::after {
+  content:'';
+  position:absolute; inset:0; z-index:2;
+  background:
+    linear-gradient(to right,
+      var(--bg) 0%,
+      rgba(22,21,26,.88) 26%,
+      rgba(22,21,26,.55) 48%,
+      rgba(22,21,26,.15) 68%,
+      transparent 100%),
+    linear-gradient(to top,
+      rgba(22,21,26,.7) 0%,
+      transparent 22%),
+    linear-gradient(to bottom,
+      rgba(22,21,26,.55) 0%,
+      transparent 18%);
+  pointer-events:none;
+}
+
+/* Grain texture */
+.grain {
+  position:absolute; inset:-50%; width:200%; height:200%;
+  z-index:3; pointer-events:none; opacity:.028;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px 200px;
+  animation:grainMove 7s steps(2) infinite;
+}
+@keyframes grainMove {
+  0%   { transform:translate(0,0); }
+  25%  { transform:translate(-5%,4%); }
+  50%  { transform:translate(4%,-5%); }
+  75%  { transform:translate(-4%,5%); }
+  100% { transform:translate(5%,-3%); }
+}
+
+/* ── HERO CONTENT ────────────────────────── */
+.hero-content {
+  position:relative; z-index:10;
+  padding: 0 3.5rem;
+  max-width: 660px;
+  pointer-events: none;
+}
+.hero-content a, .hero-content button { pointer-events: all; }
+
+/* Eyebrow */
+.eyebrow {
+  display:flex; align-items:center; gap:1rem;
+  margin-bottom:3rem; overflow:hidden;
+}
+.eb-line { width:24px; height:1px; background:rgba(200,182,153,.3); flex-shrink:0; }
+.eb-text {
+  font-size:.63rem; letter-spacing:.2em; text-transform:uppercase; color:var(--dim);
+  transform:translateY(120%); opacity:0;
+  transition: transform 1s .2s cubic-bezier(.16,1,.3,1), opacity .6s .2s;
+}
+
+/* Headline */
+.head { margin-bottom:2.6rem; line-height:.88; }
+
+.wd {
+  font-family:var(--sans); font-weight:200;
+  font-size:clamp(.85rem, 1.05vw, 1.05rem);
+  letter-spacing:.38em; text-transform:uppercase;
+  color:var(--dim); display:block; margin-bottom:.55rem;
+  opacity:0; transform:translateY(16px);
+  transition: opacity .8s .35s, transform .8s .35s cubic-bezier(.16,1,.3,1);
+}
+
+.wr { display:block; overflow:hidden; }
+.wr-n {
+  font-family:var(--serif);
+  font-size:clamp(5rem, 9.8vw, 12rem);
+  letter-spacing:-.03em; color:var(--text);
+}
+.wr-a {
+  font-family:var(--serif); font-style:italic;
+  font-size:clamp(5rem, 9.8vw, 12rem);
+  letter-spacing:-.03em; color:var(--sage);
+}
+.wi {
+  display:block;
+  transform:translateY(110%); opacity:0;
+  transition: transform 1.4s cubic-bezier(.16,1,.3,1), opacity .4s;
+}
+.wi-1 { transition-delay:.45s,.45s; }
+.wi-2 { transition-delay:.62s,.62s; }
+
+/* Sub */
+.sub {
+  font-size:.95rem; font-weight:300; line-height:1.85;
+  color:var(--dim); max-width:400px; margin-bottom:2.8rem;
+  opacity:0; transform:translateY(16px);
+  transition: opacity .8s .9s, transform .8s .9s cubic-bezier(.16,1,.3,1);
+}
+
+/* CTA */
+.cta {
+  display:flex; align-items:center; gap:1.5rem;
+  opacity:0; transform:translateY(16px);
+  transition: opacity .8s 1.1s, transform .8s 1.1s cubic-bezier(.16,1,.3,1);
+}
+.btn-p {
+  background:var(--text); color:var(--bg);
+  padding:.82rem 2rem; border-radius:2rem;
+  font-family:var(--sans); font-size:.76rem; letter-spacing:.04em; font-weight:400;
+  text-decoration:none; cursor:none; border:none;
+  transition:background .25s, transform .25s;
+}
+.btn-p:hover { background:var(--sand); transform:translateY(-2px); }
+.btn-g {
+  font-size:.76rem; letter-spacing:.04em; color:var(--dim);
+  text-decoration:none; cursor:none;
+  display:flex; align-items:center; gap:.5rem;
+  transition:color .3s;
+}
+.btn-g span { display:inline-block; transition:transform .3s; }
+.btn-g:hover { color:var(--text); }
+.btn-g:hover span { transform:translate(2px,-2px); }
+
+/* Meta */
+.meta {
+  position:absolute; bottom:3.5rem; left:3.5rem; z-index:10;
+  display:flex; align-items:center; gap:1.6rem;
+  opacity:0; transition: opacity .8s 1.5s;
+}
+.mi { font-size:.61rem; letter-spacing:.1em; text-transform:uppercase; color:rgba(237,232,223,.2); }
+.md { width:3px; height:3px; border-radius:50%; background:rgba(237,232,223,.15); }
+
+/* Floating principle tags */
+.ftags { position:absolute; inset:0; z-index:9; pointer-events:none; }
+.ft {
+  position:absolute;
+  display:inline-flex; align-items:center; gap:.55rem;
+  padding:.4rem 1rem;
+  border:1px solid rgba(237,232,223,.09);
+  border-radius:2rem; font-size:.64rem; letter-spacing:.06em;
+  color:rgba(237,232,223,.3); background:rgba(22,21,26,.5);
+  backdrop-filter:blur(12px); white-space:nowrap;
+  opacity:0; transition: opacity .9s;
+}
+.ft::before { content:''; width:5px; height:5px; border-radius:50%; flex-shrink:0; }
+.ft.s::before { background:var(--sage); }
+.ft.b::before { background:var(--blue); }
+.ft.c::before { background:var(--clay); }
+
+.ft1 { top:22%; right:8%;  animation:fd1 17s ease-in-out infinite alternate; transition-delay:.8s; }
+.ft2 { top:40%; right:22%; animation:fd2 21s ease-in-out infinite alternate; transition-delay:1.0s; }
+.ft3 { top:60%; right:9%;  animation:fd3 15s ease-in-out infinite alternate; transition-delay:1.2s; }
+.ft4 { bottom:22%; right:28%; animation:fd1 23s ease-in-out infinite alternate-reverse; transition-delay:1.4s; }
+.ft5 { top:13%; right:36%; animation:fd2 19s ease-in-out infinite alternate; transition-delay:.9s; }
+
+@keyframes fd1 { to { transform:translate(-12px,16px); } }
+@keyframes fd2 { to { transform:translate(14px,-12px); } }
+@keyframes fd3 { to { transform:translate(-10px,-14px); } }
+
+/* Scroll indicator */
+.scrollind {
+  position:absolute; right:3rem; bottom:3.8rem; z-index:20;
+  display:flex; flex-direction:column; align-items:center; gap:.8rem;
+  opacity:0; transition: opacity .8s 2s;
+}
+.si-line {
+  width:1px; height:52px;
+  background:linear-gradient(to bottom, transparent, rgba(237,232,223,.18));
+  position:relative; overflow:hidden;
+}
+.si-line::after {
+  content:''; position:absolute; inset:0;
+  background:rgba(200,182,153,.8);
+  transform:translateY(-100%);
+  animation:siFlow 2.2s 2.6s ease-in-out infinite;
+}
+@keyframes siFlow { 0%,100%{transform:translateY(-100%)} 50%{transform:translateY(200%)} }
+.si-lbl {
+  font-size:.57rem; letter-spacing:.18em; text-transform:uppercase;
+  color:rgba(237,232,223,.2); writing-mode:vertical-rl;
+}
+
+/* ── TICKER ──────────────────────────────── */
+.ticker {
+  position:absolute; bottom:0; left:0; right:0; height:40px;
+  z-index:20; display:flex; align-items:center;
+  border-top:1px solid rgba(237,232,223,.055); overflow:hidden;
+}
+.tk { display:flex; white-space:nowrap; animation:tkScroll 36s linear infinite; }
+.ti {
+  display:inline-flex; align-items:center; gap:1.4rem;
+  padding:0 2rem;
+  font-size:.61rem; letter-spacing:.14em; text-transform:uppercase;
+  color:rgba(237,232,223,.15);
+}
+.td { width:3px; height:3px; border-radius:50%; background:rgba(200,182,153,.25); flex-shrink:0; }
+@keyframes tkScroll { to { transform:translateX(-50%); } }
+
+/* ── STATE ───────────────────────────────── */
+.rdy .eb-text   { transform:translateY(0); opacity:1; }
+.rdy .wd        { opacity:1; transform:translateY(0); }
+.rdy .wi        { transform:translateY(0); opacity:1; }
+.rdy .sub       { opacity:1; transform:translateY(0); }
+.rdy .cta       { opacity:1; transform:translateY(0); }
+.rdy .meta      { opacity:1; }
+.rdy .scrollind { opacity:1; }
+.rdy .ft        { opacity:1; }
+
+/* ── BELOW ───────────────────────────────── */
+.section {
+  padding: 9rem 3.5rem;
+  position: relative;
+}
+
+/* PARADIGM */
+.paradigm {
+  background: #1C1B21;
+  border-radius: 2rem;
+  margin: 0 1.5rem 3rem;
+  padding: 6rem 4.5rem;
+  overflow: hidden;
+}
+.par-label {
+  font-size:.62rem; letter-spacing:.16em; text-transform:uppercase;
+  color:rgba(237,232,223,.22); margin-bottom:2rem;
+  display:flex; align-items:center; gap:1rem;
+}
+.par-label::before { content:''; width:20px; height:1px; background:rgba(237,232,223,.12); }
+.par-h {
+  font-family:var(--serif); font-size:clamp(2.4rem,5vw,5rem);
+  letter-spacing:-.03em; line-height:1; margin-bottom:1.6rem;
+}
+.par-h em { font-style:italic; color:var(--sage); }
+.par-sub {
+  font-size:.92rem; font-weight:300; line-height:1.82;
+  color:rgba(237,232,223,.4); max-width:480px;
+}
+.shift-grid {
+  display:grid; grid-template-columns:1fr 1fr; gap:2rem; margin-top:4rem;
+}
+.shift-label {
+  font-size:.62rem; letter-spacing:.12em; text-transform:uppercase;
+  color:rgba(237,232,223,.22); margin-bottom:1.2rem;
+}
+.shift-items { display:flex; flex-direction:column; gap:.65rem; }
+.si-row {
+  display:flex; align-items:center; gap:.9rem;
+  padding:.85rem 1.1rem; border-radius:.65rem;
+  font-size:.85rem; font-weight:300;
+  transition: transform .2s;
+}
+.si-row:hover { transform:translateX(4px); }
+.col-bad  .si-row { background:rgba(255,100,70,.06); border:1px solid rgba(255,100,70,.1); color:rgba(237,200,190,.55); }
+.col-good .si-row { background:rgba(142,168,144,.07); border:1px solid rgba(142,168,144,.14); color:rgba(180,210,185,.6); }
+.si-dot { width:7px; height:7px; border-radius:50%; flex-shrink:0; }
+.col-bad  .si-dot { background:rgba(220,100,80,.5); }
+.col-good .si-dot { background:var(--sage); opacity:.7; }
+
+/* PRINCIPLES */
+.principles { padding:7rem 3.5rem; }
+.pr-label {
+  font-size:.62rem; letter-spacing:.16em; text-transform:uppercase;
+  color:rgba(237,232,223,.22); margin-bottom:1.5rem;
+  display:flex; align-items:center; gap:1rem;
+}
+.pr-label::before { content:''; width:20px; height:1px; background:rgba(237,232,223,.12); }
+.pr-h {
+  font-family:var(--serif); font-size:clamp(2.4rem,5vw,5rem);
+  letter-spacing:-.03em; line-height:1; margin-bottom:4rem;
+}
+.pr-grid {
+  display:grid; grid-template-columns:repeat(4,1fr); gap:1px;
+  background:rgba(237,232,223,.06); border-radius:1rem; overflow:hidden;
+}
+.pr-card {
+  background:var(--bg); padding:2.2rem;
+  cursor:none;
+  transition: background .4s;
+  position:relative; overflow:hidden;
+}
+.pr-card::before {
+  content:''; position:absolute; inset:0;
+  background:radial-gradient(circle at var(--mx,50%) var(--my,50%), rgba(237,232,223,.04) 0%, transparent 65%);
+  opacity:0; transition:opacity .4s;
+}
+.pr-card:hover { background:#1E1D23; }
+.pr-card:hover::before { opacity:1; }
+.pr-num {
+  font-size:.58rem; letter-spacing:.12em; text-transform:uppercase;
+  color:rgba(237,232,223,.18); margin-bottom:1.4rem;
+}
+.pr-name {
+  font-family:var(--serif); font-size:1.1rem;
+  color:rgba(237,232,223,.8); margin-bottom:.7rem; line-height:1.2;
+}
+.pr-desc {
+  font-size:.77rem; line-height:1.7; font-weight:300;
+  color:rgba(237,232,223,.3);
+}
+.pr-accent {
+  position:absolute; bottom:1.5rem; right:1.5rem;
+  width:8px; height:8px; border-radius:50%; opacity:.5;
+}
+.ac-s { background:var(--sage); }
+.ac-b { background:var(--blue); }
+.ac-c { background:var(--clay); }
+
+/* JOURNEY */
+.journey { padding:8rem 3.5rem; max-width:900px; margin:0 auto; }
+.jrn-intro { margin-bottom:6rem; }
+.jrn-h {
+  font-family:var(--serif); font-size:clamp(3rem,6vw,7rem);
+  letter-spacing:-.03em; line-height:.92; margin-bottom:1.4rem;
+}
+.jrn-h em { font-style:italic; color:var(--sage); }
+.jrn-sub { font-size:.92rem; font-weight:300; line-height:1.8; color:rgba(237,232,223,.35); }
+.jrn-steps { display:flex; flex-direction:column; }
+.jrn-step {
+  display:grid; grid-template-columns:72px 1fr;
+  gap:2.5rem; padding:3rem 0;
+  border-top:1px solid rgba(237,232,223,.06);
+}
+.j-num {
+  font-family:var(--serif); font-style:italic;
+  font-size:4rem; line-height:1; color:rgba(237,232,223,.1);
+  padding-top:.2rem;
+}
+.j-label {
+  font-size:.6rem; letter-spacing:.14em; text-transform:uppercase;
+  color:rgba(237,232,223,.2); margin-bottom:.7rem;
+}
+.j-title {
+  font-family:var(--serif); font-size:clamp(1.8rem,3vw,2.8rem);
+  letter-spacing:-.02em; margin-bottom:.9rem; line-height:1.05;
+}
+.j-desc {
+  font-size:.88rem; line-height:1.85; font-weight:300;
+  color:rgba(237,232,223,.35); max-width:480px;
+}
+.j-pill {
+  display:inline-flex; margin-top:1.1rem;
+  padding:.35rem .95rem; border-radius:2rem;
+  font-size:.66rem; letter-spacing:.05em;
+  border:1px solid rgba(237,232,223,.1); color:rgba(237,232,223,.3);
+}
+.jc1 { color:var(--text); }
+.jc2 { color:var(--sage); }
+.jc3 { color:var(--blue); }
+.jc4 { color:var(--clay); }
+.jc5 { color:var(--sand); }
+
+/* MANIFESTO */
+.manifesto {
+  background:#1C1B21; border-radius:2rem;
+  margin:0 1.5rem 3rem; padding:7rem 4.5rem;
+  position:relative; overflow:hidden;
+}
+.mfst-word {
+  position:absolute; right:-2rem; top:50%; transform:translateY(-52%);
+  font-family:var(--serif); font-style:italic;
+  font-size:clamp(7rem,14vw,18rem);
+  line-height:.85; letter-spacing:-.04em;
+  color:transparent; -webkit-text-stroke:1px rgba(237,232,223,.04);
+  pointer-events:none; white-space:nowrap;
+}
+.mfst-inner { position:relative; z-index:1; max-width:720px; }
+.mfst-qs { display:flex; flex-direction:column; gap:3.5rem; }
+.mfst-q {
+  font-family:var(--serif); font-size:clamp(1.6rem,3vw,2.8rem);
+  line-height:1.18; letter-spacing:-.02em; color:rgba(237,232,223,.75);
+}
+.mfst-q em { font-style:italic; color:var(--sage); }
+.mfst-sep { width:36px; height:1px; background:rgba(237,232,223,.1); }
+
+/* FOOTER */
+footer {
+  padding:4rem 3.5rem; display:flex;
+  align-items:center; justify-content:space-between;
+  border-top:1px solid rgba(237,232,223,.06);
+}
+.f-logo { font-family:var(--serif); font-size:1rem; letter-spacing:.02em; }
+.f-meta {
+  font-size:.72rem; color:rgba(237,232,223,.22);
+  letter-spacing:.04em; text-align:right; line-height:1.9;
+}
+
+/* REVEAL */
+.reveal {
+  opacity:0; transform:translateY(36px);
+  transition: opacity .9s cubic-bezier(.16,1,.3,1), transform .9s cubic-bezier(.16,1,.3,1);
+}
+.reveal.in { opacity:1; transform:translateY(0); }
+.d1 { transition-delay:.08s; } .d2 { transition-delay:.17s; }
+.d3 { transition-delay:.26s; } .d4 { transition-delay:.35s; }
+.d5 { transition-delay:.44s; } .d6 { transition-delay:.53s; }
+.d7 { transition-delay:.62s; } .d8 { transition-delay:.71s; }
+
+/* Loading state for Spline */
+.spline-loader {
+  position:absolute; inset:0; z-index:5;
+  display:flex; align-items:center; justify-content:center;
+  background:var(--bg);
+  transition: opacity 1.2s 1s;
+}
+.spline-loader.hide { opacity:0; pointer-events:none; }
+.loader-dot {
+  width:5px; height:5px; border-radius:50%;
+  background:rgba(237,232,223,.2);
+  animation:ldPulse 1.4s ease-in-out infinite;
+}
+@keyframes ldPulse { 0%,100%{opacity:.15} 50%{opacity:.7} }
+
+@media (max-width: 860px) {
+  nav { padding:1.5rem 2rem; }
+  .nav-links { display:none; }
+  .hero-content { padding:0 2rem; }
+  .ft3,.ft4,.ft5 { display:none; }
+  .scrollind { display:none; }
+  .pr-grid { grid-template-columns:1fr 1fr; }
+  .shift-grid { grid-template-columns:1fr; }
+  .paradigm,.manifesto { margin:0; border-radius:0; padding:4rem 2rem; }
+}
+</style>
+</head>
+<body>
+
+<div id="cur"><div id="cur-dot"></div><div id="cur-ring"></div></div>
+
+<nav id="nav">
+  <a class="nav-logo" href="#">Design Neuroafetivo</a>
+  <div class="nav-r">
+    <ul class="nav-links">
+      <li><a href="#paradigma">Paradigma</a></li>
+      <li><a href="#principios">Princípios</a></li>
+      <li><a href="#jornada">Jornada</a></li>
+      <li><a href="#manifesto">Manifesto</a></li>
+    </ul>
+    <span class="nav-badge">Tese 2024</span>
+  </div>
+</nav>
+
+<!-- ═══════════════ HERO ════════════════════ -->
+<section class="hero" id="hero">
+
+  <!-- Spline -->
+  <div class="spline-wrap" id="splineWrap">
+    <spline-viewer
+      id="splineEl"
+      url="https://prod.spline.design/BTVRLfQKcG85zwIPyXCgXcJg/scene.splinecode"
+      loading="lazy"
+      events-target="global"
+    ></spline-viewer>
+  </div>
+
+  <!-- Grain -->
+  <div class="grain"></div>
+
+  <!-- Loader -->
+  <div class="spline-loader" id="splineLoader">
+    <div class="loader-dot"></div>
+  </div>
+
+  <!-- Floating tags -->
+  <div class="ftags" aria-hidden="true">
+    <span class="ft s ft1">Legibilidade Afetiva</span>
+    <span class="ft b ft2">Respiração Visual</span>
+    <span class="ft c ft3">Segurança Sensorial</span>
+    <span class="ft s ft4">Motion Calm</span>
+    <span class="ft b ft5">Previsibilidade Reguladora</span>
+  </div>
+
+  <!-- Content -->
+  <div class="hero-content" id="heroContent">
+    <div class="eyebrow">
+      <div class="eb-line"></div>
+      <span class="eb-text">Tese de Design — 2024</span>
+    </div>
+    <div class="head">
+      <span class="wd">Design</span>
+      <span class="wr"><span class="wr-n"><span class="wi wi-1">Neuro·</span></span></span>
+      <span class="wr"><span class="wr-a"><span class="wi wi-2">afetivo</span></span></span>
+    </div>
+    <p class="sub">Uma filosofia estrutural para criar interfaces emocionalmente seguras, cognitivamente legíveis e sensorialmente reguladoras — para futuros neurodivergentes.</p>
+    <div class="cta">
+      <a href="#paradigma" class="btn-p">Explorar a Tese</a>
+      <a href="#manifesto" class="btn-g">Ler o Manifesto <span>↗</span></a>
+    </div>
+  </div>
+
+  <!-- Meta -->
+  <div class="meta">
+    <span class="mi">Filosofia estrutural</span>
+    <div class="md"></div>
+    <span class="mi">Sofisticação regulatória</span>
+    <div class="md"></div>
+    <span class="mi">Neurodivergent-first</span>
+  </div>
+
+  <!-- Ticker -->
+  <div class="ticker" aria-hidden="true">
+    <div class="tk">
+      <span class="ti"><span class="td"></span>Legibilidade Afetiva</span>
+      <span class="ti"><span class="td"></span>Respiração Visual</span>
+      <span class="ti"><span class="td"></span>Motion Calm Technology</span>
+      <span class="ti"><span class="td"></span>Previsibilidade Reguladora</span>
+      <span class="ti"><span class="td"></span>Segurança Sensorial</span>
+      <span class="ti"><span class="td"></span>Comunicação Não-Agressiva</span>
+      <span class="ti"><span class="td"></span>Contraste Inteligente</span>
+      <span class="ti"><span class="td"></span>Neurodivergent-First</span>
+      <span class="ti"><span class="td"></span>Legibilidade Afetiva</span>
+      <span class="ti"><span class="td"></span>Respiração Visual</span>
+      <span class="ti"><span class="td"></span>Motion Calm Technology</span>
+      <span class="ti"><span class="td"></span>Previsibilidade Reguladora</span>
+      <span class="ti"><span class="td"></span>Segurança Sensorial</span>
+      <span class="ti"><span class="td"></span>Comunicação Não-Agressiva</span>
+      <span class="ti"><span class="td"></span>Contraste Inteligente</span>
+      <span class="ti"><span class="td"></span>Neurodivergent-First</span>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="scrollind">
+    <div class="si-line"></div>
+    <span class="si-lbl">Scroll</span>
+  </div>
+
+</section>
+
+<!-- ═══════════ PARADIGMA ════════════════════ -->
+<div id="paradigma" style="padding:5rem 0 0;">
+<div class="paradigm reveal">
+  <div class="par-label">A Mudança</div>
+  <h2 class="par-h">A Virada<br><em>Paradigmática</em></h2>
+  <p class="par-sub">Sistemas digitais foram construídos sobre hiperstimulação e urgência. Design Neuroafetivo propõe uma inversão: sofisticação regulatória no lugar de pressão emocional.</p>
+  <div class="shift-grid">
+    <div class="col-bad">
+      <div class="shift-label">UX Tradicional</div>
+      <div class="shift-items">
+        <div class="si-row"><div class="si-dot"></div>Hiperstimulação visual</div>
+        <div class="si-row"><div class="si-dot"></div>Urgência artificial</div>
+        <div class="si-row"><div class="si-dot"></div>Sobrecarga cognitiva</div>
+        <div class="si-row"><div class="si-dot"></div>Engajamento agressivo</div>
+        <div class="si-row"><div class="si-dot"></div>Pressão emocional</div>
+        <div class="si-row"><div class="si-dot"></div>Imprevisibilidade</div>
+      </div>
+    </div>
+    <div class="col-good">
+      <div class="shift-label">Design Neuroafetivo</div>
+      <div class="shift-items">
+        <div class="si-row"><div class="si-dot"></div>Respiração visual</div>
+        <div class="si-row"><div class="si-dot"></div>Previsibilidade reguladora</div>
+        <div class="si-row"><div class="si-dot"></div>Legibilidade afetiva</div>
+        <div class="si-row"><div class="si-dot"></div>Comunicação não-agressiva</div>
+        <div class="si-row"><div class="si-dot"></div>Segurança sensorial</div>
+        <div class="si-row"><div class="si-dot"></div>Sofisticação regulatória</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ═══════════ PRINCÍPIOS ═══════════════════ -->
+<section id="principios" class="principles">
+  <div class="pr-label reveal">Os Princípios</div>
+  <h2 class="pr-h reveal d1">8 Princípios<br>Neuroafetivos</h2>
+  <div class="pr-grid">
+    <div class="pr-card reveal d1"><div class="pr-num">01</div><div class="pr-name">Legibilidade Afetiva</div><div class="pr-desc">O usuário compreende instantaneamente onde está, o que importa e o próximo passo.</div><div class="pr-accent ac-s"></div></div>
+    <div class="pr-card reveal d2"><div class="pr-num">02</div><div class="pr-name">Previsibilidade Reguladora</div><div class="pr-desc">Interações consistentes reduzem a carga cognitiva e criam sensação de segurança.</div><div class="pr-accent ac-b"></div></div>
+    <div class="pr-card reveal d3"><div class="pr-num">03</div><div class="pr-name">Respiração Visual</div><div class="pr-desc">Espaço em branco como ferramenta regulatória. O vazio é presença intencional.</div><div class="pr-accent ac-c"></div></div>
+    <div class="pr-card reveal d4"><div class="pr-num">04</div><div class="pr-name">Motion Calm Technology</div><div class="pr-desc">Movimento existe para orientar e clarificar — nunca para invadir ou estimular.</div><div class="pr-accent ac-s"></div></div>
+    <div class="pr-card reveal d5"><div class="pr-num">05</div><div class="pr-name">Comunicação Não-Agressiva</div><div class="pr-desc">Zero urgência artificial. A interface comunica com empatia, sem manipulação.</div><div class="pr-accent ac-b"></div></div>
+    <div class="pr-card reveal d6"><div class="pr-num">06</div><div class="pr-name">Contraste Inteligente</div><div class="pr-desc">Hierarquia visual com sutileza — não com choque cromático ou sobrecarga.</div><div class="pr-accent ac-c"></div></div>
+    <div class="pr-card reveal d7"><div class="pr-num">07</div><div class="pr-name">Segurança Sensorial</div><div class="pr-desc">Nenhum elemento agride sensorialmente. A experiência calibra em vez de estimular.</div><div class="pr-accent ac-s"></div></div>
+    <div class="pr-card reveal d8"><div class="pr-num">08</div><div class="pr-name">Neurodivergent-First</div><div class="pr-desc">Uma filosofia estrutural que começa no centro — nunca nas margens.</div><div class="pr-accent ac-b"></div></div>
+  </div>
+</section>
+
+<!-- ═══════════ JORNADA ═══════════════════════ -->
+<section id="jornada">
+<div class="journey">
+  <div class="jrn-intro reveal">
+    <h2 class="jrn-h">Do acesso<br>ao <em>pertencer</em></h2>
+    <p class="jrn-sub">Cinco estágios que transformam uma interface em um espaço de acolhimento genuíno.</p>
+  </div>
+  <div class="jrn-steps">
+    <div class="jrn-step reveal d1"><div class="j-num">1</div><div><div class="j-label">Primeiro</div><h3 class="j-title jc1">Compreender</h3><p class="j-desc">O usuário chega e imediatamente entende. A legibilidade afetiva faz o trabalho de orientação antes de qualquer clique.</p><span class="j-pill">Legibilidade Afetiva</span></div></div>
+    <div class="jrn-step reveal d2"><div class="j-num">2</div><div><div class="j-label">Então</div><h3 class="j-title jc2">Permanecer</h3><p class="j-desc">A interface não gera fadiga. Sem alertas invasivos, urgência artificial ou sobrecarga cromática. O usuário pode — e quer — ficar.</p><span class="j-pill">Segurança Sensorial</span></div></div>
+    <div class="jrn-step reveal d3"><div class="j-num">3</div><div><div class="j-label">Com segurança</div><h3 class="j-title jc3">Participar</h3><p class="j-desc">Com ancoragem cognitiva estabelecida, a participação acontece naturalmente. Sem barreira de entrada, sem ansiedade de navegação.</p><span class="j-pill">Previsibilidade Reguladora</span></div></div>
+    <div class="jrn-step reveal d4"><div class="j-num">4</div><div><div class="j-label">Profundamente</div><h3 class="j-title jc4">Sentir-se Seguro</h3><p class="j-desc">A comunicação não pressiona. O tom é empático. Os feedbacks são claros. A interface respeita o ritmo de cada pessoa.</p><span class="j-pill">Comunicação Não-Agressiva</span></div></div>
+    <div class="jrn-step reveal d5"><div class="j-num">5</div><div><div class="j-label">Finalmente</div><h3 class="j-title jc5">Pertencer</h3><p class="j-desc">Não como usuário tolerado. Como pessoa para quem aquele espaço foi genuinamente construído. O Design Neuroafetivo não adapta — ele acolhe.</p><span class="j-pill">Neurodivergent-First</span></div></div>
+  </div>
+</div>
+</section>
+
+<!-- ═══════════ MANIFESTO ═════════════════════ -->
+<div id="manifesto" style="padding:2rem 0 5rem;">
+<div class="manifesto reveal">
+  <div class="mfst-word" aria-hidden="true">Regulação</div>
+  <div class="mfst-inner">
+    <div class="par-label" style="margin-bottom:3rem;">Manifesto</div>
+    <div class="mfst-qs">
+      <blockquote class="mfst-q">"Acessibilidade não é <em>adaptação.</em>"</blockquote>
+      <div class="mfst-sep"></div>
+      <blockquote class="mfst-q">"Interfaces deveriam <em>reduzir</em> a vigilância — não aumentá-la."</blockquote>
+      <div class="mfst-sep"></div>
+      <blockquote class="mfst-q">"O futuro dos sistemas digitais é a <em>segurança emocional.</em>"</blockquote>
+      <div class="mfst-sep"></div>
+      <blockquote class="mfst-q">"Sofisticação <em>regulatória.</em>"</blockquote>
+    </div>
+  </div>
+</div>
+</div>
+
+<footer>
+  <div class="f-logo">Design Neuroafetivo</div>
+  <div class="f-meta">Tese de Mestrado em Design<br>2024 — Interfaces para futuros neurodivergentes</div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+<script>
+/* ─── Lenis ─── */
+const lenis = new Lenis({
+  duration: 1.6,
+  easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+  smoothTouch: false,
+});
+function raf(t) { lenis.raf(t); requestAnimationFrame(raf); }
+requestAnimationFrame(raf);
+
+/* ─── Cursor ─── */
+const cur = document.getElementById('cur');
+let cx = 0, cy = 0, rx = 0, ry = 0;
+document.addEventListener('mousemove', e => { cx = e.clientX; cy = e.clientY; });
+(function trackC() {
+  cur.style.left = cx + 'px'; cur.style.top = cy + 'px';
+  rx += (cx - rx) * .1; ry += (cy - ry) * .1;
+  document.getElementById('cur-ring').style.left = (rx - cx) + 'px';
+  document.getElementById('cur-ring').style.top  = (ry - cy) + 'px';
+  requestAnimationFrame(trackC);
+})();
+document.querySelectorAll('a,button,.pr-card,.si-row').forEach(el => {
+  el.addEventListener('mouseenter', () => document.body.classList.add('hov'));
+  el.addEventListener('mouseleave', () => document.body.classList.remove('hov'));
+});
+
+/* ─── Nav scroll ─── */
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 80);
+}, { passive: true });
+
+/* ─── Spline load ─── */
+const splineLoader = document.getElementById('splineLoader');
+const splineEl = document.getElementById('splineEl');
+// Hide loader once Spline fires load event, or after timeout fallback
+function hideLoader() { splineLoader.classList.add('hide'); }
+splineEl.addEventListener('load', hideLoader);
+// Fallback: hide after 6s regardless
+setTimeout(hideLoader, 6000);
+
+/* ─── Entrance ─── */
+window.addEventListener('load', () => {
+  document.getElementById('hero').classList.add('rdy');
+});
+
+/* ─── GSAP ─── */
+if (typeof gsap !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.to('#heroContent', {
+    scrollTrigger: { trigger: '.hero', start:'top top', end:'bottom top', scrub:2 },
+    y: -80, opacity: .1, ease:'none'
+  });
+  gsap.to('.spline-wrap', {
+    scrollTrigger: { trigger: '.hero', start:'top top', end:'bottom top', scrub:2.5 },
+    scale: 1.08, ease:'none'
+  });
+  gsap.to('.ftags', {
+    scrollTrigger: { trigger: '.hero', start:'top top', end:'50% top', scrub:1 },
+    y: 50, opacity: 0, ease:'none'
+  });
+  gsap.to('.ticker', {
+    scrollTrigger: { trigger: '.hero', start:'top top', end:'35% top', scrub:1 },
+    opacity: 0, ease:'none'
+  });
+  gsap.to('.meta', {
+    scrollTrigger: { trigger: '.hero', start:'top top', end:'40% top', scrub:1 },
+    opacity: 0, ease:'none'
+  });
+}
+
+/* ─── Card mouse gradient ─── */
+document.querySelectorAll('.pr-card').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const r = card.getBoundingClientRect();
+    card.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 100).toFixed(1) + '%');
+    card.style.setProperty('--my', ((e.clientY - r.top)  / r.height * 100).toFixed(1) + '%');
+  });
+});
+
+/* ─── Scroll reveal ─── */
+const ro = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); } });
+}, { threshold: .1, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+
+/* ─── Reduced motion ─── */
+if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.querySelectorAll('.grain,.ft,.tk').forEach(el => el.style.animation = 'none');
+}
+</script>
+</body>
+</html>

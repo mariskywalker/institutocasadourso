@@ -43,7 +43,7 @@ export const WebGuidelinesSection = () => {
             <span className="text-sunshine"><IconAutonomia className="w-4 h-4" /></span>
             <span className="text-coral"><IconEmocional className="w-4 h-4" /></span>
             <span className="text-sky"><IconComunicacao className="w-4 h-4" /></span>
-            <span className="text-mint-dark"><IconSocial className="w-4 h-4" /></span>
+            <span className="text-[#CD995B]"><IconSocial className="w-4 h-4" /></span>
             <span className="text-xs font-semibold text-mint-dark uppercase tracking-wider ml-1">UI Kit</span>
           </div>
           <h1 className="text-4xl md:text-6xl font-display font-black text-foreground mb-4 tracking-tight">

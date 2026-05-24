@@ -49,29 +49,29 @@ export const ColorPaletteSection = () => {
   const primaryColors = [
     {
       name: 'Navy',
-      hex: '#1E3A5F',
-      rgb: '30, 58, 95',
+      hex: '#032E4D',
+      rgb: '3, 46, 77',
       usage: 'Cor principal. Textos, botões, fundos importantes.',
       className: 'bg-navy',
     },
     {
       name: 'Doce',
-      hex: '#E8A5A5',
-      rgb: '232, 165, 165',
+      hex: '#F9746E',
+      rgb: '249, 116, 110',
       usage: 'Destaque emocional. Corações, CTAs, alertas.',
       className: 'bg-coral',
     },
     {
       name: 'Sky Blue',
-      hex: '#4497C3',
-      rgb: '68, 151, 195',
+      hex: '#4099DB',
+      rgb: '64, 153, 219',
       usage: 'Elementos de apoio. Ícones, badges, destaques.',
       className: 'bg-sky',
     },
     {
       name: 'Milho',
-      hex: '#F5C842',
-      rgb: '245, 200, 66',
+      hex: '#FCB346',
+      rgb: '252, 179, 70',
       usage: 'Energia e alegria. Alertas positivos, destaques.',
       className: 'bg-sunshine',
       textColor: 'text-navy',
@@ -81,32 +81,32 @@ export const ColorPaletteSection = () => {
   const secondaryColors = [
     {
       name: 'Doce Light',
-      hex: '#FADEDE',
-      rgb: '250, 222, 222',
+      hex: '#FDE3E2',
+      rgb: '253, 227, 226',
       usage: 'Fundos suaves, cards, seções.',
       className: 'bg-coral-light',
       textColor: 'text-navy',
     },
     {
       name: 'Sky Light',
-      hex: '#B8D6E8',
-      rgb: '184, 214, 232',
+      hex: '#D9ECFA',
+      rgb: '217, 236, 250',
       usage: 'Fundos suaves, highlights.',
       className: 'bg-sky-light',
       textColor: 'text-navy',
     },
     {
       name: 'Milho Light',
-      hex: '#FCF0C5',
-      rgb: '252, 240, 197',
+      hex: '#FEE8C2',
+      rgb: '254, 232, 194',
       usage: 'Fundos suaves, avisos.',
       className: 'bg-sunshine-light',
       textColor: 'text-navy',
     },
     {
       name: 'Mint',
-      hex: '#99D6C9',
-      rgb: '153, 214, 201',
+      hex: '#5DC198',
+      rgb: '93, 193, 152',
       usage: 'Sucesso, confirmações, crescimento.',
       className: 'bg-mint',
       textColor: 'text-navy',
@@ -159,7 +159,7 @@ export const ColorPaletteSection = () => {
                 <h4 className="font-display font-bold text-navy">Hero Gradient</h4>
                 <p className="text-xs text-muted-foreground mt-1">Doce → Sky → Milho</p>
                 <code className="text-xs bg-muted px-2 py-1 rounded mt-2 block overflow-x-auto">
-                  linear-gradient(135deg, #FADEDE 0%, #B8D6E8 50%, #FCF0C5 100%)
+                  linear-gradient(135deg, #FDE3E2 0%, #D9ECFA 50%, #FEE8C2 100%)
                 </code>
               </div>
             </div>
@@ -169,7 +169,7 @@ export const ColorPaletteSection = () => {
                 <h4 className="font-display font-bold text-navy">Playful Gradient</h4>
                 <p className="text-xs text-muted-foreground mt-1">Doce → Sky → Milho (vibrante)</p>
                 <code className="text-xs bg-muted px-2 py-1 rounded mt-2 block overflow-x-auto">
-                  linear-gradient(135deg, #E8A5A5 0%, #4497C3 50%, #F5C842 100%)
+                  linear-gradient(135deg, #F9746E 0%, #4099DB 50%, #FCB346 100%)
                 </code>
               </div>
             </div>
@@ -179,7 +179,7 @@ export const ColorPaletteSection = () => {
                 <h4 className="font-display font-bold text-navy">Navy Gradient</h4>
                 <p className="text-xs text-muted-foreground mt-1">Navy Dark → Navy Light</p>
                 <code className="text-xs bg-muted px-2 py-1 rounded mt-2 block overflow-x-auto">
-                  linear-gradient(135deg, #1E3A5F 0%, #3D5A80 100%)
+                  linear-gradient(135deg, #032E4D 0%, #356485 100%)
                 </code>
               </div>
             </div>

@@ -99,7 +99,7 @@ function getTagColor(label: string) {
 
 const SistemaProgressoPage = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background overflow-x-clip relative instituto-glow-bg">
       {/* Header */}
       <header className="relative overflow-hidden">
         <div className="absolute inset-0 gradient-hero opacity-30" />

@@ -85,8 +85,8 @@ export default {
         },
       },
       fontFamily: {
-        display: ['Satoshi', 'sans-serif'],
-        body: ['Satoshi', 'sans-serif'],
+        display: ['Poppins', 'sans-serif'],
+        body: ['Poppins', 'sans-serif'],
         poppins: ['Poppins', 'sans-serif'],
       },
       borderRadius: {

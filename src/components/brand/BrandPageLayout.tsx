@@ -10,7 +10,7 @@ interface BrandPageLayoutProps {
 
 export const BrandPageLayout = ({ children }: BrandPageLayoutProps) => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background overflow-x-clip relative instituto-glow-bg">
       <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2">

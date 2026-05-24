@@ -1,7 +1,7 @@
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, Asterisk, Heart, House } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import headerIcons from '@/assets/brand/header-icons.png';
-import { IconEmocional, IconSocial, IconComunicacao, IconAutonomia } from '@/components/brand/BrandIcons';
+import { IconSocial } from '@/components/brand/BrandIcons';
 
 interface PilarData {
   title: string;
@@ -18,82 +18,70 @@ interface PilarData {
 
 const pilares: PilarData[] = [
   {
-    title: 'Emocional',
-    color: '#E8A5A5',
-    colorClass: 'text-coral',
-    bgLight: 'bg-coral-light',
-    borderColor: 'border-coral',
-    icon: <IconEmocional className="w-7 h-7" />,
-    description: 'Ajuda a criança a reconhecer, nomear e lidar com o que sente — com segurança e acolhimento.',
-    includes: [
-      'Identificação e nomeação de emoções',
-      'Regulação emocional e autocontrole',
-      'Construção de autoestima e confiança',
-      'Desenvolvimento de resiliência',
-      'Vínculo afetivo com cuidadores',
-    ],
-    realExample: 'Quando a criança consegue dizer "estou com raiva" ao invés de fazer birra, ou quando pede um abraço ao se sentir triste.',
-    appUsage: 'Diários emocionais, atividades de reconhecimento de sentimentos e relatórios de progresso emocional para os pais.',
-  },
-  {
-    title: 'Social',
-    color: '#99D6C9',
-    colorClass: 'text-mint',
-    bgLight: 'bg-mint-light',
-    borderColor: 'border-mint',
-    icon: <IconSocial className="w-7 h-7" />,
-    description: 'Fortalece a capacidade de se relacionar, compartilhar e conviver com outras pessoas de forma saudável.',
-    includes: [
-      'Habilidades de cooperação e trabalho em grupo',
-      'Empatia e respeito às diferenças',
-      'Resolução de conflitos entre pares',
-      'Regras sociais e limites saudáveis',
-      'Construção de amizades',
-    ],
-    realExample: 'Quando a criança espera sua vez para falar, divide um brinquedo com o colega ou convida alguém que está sozinho para brincar.',
-    appUsage: 'Atividades em grupo, desafios colaborativos e métricas de interação social no acompanhamento terapêutico.',
-  },
-  {
-    title: 'Comunicação',
-    color: '#4497C3',
-    colorClass: 'text-sky',
-    bgLight: 'bg-sky-light',
-    borderColor: 'border-sky',
-    icon: <IconComunicacao className="w-7 h-7" />,
-    description: 'Desenvolve a expressão verbal e não-verbal, ampliando a forma como a criança se comunica com o mundo.',
-    includes: [
-      'Desenvolvimento da fala e linguagem',
-      'Ampliação de vocabulário',
-      'Comunicação não-verbal e expressão corporal',
-      'Narrativa e organização do pensamento',
-      'Escuta ativa e compreensão',
-    ],
-    realExample: 'Quando a criança conta sobre o dia na escola com começo, meio e fim, ou quando faz perguntas para entender algo novo.',
-    appUsage: 'Exercícios de linguagem, registro de evolução da fala e recursos visuais de apoio à comunicação.',
-  },
-  {
-    title: 'Autonomia',
+    title: 'Escola',
     color: '#F5C842',
     colorClass: 'text-sunshine',
     bgLight: 'bg-sunshine-light',
     borderColor: 'border-sunshine',
-    icon: <IconAutonomia className="w-7 h-7" />,
-    description: 'Incentiva a criança a fazer escolhas, tomar iniciativas e cuidar de si com cada vez mais independência.',
+    icon: <Asterisk className="w-7 h-7" />,
+    description: 'A escola é o espaço de aprendizagem, socialização e pertencimento, essencial para o desenvolvimento infantil.',
     includes: [
-      'Tomada de decisões apropriadas à idade',
-      'Rotinas e hábitos de autocuidado',
-      'Resolução de problemas do cotidiano',
-      'Responsabilidade com pertences e tarefas',
-      'Iniciativa e curiosidade exploratória',
+      'Alinhamento com objetivos pedagógicos e socioemocionais',
+      'Integração entre equipe escolar e equipe técnica',
+      'Acompanhamento da rotina, participação e convivência',
+      'Adaptações e estratégias para o ambiente de sala de aula',
+      'Continuidade entre aprendizagem e cuidado',
     ],
-    realExample: 'Quando a criança escolhe a roupa sozinha, guarda os brinquedos sem ser pedido ou tenta resolver um problema antes de pedir ajuda.',
-    appUsage: 'Checklists de rotina, conquistas desbloqueáveis e acompanhamento de marcos de independência.',
+    realExample: 'Quando escola e equipe terapêutica combinam metas em conjunto e a criança recebe suporte consistente durante as atividades do dia.',
+    appUsage: 'Registro de rotina escolar, alinhamento de objetivos e compartilhamento de evoluções com toda a rede de cuidado.',
+  },
+  {
+    title: 'Clínica',
+    color: '#E8A5A5',
+    colorClass: 'text-coral',
+    bgLight: 'bg-coral-light',
+    borderColor: 'border-coral',
+    icon: <Heart className="w-7 h-7" />,
+    description: 'A clínica oferece avaliação técnica, escuta qualificada e intervenções personalizadas para cada criança.',
+    includes: [
+      'Avaliação multidisciplinar e definição de plano terapêutico',
+      'Metas individualizadas com base em evidências',
+      'Acompanhamento contínuo de evolução e ajustes de conduta',
+      'Suporte técnico para família e escola',
+      'Visão integral da criança e do seu contexto',
+    ],
+    realExample: 'Quando a equipe clínica identifica prioridades de intervenção e traduz as orientações em ações práticas para escola e família.',
+    appUsage: 'Planos terapêuticos, relatórios técnicos e histórico de evolução com indicadores de progresso.',
+  },
+  {
+    title: 'Casa',
+    color: '#4497C3',
+    colorClass: 'text-sky',
+    bgLight: 'bg-sky-light',
+    borderColor: 'border-sky',
+    icon: <House className="w-7 h-7" />,
+    description: 'A casa é o território do vínculo, da rotina real e da participação ativa da família no desenvolvimento.',
+    includes: [
+      'Fortalecimento do papel dos cuidadores no processo',
+      'Estratégias aplicáveis à rotina diária',
+      'Consistência entre orientações e prática em casa',
+      'Observação de comportamentos em contexto natural',
+      'Construção de vínculos e autonomia com suporte',
+    ],
+    realExample: 'Quando os cuidadores aplicam as orientações no cotidiano e percebem avanços na comunicação, comportamento e autonomia da criança.',
+    appUsage: 'Guias práticos para cuidadores, check-ins familiares e registro de avanços observados em casa.',
   },
 ];
 
 const Pilares = () => {
+  const metodoUrso = {
+    title: 'Urso',
+    description:
+      'O Método Casa do Urso une Escola, Clínica e Casa em um hub personalizado para a criança, conectando informações, estratégias e acompanhamento em uma visão única de cuidado.',
+  };
+
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background overflow-x-clip relative instituto-glow-bg">
       {/* Header */}
       <header className="relative overflow-hidden">
         <div className="absolute inset-0 gradient-hero opacity-30" />
@@ -113,8 +101,8 @@ const Pilares = () => {
             Pilares de Desenvolvimento
           </h1>
           <p className="font-body text-lg text-muted-foreground max-w-3xl">
-            A Casa do Urso organiza sua abordagem em quatro pilares fundamentais.
-            Cada pilar representa uma dimensão essencial do crescimento infantil — e uma cor que a identifica em todo o ecossistema da marca.
+            O método Casa do Urso organiza sua abordagem em três pilares integrados:
+            Escola, Clínica e Casa. Juntos, eles conectam os principais contextos da vida da criança com continuidade de cuidado.
           </p>
         </div>
       </header>
@@ -202,15 +190,34 @@ const Pilares = () => {
           </section>
         ))}
 
+        {/* Urso / Método */}
+        <section className="pt-2">
+          <div className="bg-[#CD995B]/10 rounded-3xl border border-[#CD995B]/30 p-10 shadow-card text-center">
+            <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-5 bg-[#CD995B]/20">
+              <span className="text-[#CD995B]">
+                <IconSocial className="w-8 h-8" />
+              </span>
+            </div>
+            <h2 className="font-display text-2xl md:text-3xl font-bold text-navy mb-4">
+              {metodoUrso.title}
+            </h2>
+            <p className="text-foreground font-body max-w-3xl mx-auto leading-relaxed">
+              {metodoUrso.description}
+            </p>
+          </div>
+        </section>
+
         {/* Summary visual */}
         <section className="pt-8">
           <div className="bg-card rounded-3xl border border-border p-10 shadow-card text-center">
             <h2 className="font-display text-2xl md:text-3xl font-bold text-navy mb-4">
-              Os 4 pilares juntos formam a base do cuidado
+              Os 3 pilares formam a base do Método Casa do Urso
             </h2>
             <p className="text-muted-foreground font-body max-w-2xl mx-auto mb-10">
-              Cada pilar se conecta aos outros — o desenvolvimento é integral.
-              A Casa do Urso acompanha cada dimensão com carinho e evidência.
+              Escola, Clínica e Casa atuam de forma integrada para garantir alinhamento entre todos os ambientes de desenvolvimento infantil.
+            </p>
+            <p className="font-display font-bold text-navy mb-8">
+              Escola x Clínica x Casa = Método Casa do Urso
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
               {pilares.map((pilar) => (
@@ -226,6 +233,16 @@ const Pilares = () => {
                   </span>
                 </div>
               ))}
+              <div className="flex flex-col items-center gap-3">
+                <div className="w-16 h-16 rounded-2xl flex items-center justify-center bg-[#CD995B]/20">
+                  <span className="text-[#CD995B]">
+                    <IconSocial className="w-7 h-7" />
+                  </span>
+                </div>
+                <span className="font-display font-bold text-navy text-sm">
+                  Urso
+                </span>
+              </div>
             </div>
           </div>
         </section>
@@ -236,7 +253,7 @@ const Pilares = () => {
         <div className="max-w-6xl mx-auto px-6 text-center">
           <p className="font-display font-semibold text-lg mb-2">Casa do Urso</p>
           <p className="text-white/60 font-body text-sm">
-            Pilares de Desenvolvimento · Brand Design System
+            Pilares de Desenvolvimento · Método Casa do Urso
           </p>
         </div>
       </footer>

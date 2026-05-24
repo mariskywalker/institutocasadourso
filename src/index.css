@@ -2,35 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&display=swap');
 
 @layer base {
   :root {
     /* Casa do Urso Brand Colors */
     --background: 0 0% 100%;
-    --foreground: 213 50% 15%;
+    --foreground: 205 92% 16%;
 
     --card: 0 0% 100%;
-    --card-foreground: 213 50% 15%;
+    --card-foreground: 205 92% 16%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 213 50% 15%;
+    --popover-foreground: 205 92% 16%;
 
     /* Primary - Navy Blue */
-    --primary: 213 50% 20%;
+    --primary: 205 92% 16%;
     --primary-foreground: 0 0% 100%;
 
     /* Secondary - Soft Pink */
-    --secondary: 0 70% 92%;
-    --secondary-foreground: 213 50% 20%;
+    --secondary: 3 92% 92%;
+    --secondary-foreground: 205 92% 16%;
 
     /* Muted */
     --muted: 210 20% 96%;
-    --muted-foreground: 213 20% 45%;
+    --muted-foreground: 205 22% 36%;
 
     /* Accent - Sky Blue */
-    --accent: 200 70% 65%;
+    --accent: 206 68% 55%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -38,40 +37,40 @@
 
     --border: 210 20% 90%;
     --input: 210 20% 90%;
-    --ring: 200 70% 65%;
+    --ring: 206 68% 55%;
 
     --radius: 1rem;
 
     /* Brand Specific Colors */
-    --coral: 0 70% 75%;
-    --coral-light: 0 70% 92%;
-    --coral-dark: 0 55% 42%;
+    --coral: 3 92% 70%;
+    --coral-light: 3 92% 94%;
+    --coral-dark: 3 60% 48%;
     
-    --sky: 201 51% 52%;
-    --sky-light: 201 45% 82%;
-    --sky-dark: 201 55% 33%;
+    --sky: 206 68% 55%;
+    --sky-light: 206 72% 91%;
+    --sky-dark: 206 62% 38%;
     
-    --sunshine: 45 90% 65%;
-    --sunshine-light: 45 90% 85%;
-    --sunshine-dark: 45 80% 32%;
+    --sunshine: 36 97% 63%;
+    --sunshine-light: 36 95% 88%;
+    --sunshine-dark: 36 72% 40%;
     
-    --navy: 213 50% 20%;
-    --navy-light: 213 40% 35%;
-    --navy-dark: 213 55% 12%;
+    --navy: 205 92% 16%;
+    --navy-light: 205 54% 30%;
+    --navy-dark: 205 86% 10%;
 
-    --mint: 160 50% 70%;
-    --mint-light: 160 50% 88%;
-    --mint-dark: 160 50% 30%;
+    --mint: 155 45% 56%;
+    --mint-light: 155 45% 90%;
+    --mint-dark: 155 52% 34%;
 
     /* Sidebar */
     --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 213 50% 20%;
-    --sidebar-primary: 213 50% 20%;
+    --sidebar-foreground: 205 92% 16%;
+    --sidebar-primary: 205 92% 16%;
     --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 200 70% 95%;
-    --sidebar-accent-foreground: 213 50% 20%;
+    --sidebar-accent: 206 72% 94%;
+    --sidebar-accent-foreground: 205 92% 16%;
     --sidebar-border: 210 20% 90%;
-    --sidebar-ring: 200 70% 65%;
+    --sidebar-ring: 206 68% 55%;
 
     /* Gradients */
     --gradient-hero: linear-gradient(135deg, hsl(var(--coral-light)) 0%, hsl(var(--sky-light)) 50%, hsl(var(--sunshine-light)) 100%);
@@ -87,8 +86,8 @@
     --shadow-coral: 0 8px 30px -8px hsl(var(--coral) / 0.4);
     --shadow-sky: 0 8px 30px -8px hsl(var(--sky) / 0.4);
 
-    --font-display: 'Satoshi', sans-serif;
-    --font-body: 'Satoshi', sans-serif;
+    --font-display: 'Poppins', sans-serif;
+    --font-body: 'Poppins', sans-serif;
   }
 
   .dark {
@@ -164,6 +163,61 @@
     background: var(--gradient-playful);
   }
 
+  .instituto-glow-bg {
+    position: relative;
+    isolation: isolate;
+    background: hsl(var(--background));
+    overflow: hidden;
+  }
+
+  .instituto-glow-bg::before,
+  .instituto-glow-bg::after {
+    content: "";
+    position: absolute;
+    inset: -12%;
+    pointer-events: none;
+    z-index: 0;
+    will-change: transform, background-position, opacity, filter;
+  }
+
+  .instituto-glow-bg::before {
+    background:
+      radial-gradient(60rem 42rem at 14% 18%, hsl(var(--coral-light) / 0.55), transparent 70%),
+      radial-gradient(70rem 46rem at 82% 12%, hsl(var(--sky-light) / 0.55), transparent 68%),
+      radial-gradient(54rem 32rem at 56% 82%, hsl(var(--sunshine-light) / 0.4), transparent 70%);
+    filter: blur(14px) saturate(108%);
+    animation:
+      instituto-liquid-drift-a 22s ease-in-out infinite alternate,
+      instituto-liquid-shift 16s linear infinite;
+  }
+
+  .instituto-glow-bg::after {
+    background:
+      radial-gradient(58rem 36rem at 78% 68%, hsl(var(--mint-light) / 0.42), transparent 72%),
+      radial-gradient(46rem 34rem at 18% 72%, hsl(var(--coral-light) / 0.38), transparent 74%),
+      radial-gradient(54rem 38rem at 56% 24%, hsl(var(--sky-light) / 0.32), transparent 75%);
+    mix-blend-mode: multiply;
+    opacity: 0.72;
+    filter: blur(18px);
+    animation:
+      instituto-liquid-drift-b 28s ease-in-out infinite alternate,
+      instituto-liquid-shift 20s linear infinite reverse;
+  }
+
+  .instituto-glow-bg > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .instituto-hero-glow {
+    background:
+      radial-gradient(64rem 38rem at 6% 16%, hsl(var(--coral-light) / 0.34), transparent 72%),
+      radial-gradient(70rem 40rem at 88% 12%, hsl(var(--sky-light) / 0.34), transparent 70%),
+      radial-gradient(48rem 30rem at 44% -6%, hsl(var(--sunshine-light) / 0.24), transparent 72%);
+    filter: blur(4px);
+    animation: instituto-liquid-drift-c 14s ease-in-out infinite alternate;
+  }
+
   .shadow-soft {
     box-shadow: var(--shadow-soft);
   }
@@ -191,6 +245,91 @@
 
   .geometric-shape {
     @apply absolute rounded-2xl opacity-80;
+  }
+
+  .liquid-glass-card {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    border-radius: 1.25rem;
+    background:
+      radial-gradient(140% 110% at 50% 50%, hsl(0 0% 100% / 0.06) 0%, hsl(0 0% 100% / 0.015) 55%, hsl(0 0% 100% / 0.09) 100%),
+      linear-gradient(160deg, hsl(0 0% 100% / 0.14), hsl(0 0% 100% / 0.03) 45%, hsl(0 0% 100% / 0.03) 100%);
+    border: 1px solid hsl(0 0% 100% / 0.42);
+    box-shadow:
+      inset 0 1px 0 hsl(0 0% 100% / 0.85),
+      inset 0 -1px 0 hsl(0 0% 100% / 0.24),
+      inset 0 -24px 28px -24px hsl(0 0% 100% / 0.02),
+      0 24px 46px -30px hsl(var(--navy) / 0.4),
+      0 2px 8px hsl(var(--navy) / 0.12);
+    backdrop-filter: blur(1px) saturate(128%) contrast(1.01) brightness(1.005);
+    -webkit-backdrop-filter: blur(1px) saturate(128%) contrast(1.01) brightness(1.005);
+    transition:
+      transform 320ms cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 320ms cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 320ms ease;
+  }
+
+  .liquid-glass-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1.2px;
+    background:
+      linear-gradient(145deg,
+        hsl(0 0% 100% / 0.78) 0%,
+        hsl(0 0% 100% / 0.45) 26%,
+        hsl(0 0% 100% / 0.12) 52%,
+        hsl(206 68% 55% / 0.25) 74%,
+        hsl(var(--navy) / 0.22) 100%);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0.95;
+  }
+
+  .liquid-glass-card::after {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    border-radius: inherit;
+    background:
+      linear-gradient(168deg, hsl(0 0% 100% / 0.58) 0%, hsl(0 0% 100% / 0.08) 34%, transparent 56%),
+      radial-gradient(120% 86% at 14% 2%, hsl(0 0% 100% / 0.42), transparent 46%),
+      radial-gradient(150% 110% at 86% 96%, hsl(0 0% 100% / 0.04), transparent 58%);
+    pointer-events: none;
+    opacity: 0.9;
+  }
+
+  .liquid-glass-card > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .liquid-glass-card:hover {
+    border-color: hsl(0 0% 100% / 0.58);
+    box-shadow:
+      inset 0 1px 0 hsl(0 0% 100% / 0.94),
+      inset 0 -1px 0 hsl(0 0% 100% / 0.3),
+      inset 0 -24px 32px -22px hsl(206 68% 55% / 0.3),
+      0 28px 54px -30px hsl(var(--navy) / 0.44),
+      0 6px 18px -10px hsl(0 0% 100% / 0.48);
+  }
+
+  .liquid-glass-core {
+    position: absolute;
+    inset: 10px;
+    border-radius: calc(1.25rem - 8px);
+    background:
+      radial-gradient(90% 64% at 50% 18%, hsl(0 0% 100% / 0.12), transparent 72%),
+      linear-gradient(180deg, hsl(0 0% 100% / 0.05), hsl(0 0% 100% / 0.008));
+    box-shadow:
+      inset 0 1px 0 hsl(0 0% 100% / 0.34),
+      inset 0 -10px 18px -14px hsl(0 0% 100% / 0.02);
+    pointer-events: none;
+    z-index: 0;
   }
 }
 
@@ -277,6 +416,71 @@
     50% {
       opacity: 0.8;
       transform: scale(1.02);
+    }
+  }
+
+  @keyframes instituto-liquid-drift-a {
+    0% {
+      transform: translate3d(-2%, -2%, 0) scale(1);
+      opacity: 0.9;
+    }
+    50% {
+      transform: translate3d(2%, 1.5%, 0) scale(1.06);
+      opacity: 0.78;
+    }
+    100% {
+      transform: translate3d(4%, -1%, 0) scale(1.04);
+      opacity: 0.86;
+    }
+  }
+
+  @keyframes instituto-liquid-drift-b {
+    0% {
+      transform: translate3d(3%, 0%, 0) scale(1.02);
+      opacity: 0.62;
+    }
+    50% {
+      transform: translate3d(-2.5%, 2.5%, 0) scale(1.09);
+      opacity: 0.74;
+    }
+    100% {
+      transform: translate3d(-4%, -2%, 0) scale(1.03);
+      opacity: 0.66;
+    }
+  }
+
+  @keyframes instituto-liquid-drift-c {
+    0% {
+      background-position: 0% 0%, 100% 0%, 50% 0%;
+      opacity: 0.62;
+    }
+    50% {
+      background-position: 6% 8%, 92% 6%, 52% 2%;
+      opacity: 0.74;
+    }
+    100% {
+      background-position: 12% 4%, 84% 10%, 48% 6%;
+      opacity: 0.68;
+    }
+  }
+
+  @keyframes instituto-liquid-shift {
+    0% {
+      filter: hue-rotate(0deg) saturate(108%);
+    }
+    50% {
+      filter: hue-rotate(8deg) saturate(116%);
+    }
+    100% {
+      filter: hue-rotate(0deg) saturate(108%);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .instituto-glow-bg::before,
+    .instituto-glow-bg::after,
+    .instituto-hero-glow {
+      animation: none;
     }
   }
 }

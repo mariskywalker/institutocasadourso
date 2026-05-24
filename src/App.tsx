@@ -14,6 +14,8 @@ import DiretrizesPage from "./pages/DiretrizesPage";
 import SistemaProgressoPage from "./pages/SistemaProgressoPage";
 import VozTomPage from "./pages/VozTomPage";
 import WebPage from "./pages/WebPage";
+import InstitutoSitePage from "./pages/InstitutoSitePage";
+import NeuroaffectivePage from "./pages/NeuroaffectivePage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -25,7 +27,9 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Index />} />
+          <Route path="/" element={<InstitutoSitePage />} />
+          <Route path="/instituto" element={<InstitutoSitePage />} />
+          <Route path="/hub" element={<Index />} />
           <Route path="/pilares" element={<Pilares />} />
           <Route path="/logos" element={<LogosPage />} />
           <Route path="/cores" element={<CoresPage />} />
@@ -36,6 +40,7 @@ const App = () => (
           <Route path="/progresso" element={<SistemaProgressoPage />} />
           <Route path="/voz-tom" element={<VozTomPage />} />
           <Route path="/web" element={<WebPage />} />
+          <Route path="/neuroaffective" element={<NeuroaffectivePage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
